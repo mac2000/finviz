@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Operating Margin</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <h1>Operating Margin</h1>
+
+    <p>Прибуток що отримує компанія на кожен доллар з продаж після сплати витрат (заробітна плата, сировина, тощо).</p>
+
+    <p>
+      <math>
+        <mrow>
+          <mtext>Oper. Margin</mtext>
+        </mrow>
+        <mo>=</mo>
+        <mfrac>
+          <mi>Operating Income</mi>
+          <mi>Revenue</mi>
+        </mfrac>
+      </math>
+    </p>
+
+    <dl>
+      <dt>Operating Income</dt>
+      <dd>Кількість грошей від оперційної діяльності, подається в звіті Income Statement, розмічається як us-gaap:OperatingIncomeLoss і в нашому випадку дорівнює 383,933.00</dd>
+      <dt><a href="/revenue.html">Revenue</a></dt>
+      <dd>Прибуток з продажів, подається в звіті Income State, розмічається як us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax і в нашому випадку дорівнює 94,760.00</dd>
+    </dl>
+
+    <p>Розраховане значення Oper. Profit можна побачити в табличці.</p>
+    <p>
+      <picture>
+        <source srcset="images/metrics_dark.png" media="(prefers-color-scheme: dark)" />
+        <img src="/images/metrics_light.png" alt="metrics" />
+      </picture>
+    </p>
+
+    <p>А показники Operating Income та Total Revenue в звіті Income statement.</p>
+    <p>
+      <picture>
+        <source srcset="images/income_dark.png" media="(prefers-color-scheme: dark)" />
+        <img src="/images/income_light.png" alt="income" />
+      </picture>
+    </p>
+
+    <p>
+      <iframe style="width: 207px; height: 112px" title="excel" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdBU3xwE_3m25SW8uaQgjYH8wv3lx7i9bdq2Dh9fl6JXhGKLeo3CzeOoRtc9dFbY0OyVroHeY7dAqD/pubhtml?gid=832084344&amp;single=true&amp;widget=false&amp;headers=true&amp;chrome=false"></iframe>
+    </p>
+
+    <table class="excel">
+      <thead>
+        <tr>
+          <th></th>
+          <th>A</th>
+          <th>B</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>1</th>
+          <td>Symbol</td>
+          <td>AAPL</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>2</th>
+          <td>Total Revenue</td>
+          <td>394328</td>
+          <td><code>=INDEX(SPLIT(SUBSTITUTE(REGEXREPLACE(REGEXREPLACE(IMPORTDATA(CONCATENATE("https://finviz.com/api/statement.ashx?t=",$B$1),"|"),CONCATENATE(".+",A2,""":\["""),""),"""\].+",""),""",""","|"),"|"),1,2)</code></td>
+        </tr>
+        <tr>
+          <th>3</th>
+          <td>Operating Income</td>
+          <td>119437</td>
+          <td><code>=INDEX(SPLIT(SUBSTITUTE(REGEXREPLACE(REGEXREPLACE(IMPORTDATA(CONCATENATE("https://finviz.com/api/statement.ashx?t=",$B$1),"|"),CONCATENATE(".+",A3,""":\["""),""),"""\].+",""),""",""","|"),"|"),1,2)</code></td>
+        </tr>
+        <tr>
+          <th>4</th>
+          <td>Oper. Profit</td>
+          <td>30.29%</td>
+          <td><code>=B3/B2</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Синоніми та аббревіатури:</p>
+    <ul>
+      <li>Operating Margin</li>
+      <li>Operational Profit</li>
+      <li>Oper Profit</li>
+    </ul>
+
+    <p>Посилання на джерела:</p>
+    <ul>
+      <li>
+        <a href="https://en.wikipedia.org/wiki/Operating_margin">Wikipedia</a>
+      </li>
+      <li>
+        <a href="https://www.investopedia.com/terms/o/operatingmargin.asp">Investopedia</a>
+      </li>
+      <li>
+        <a href="https://docs.google.com/spreadsheets/d/1e7EngYnq1yNCJtAPjP7wpJPw3hNg9H7sSxxjFnw8gCs/edit?usp=sharing">Excel</a>
+      </li>
+    </ul>
+  </body>
+</html>

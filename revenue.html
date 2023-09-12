@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Revenue</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <h1>Revenue</h1>
+
+    <p>Кількість грошей що компанія генерує, у нашому випадку з продажів iPhone, MacBook та сервісів Apple.</p>
+
+    <p>Revenue в таблиці зазначено як &laquo;Sales&raquo; в лівому верхньому куті і дорівнює 383.93B</p>
+    <p>
+      <picture>
+        <source srcset="images/metrics_dark.png" media="(prefers-color-scheme: dark)" />
+        <img src="/images/metrics_light.png" alt="metrics" />
+      </picture>
+    </p>
+
+    <p>Цей показник подається компанією у своїх звітах, його можна подивитися в розділі &laquo;income statement&raquo; позначений як &laquo;Total Revenue&raquo;</p>
+    <p>
+      <picture>
+        <source srcset="images/income_dark.png" media="(prefers-color-scheme: dark)" />
+        <img src="/images/income_light.png" alt="income" />
+      </picture>
+    </p>
+
+    <p>
+      <iframe style="width: 190px; height: 70px" title="excel" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdBU3xwE_3m25SW8uaQgjYH8wv3lx7i9bdq2Dh9fl6JXhGKLeo3CzeOoRtc9dFbY0OyVroHeY7dAqD/pubhtml?gid=732079216&amp;single=true&amp;widget=false&amp;headers=true&amp;chrome=false"></iframe>
+    </p>
+
+    <table class="excel">
+      <thead>
+        <tr>
+          <th></th>
+          <th>A</th>
+          <th>B</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>1</th>
+          <td>Symbol</td>
+          <td>AAPL</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>2</th>
+          <td>Revenue</td>
+          <td>383.93</td>
+          <td><code>=VALUE(SUBSTITUTE(INDEX(ARRAYFORMULA(REGEXREPLACE(IMPORTHTML(CONCATENATE("https://finviz.com/quote.ashx?t=",B1),"table","10"),"\*","")),4,2),"B",""))</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h1>Quarterly revenue growth (YoY)</h1>
+
+    <p>Він же в таблиці зазначен як Sales Q/Q</p>
+
+    <p>
+      <iframe style="width: 291px; height: 114px" title="excel" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdBU3xwE_3m25SW8uaQgjYH8wv3lx7i9bdq2Dh9fl6JXhGKLeo3CzeOoRtc9dFbY0OyVroHeY7dAqD/pubhtml?gid=873544783&amp;single=true&amp;widget=false&amp;headers=true&amp;chrome=false"></iframe>
+    </p>
+
+    <table class="excel">
+      <tr>
+        <th>B1</th>
+        <td><code>=YEAR(TODAY())-1</code></td>
+      </tr>
+      <tr>
+        <th>C1</th>
+        <td><code>=YEAR(TODAY())-2</code></td>
+      </tr>
+      <tr>
+        <th>B2</th>
+        <td><code>=INDEX(SPLIT(SUBSTITUTE(REGEXREPLACE(REGEXREPLACE(IMPORTDATA(CONCATENATE("https://finviz.com/api/statement.ashx?t=",$A$1),"|"),CONCATENATE(".+",$A2,""":\["""),""),"""\].+",""),""",""","|"),"|"),1,YEAR(TODAY())-B1+1)</code></td>
+      </tr>
+      <tr>
+        <th>B3</th>
+        <td><code>=(B2-C2)/C2</code></td>
+      </tr>
+      <tr>
+        <th>B4</th>
+        <td><code>=VALUE(INDEX(ARRAYFORMULA(REGEXREPLACE(IMPORTHTML(CONCATENATE("https://finviz.com/quote.ashx?t=",A1),"table","10"),"\*","")),9,6))</code></td>
+      </tr>
+    </table>
+
+    <p>Складається таке враження що Finviz рахує цей показник відносно поточного кварталу, в якому дійсно показник менший, бо інакше як іще могла вирахуватися відьемна цифра?</p>
+
+    <h1>Annual sales growth past 5 years (Sales past 5Y)</h1>
+
+    <p>Тут нам пропонують розрахований ріст обороту компанії за останні пьять років, але глядячи на попередній показник вже не дуже віриться, нажаль Finviz в безкоштовній версії не надає данних для перевірки.</p>
+    <p>Google Finance дає необхідну інформацію, але розрахунки не на користь Finviz.</p>
+
+    <p>Синоніми та аббревіатури:</p>
+    <ul>
+      <li>Revenue</li>
+      <li>Sales</li>
+      <li>Total Revenue</li>
+      <li>us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax</li>
+    </ul>
+
+    <p>Використовується в разрахунках:</p>
+    <ul>
+      <li>
+        <a href="/ps.html">Price to Sales (PS)</a>
+      </li>
+      <li>
+        <a href="/gross-margin.html">Gross Margin</a>
+      </li>
+      <li>
+        <a href="/oper-margin.html">Operating Margin</a>
+      </li>
+      <li>
+        <a href="/profit-margin.html">Profit Margin</a>
+      </li>
+    </ul>
+
+    <p>Посилання на джерела:</p>
+    <ul>
+      <li>
+        <a href="https://en.wikipedia.org/wiki/Revenue">Wikipedia</a>
+      </li>
+      <li>
+        <a href="https://www.investopedia.com/terms/r/revenue.asp">Investopedia</a>
+      </li>
+      <li>
+        <a href="https://docs.google.com/spreadsheets/d/1e7EngYnq1yNCJtAPjP7wpJPw3hNg9H7sSxxjFnw8gCs/edit?usp=sharing">Excel</a>
+      </li>
+    </ul>
+  </body>
+</html>

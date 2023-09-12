@@ -1,0 +1,20 @@
+iframe[title="excel"] {
+  box-sizing: border-box;
+  display: block;
+}
+
+.excel {
+  border-collapse: collapse;
+  border: 1px solid #999;
+  margin: 0 auto;
+}
+
+.excel td,
+.excel th {
+  border: 1px solid #999;
+  padding: 0.2em 0.5em;
+}
+
+.excel code {
+  word-break: break-all;
+}

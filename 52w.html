@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>52W Range, Low, High</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <h1>52W Range, Low, High</h1>
+
+    <p><b>52W</b> - 52 week, 12 months, 1 year.</p>
+    <p><b>52W High, Low</b> - відповідно мінімальна та максимальна ціна за рік.</p>
+
+    <p>Подивитися значення можно в табличці</p>
+
+    <p>
+      <picture>
+        <source srcset="images/metrics_dark.png" media="(prefers-color-scheme: dark)" />
+        <img src="/images/metrics_light.png" alt="metrics" />
+      </picture>
+    </p>
+
+    <p>Як правило в році 252 робочі дні</p>
+
+    <p>
+      <iframe style="width: 240px; height: 217px" title="excel" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdBU3xwE_3m25SW8uaQgjYH8wv3lx7i9bdq2Dh9fl6JXhGKLeo3CzeOoRtc9dFbY0OyVroHeY7dAqD/pubhtml?gid=889966050&amp;single=true&amp;widget=false&amp;headers=true&amp;chrome=false"></iframe>
+    </p>
+
+    <table class="excel">
+      <thead>
+        <tr>
+          <th></th>
+          <th>A</th>
+          <th>B</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>1</th>
+          <td>Symbol</td>
+          <td>AAPL</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>2</th>
+          <td>Today</td>
+          <td>9/11/2023</td>
+          <td><code>=TODAY()</code></td>
+        </tr>
+        <tr>
+          <th>3</th>
+          <td>Closest working day</td>
+          <td>9/8/2023</td>
+          <td><code>=WORKDAY(TODAY(),-1)</code></td>
+        </tr>
+        <tr>
+          <th>4</th>
+          <td>52W</td>
+          <td>9/22/2022</td>
+          <td><code>=WORKDAY(TODAY(),-252)</code></td>
+        </tr>
+        <tr>
+          <th>5</th>
+          <td>52W Low</td>
+          <td>125.02</td>
+          <td><code>=MIN(INDEX(GOOGLEFINANCE(B1,"price",B4,B3),,2))</code></td>
+        </tr>
+        <tr>
+          <th>6</th>
+          <td>52W High</td>
+          <td>196.45</td>
+          <td><code>=MAX(INDEX(GOOGLEFINANCE(B1,"price",B4,B3),,2))</code></td>
+        </tr>
+        <tr>
+          <th>7</th>
+          <td>Price</td>
+          <td>178.18</td>
+          <td><code>=GOOGLEFINANCE(B1,"price")</code></td>
+        </tr>
+        <tr>
+          <th>8</th>
+          <td>price/52W Low</td>
+          <td>29.83%</td>
+          <td><code>=1-B5/B7</code></td>
+        </tr>
+        <tr>
+          <th>9</th>
+          <td>price/52W High</td>
+          <td>-10.25%</td>
+          <td><code>=1-B6/B7</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Синоніми та аббревіатури:</p>
+    <ul>
+      <li>52W Range</li>
+      <li>52W Low</li>
+      <li>52W High</li>
+      <li>52 Week Range</li>
+      <li>52 Week High</li>
+      <li>52 Week Low</li>
+    </ul>
+
+    <p>Посилання на джерела:</p>
+    <ul>
+      <li>
+        <a href="https://www.investopedia.com/terms/1/52weekhighlow.asp">Investopedia</a>
+      </li>
+      <li>
+        <a href="https://docs.google.com/spreadsheets/d/1e7EngYnq1yNCJtAPjP7wpJPw3hNg9H7sSxxjFnw8gCs/edit?usp=sharing">Google Sheet</a>
+      </li>
+    </ul>
+  </body>
+</html>

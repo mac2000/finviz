@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Price to Earnings to Growth</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <h1>Price to Earnings to Growth</h1>
+
+    <p>Більш наворочений P/E з урахуванням можливих майбутніх прибутків.</p>
+
+    <p>
+      <math>
+        <mrow>
+          <mtext>PEG</mtext>
+        </mrow>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mtext>P/E</mtext>
+          </mrow>
+          <mrow>
+            <mtext>EPS Growth</mtext>
+          </mrow>
+        </mfrac>
+      </math>
+    </p>
+
+    <dl>
+      <dt><a href="/pe.html">P/E</a></dt>
+      <dd>
+        <p>Співвідношення вартости акції до прибутків компанії &mdash; 29.95</p>
+      </dd>
+      <dt>Annual EPS Growth</dt>
+      <dd>
+        <p>Прогнозований ріст EPS (співвідношення прибутка до загальноеї кількості акцій), для разрахунку finviz використовує прогноз на пьять років (EPS next 5Y) &mdash; 6.37%</p>
+      </dd>
+    </dl>
+
+    <p>Значення показників P/E, EPS next 5Y та розрахованного PEG можно подивитися в табличці</p>
+    <p>
+      <picture>
+        <source srcset="images/metrics_dark.png" media="(prefers-color-scheme: dark)" />
+        <img src="/images/metrics_light.png" alt="metrics" />
+      </picture>
+    </p>
+
+    <p>Отже для Apple цей показник буде дорівнювати</p>
+
+    <p>
+      <math>
+        <mrow>
+          <mtext>PEG</mtext>
+        </mrow>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mtext>P/E</mtext>
+          </mrow>
+          <mrow>
+            <mtext>EPS Growth</mtext>
+          </mrow>
+        </mfrac>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mn>29.95</mn>
+          </mrow>
+          <mrow>
+            <mn>6.37%</mn>
+          </mrow>
+        </mfrac>
+        <mo>=</mo>
+        <mrow>
+          <mn>4.70</mn>
+        </mrow>
+      </math>
+    </p>
+
+    <p>Маленькі значення можуть свідчити про недооціненість компанії. Значення 1 і менше вважається ідеальним.</p>
+
+    <p>Для біль зрозумілого прикладу, замість разрахунків з майбутніми цифрами, можно скористатися минулими</p>
+    <p>Так наприклад спробуймо порівняти Apple з Tesla.</p>
+    <p>Якщо оріентуватися лише за показником P/E Apple здається більш цікавим.</p>
+    <p>Але, якщо додати до рівняння швидкість росту прибутків картина набуває іншого змісту, адже порівнянно з Tesla, Apple має не достатньо швидкий темп зростання за для виправдання свого P/E. Tesla на фоні Apple продається з дисконтом, адже коштує менше на одиницю генерованого прибутку. Виходячи з меншого PEG Tesla може виявитися більш вдалим придбанням.</p>
+
+    <p>
+      <iframe style="width: 561px; height: 238px" title="excel" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdBU3xwE_3m25SW8uaQgjYH8wv3lx7i9bdq2Dh9fl6JXhGKLeo3CzeOoRtc9dFbY0OyVroHeY7dAqD/pubhtml?gid=1336815165&amp;single=true&amp;widget=false&amp;headers=true&amp;chrome=false"></iframe>
+    </p>
+
+    <p>
+      <table class="excel">
+        <thead>
+          <tr>
+            <th></th>
+            <th>A</th>
+            <th>B</th>
+            <th>C</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>1</th>
+            <td>AAPL</td>
+            <td>2022</td>
+            <td>2021</td>
+            <td></td>
+          </tr>
+          <tr>
+            <th>2</th>
+            <td>Net Income</td>
+            <td>99803</td>
+            <td>94680</td>
+            <td><code>=TRANSPOSE(QUERY(TRANSPOSE(SPLIT(SUBSTITUTE(SUBSTITUTE(REGEXREPLACE(REGEXREPLACE(IMPORTDATA(CONCATENATE("https://finviz.com/api/statement.ashx?t=",A1),"|"),".+Net Income"":\[""",""),"""\].+",""),""",""","|"),",",""),"|")),"SELECT Col1 LIMIT 2 OFFSET 1",0))</code></td>
+          </tr>
+          <tr>
+            <th>3</th>
+            <td>Outstanding Shares</td>
+            <td>16426.79</td>
+            <td>16976.76</td>
+            <td><code>=TRANSPOSE(QUERY(TRANSPOSE(SPLIT(SUBSTITUTE(SUBSTITUTE(REGEXREPLACE(REGEXREPLACE(IMPORTDATA(CONCATENATE("https://finviz.com/api/statement.ashx?t=",A1,"&s=BA"),"|"),".+Total Common Shares Outstanding"":\[""",""),"""\].+",""),""",""","|"),",",""),"|")),"SELECT Col1 LIMIT 2 OFFSET 1",0))</code></td>
+          </tr>
+          <tr>
+            <th>4</th>
+            <td>EPS</td>
+            <td>6.08</td>
+            <td>5.58</td>
+            <td><code>=B2/B3</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </p>
+
+    <p>
+      <table class="excel">
+        <thead>
+          <tr>
+            <th></th>
+            <th>E</th>
+            <th>F</th>
+            <th>G</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>1</th>
+            <td>TSLA</td>
+            <td>2022</td>
+            <td>2021</td>
+            <td></td>
+          </tr>
+          <tr>
+            <th>2</th>
+            <td>Net Income</td>
+            <td>12583</td>
+            <td>5524</td>
+            <td><code>=TRANSPOSE(QUERY(TRANSPOSE(SPLIT(SUBSTITUTE(SUBSTITUTE(REGEXREPLACE(REGEXREPLACE(IMPORTDATA(CONCATENATE("https://finviz.com/api/statement.ashx?t=",E1),"|"),".+Net Income"":\[""",""),"""\].+",""),""",""","|"),",",""),"|")),"SELECT Col1 LIMIT 2 OFFSET 1",0))</code></td>
+          </tr>
+          <tr>
+            <th>3</th>
+            <td>Outstanding Shares</td>
+            <td>3099.03</td>
+            <td>2880.03</td>
+            <td><code>=TRANSPOSE(QUERY(TRANSPOSE(SPLIT(SUBSTITUTE(SUBSTITUTE(REGEXREPLACE(REGEXREPLACE(IMPORTDATA(CONCATENATE("https://finviz.com/api/statement.ashx?t=",E1,"&s=BA"),"|"),".+Total Common Shares Outstanding"":\[""",""),"""\].+",""),""",""","|"),",",""),"|")),"SELECT Col1 LIMIT 2 OFFSET 1",0))</code></td>
+          </tr>
+          <tr>
+            <th>4</th>
+            <td>EPS</td>
+            <td>4.06</td>
+            <td>1.92</td>
+            <td><code>=F2/F3</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </p>
+
+
+    <p>
+      <table class="excel">
+        <thead>
+          <tr>
+            <th></th>
+            <th>A</th>
+            <th>B</th>
+            <th>C</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>6</th>
+            <td></td>
+            <td>AAPL</td>
+            <td>TSLA</td>
+            <td><code>=A1</code></td>
+            <td><code>=E1</code></td>
+          </tr>
+          <tr>
+            <th>7</th>
+            <td>Price</td>
+            <td>125.07</td>
+            <td>108.1</td>
+            <td><code>=INDEX(GOOGLEFINANCE(A1,"price", DATE(B1,12,31)),2,2)</code></td>
+            <td><code>=INDEX(GOOGLEFINANCE(E1,"price",DATE(F1,12,31)),2,2)</code></td>
+          </tr>
+          <tr>
+            <th>8</th>
+            <td>P/E</td>
+            <td>20.59</td>
+            <td>26.62</td>
+            <td><code>=B7/B4</code></td>
+            <td><code>=C7/F4</code></td>
+          </tr>
+          <tr>
+            <th>9</th>
+            <td>EPS Growth</td>
+            <td>8.94</td>
+            <td>111.69</td>
+            <td><code>=100*(B4/C4-1)</code></td>
+            <td><code>=100*(F4/G4-1)</code></td>
+          </tr>
+          <tr>
+            <th>10</th>
+            <td>PEG</td>
+            <td>2.30</td>
+            <td>0.24</td>
+            <td><code>=B8/B9</code></td>
+            <td><code>=C8/C9</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </p>
+
+    <p>Синоніми та аббревіатури:</p>
+    <ul>
+      <li>Price/Earnings-to-Growth</li>
+      <li>PEG</li>
+      <li>PEG ratio</li>
+    </ul>
+
+    <p>Посилання на джерела:</p>
+    <ul>
+      <li>
+        <a href="https://en.wikipedia.org/wiki/PEG_ratio">Wikipedia</a>
+      </li>
+      <li>
+        <a href="https://www.investopedia.com/terms/p/pegratio.asp">Investopedia</a>
+      </li>
+      <li>
+        <a href="https://www.youtube.com/watch?v=fR-Cp_NXSIc">YouTube</a>
+      </li>
+      <li>
+        <a href="https://docs.google.com/spreadsheets/d/1e7EngYnq1yNCJtAPjP7wpJPw3hNg9H7sSxxjFnw8gCs/edit?usp=sharing">Google Sheet</a>
+      </li>
+    </ul>
+  </body>
+</html>

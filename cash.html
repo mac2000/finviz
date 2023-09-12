@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cash flow</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <h1>Cash flow</h1>
+    <p>Звіт щодо руху коштів компанії</p>
+    <p>
+      <picture>
+        <source srcset="images/cash_dark.png" media="(prefers-color-scheme: dark)" />
+        <img src="/images/cash_light.png" alt="cash" />
+      </picture>
+    </p>
+
+    <p>Всюду будемо використовувати цифру як є, без мультиплікаторів, тобто якщо мільони то прямо з шістью нулями і будемо писати. Також у разі нестиковок, з зазначенням цього будемо використовувати цифру зі звіту, а не finviz.</p>
+    <p><a href="https://www.investopedia.com/investing/what-is-a-cash-flow-statement/">Investopedia</a></p>
+
+    <p>Далі показники що мабуть є найбіль важливими</p>
+
+    <h1><a href="/net-income.html">Net Income</a></h1>
+    <p>
+      <math>
+        <mrow>
+          <mi>Net Income</mi>
+          <mo>=</mo>
+          <mi>$99,803,000,000</mi>
+        </mrow>
+      </math>
+    </p>
+    <p>Чистий прибуток з якого вже вирахувані всі витрати та налоги.</p>
+    <p><a href="https://www.investopedia.com/terms/n/netincome.asp">Investopedia</a></p>
+
+    <h1>Cash from Operating Activities</h1>
+    <p>
+      <math>
+        <mrow>
+          <mi>Cash from Operating Activities</mi>
+          <mo>=</mo>
+          <mi>$122,151,000,000</mi>
+        </mrow>
+      </math>
+    </p>
+    <p>Готівка з операційної діяльності компанії.</p>
+
+    <h1>Cash from Investing Activities</h1>
+    <p>
+      <math>
+        <mrow>
+          <mi>Cash from Investing Activities</mi>
+          <mo>=</mo>
+          <mi>-$22,354,000,000</mi>
+        </mrow>
+      </math>
+    </p>
+    <p>Готівка що була отримана або затрачена на купівлю цінних паперів або навіть цілих компаній.</p>
+    <p>Якщо в окремому звіті є скачок - є сенс подивитися звіт біль детально, а також почитати новини щодо компанії, адже є шанс що вони купили якійсь бізнес.</p>
+
+    <h1>Cash from Financing Activities</h1>
+    <p>
+      <math>
+        <mrow>
+          <mi>Cash from Financing Activities</mi>
+          <mo>=</mo>
+          <mi>-$110,749,000,000</mi>
+        </mrow>
+      </math>
+    </p>
+    <p>Погашення заборгованостей, викуп акцій, виплата дивідендів.</p>
+
+    <p>Табличка з розрахунками та формулами</p>
+    <p>
+      <iframe style="width: 285px; height: 196px" title="excel" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdBU3xwE_3m25SW8uaQgjYH8wv3lx7i9bdq2Dh9fl6JXhGKLeo3CzeOoRtc9dFbY0OyVroHeY7dAqD/pubhtml?gid=343110934&amp;single=true&amp;widget=false&amp;headers=true&amp;chrome=false"></iframe>
+    </p>
+
+    <table class="excel">
+      <thead>
+        <tr>
+          <th></th>
+          <th>A</th>
+          <th>B</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>1</th>
+          <th colspan="2">AAPL</th>
+          <th></th>
+        </tr>
+        <tr>
+          <th>2</th>
+          <th nowrap colspan="2">Cash Flow</th>
+          <th></th>
+        </tr>
+        <tr>
+          <th>3</th>
+          <th nowrap>Net Income</th>
+          <th>99803</th>
+          <td><code>=ABS(INDEX(SPLIT(SUBSTITUTE(REGEXREPLACE(REGEXREPLACE(IMPORTDATA(CONCATENATE("https://finviz.com/api/statement.ashx?t=",$A$1,"&s=CA"),"|"),CONCATENATE(".+",$A3,""":\["""),""),"""\].+",""),""",""","|"),"|"),1,2))</code></td>
+        </tr>
+        <tr>
+          <td colspan="4">&hellip;</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h1>US-GAAP</h1>
+    <p>Маркування показників у звітах. Не залежно від сервісу чи того як позначена цифра в звіті, вона буде промаркована наступним чином:</p>
+    <table class="excel">
+      <thead>
+        <tr>
+          <th>finviz</th>
+          <th>us-gaap</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td nowrap>Net Income</td>
+          <td><code>us-gaap:NetIncomeLoss</code></td>
+        </tr>
+        <tr>
+          <td nowrap>Cash from Operating Activities</td>
+          <td><code>us-gaap:NetCashProvidedByUsedInOperatingActivities</code></td>
+        </tr>
+        <tr>
+          <td nowrap>Cash from Investing Activities</td>
+          <td><code>us-gaap:NetCashProvidedByUsedInInvestingActivities</code></td>
+        </tr>
+        <tr>
+          <td nowrap>Cash from Financing Activities</td>
+          <td><code>us-gaap:NetCashProvidedByUsedInFinancingActivities</code></td>
+        </tr>
+        <tr>
+          <td nowrap>Depreciation/Depletion</td>
+          <td><code>us-gaap:DepreciationDepletionAndAmortization</code></td>
+        </tr>
+        <tr>
+          <td nowrap>Total Cash Dividends Paid</td>
+          <td><code>us-gaap:PaymentsOfDividends</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

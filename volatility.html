@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Volatility</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <h1>Volatility</h1>
+
+    <p>Наскільки сильно вартість акції відхиляється від середніх значень за заданий проміжок часу.</p>
+    <p>Наприклад, якщо річне значення volatility дорівнює 10% це означає що значення ціни протягом року було в проміжку -10%&hellip;+10% від середніх значень.</p>
+    <p>Якщо ж ціна протягом року не мінялась взагалі volatility буде 0%.</p>
+
+    <p>Подивитися значення можна в правому нижньому куті таблички (Finviz показує значення за неділю та місяць)</p>
+    <p>
+      <picture>
+        <source srcset="images/metrics_dark.png" media="(prefers-color-scheme: dark)" />
+        <img src="/images/metrics_light.png" alt="metrics" />
+      </picture>
+    </p>
+
+    <p>Відноситися до цього показника слід як до інформаційного, тобто бути готовим до того що, на основі попередніх данних ціна може і скоріш за все буде скакати вгору вниз на такий відсоток і для цієї компанії це норма.</p>
+
+    <p>Розрахунок волатильності</p>
+    <p>
+      <math>
+        <mrow>
+          <mi>volatility</mi>
+          <mo>=</mo>
+          <mi>stdev(&hellip;daily_price_changes)</mi>
+          <mo>x</mo>
+          <mi>sqrt(count(*))</mi>
+        </mrow>
+      </math>
+    </p>
+
+    <dl>
+      <dt><a href="/price.html">daily_price_changes</a></dt>
+      <dd>щоденна зміна ціни, що розраховується як (поточна ціна - попередня ціна) / попередня ціна</dd>
+      <dt>stdev</dt>
+      <dd>стандартне відхилення, власне це і є те що ми хочемо вирахувати</dd>
+      <dt>sqrt(count(*))</dt>
+      <dd>квадратний корінь з кількості замірів метрики</dd>
+    </dl>
+
+    <p>Розрахунок річної волатильності</p>
+    <p>
+      <math>
+        <mrow>
+          <mi>annualized volatility</mi>
+          <mo>=</mo>
+          <mi>stdev(&hellip;daily_price_changes)</mi>
+          <mo>x</mo>
+          <mi>sqrt(252)</mi>
+        </mrow>
+      </math>
+    </p>
+
+    <p>Приклад розрахунку</p>
+    <p>
+      <iframe style="width: 241px; height: 153px" title="excel" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdBU3xwE_3m25SW8uaQgjYH8wv3lx7i9bdq2Dh9fl6JXhGKLeo3CzeOoRtc9dFbY0OyVroHeY7dAqD/pubhtml?gid=772591701&amp;single=true&amp;widget=false&amp;headers=true&amp;chrome=false"></iframe>
+    </p>
+
+    <table class="excel">
+      <tbody>
+        <tr>
+          <th>A2</th>
+          <td><code>=GOOGLEFINANCE("AAPL","price", WORKDAY(TODAY(),-252),WORKDAY(TODAY(),-1))</code></td>
+        </tr>
+        <tr>
+          <th>C4</th>
+          <td><code>=(B4-B3)/B3</code></td>
+        </tr>
+        <tr>
+          <th>C1</th>
+          <td><code>=STDEV(C4:C)*SQRT(252)</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Ще один приклад розрахунку</p>
+    <p>
+      <iframe style="width: 187px; height: 91px" title="excel" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdBU3xwE_3m25SW8uaQgjYH8wv3lx7i9bdq2Dh9fl6JXhGKLeo3CzeOoRtc9dFbY0OyVroHeY7dAqD/pubhtml?gid=633820630&amp;single=true&amp;widget=false&amp;headers=true&amp;chrome=false"></iframe>
+    </p>
+    <table class="excel">
+      <tbody>
+        <tr>
+          <th>B3</th>
+          <td>
+            <code>
+              <pre>
+=STDEV(ARRAYFORMULA(
+  (
+      QUERY(INDEX(GOOGLEFINANCE(B1,"price",WORKDAY(TODAY(),-1*B2-1),WORKDAY(TODAY(),-1)),,2),"SELECT Col1 OFFSET 1", 0)
+      -
+      QUERY(INDEX(GOOGLEFINANCE(B1,"price",WORKDAY(TODAY(),-1*B2-2),WORKDAY(TODAY(),-2)),,2),"SELECT Col1 OFFSET 1", 0)
+  ) /  QUERY(INDEX(GOOGLEFINANCE(B1,"price",WORKDAY(TODAY(),-1*B2-2),WORKDAY(TODAY(),-2)),,2),"SELECT Col1 OFFSET 1", 0)
+))*SQRT(B2)</pre
+              >
+            </code>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Виглядає лячно, але на справді, якщо придивитися це все тей самий stdev(price changes)*sqrt(252), а оскільки у нас немає готового показника, за допомогою array formula ми його розраховуємо, забираючи данні за 252 та 253 дня відповідно.</p>
+
+    <p>Також в мережі є доволі цікаве відео &laquo;Warren Buffett Explains Why Volatility Is Good For Stock Investors&raquo; яке мабуть варто подивитися.</p>
+
+    <p>Синоніми та аббревіатури:</p>
+    <ul>
+      <li>Volatility</li>
+      <li>Annulalized Volatility</li>
+    </ul>
+
+    <p>Посилання на джерела:</p>
+    <ul>
+      <li>
+        <a href="https://en.wikipedia.org/wiki/Volatility_(finance)">Wikipedia</a>
+      </li>
+      <li>
+        <a href="https://www.investopedia.com/terms/v/volatility.asp">Investopedia</a>
+      </li>
+      <li>
+        <a href="https://www.youtube.com/watch?v=KJgvIlBJeYg">YouTube</a>
+      </li>
+      <li>
+        <a href="https://docs.google.com/spreadsheets/d/1e7EngYnq1yNCJtAPjP7wpJPw3hNg9H7sSxxjFnw8gCs/edit?usp=sharing">Google Sheet</a>
+      </li>
+    </ul>
+  </body>
+</html>

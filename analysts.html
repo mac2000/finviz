@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Analysts</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <h1>Розділ ворожіння</h1>
+
+    <p>Тут нам запропоновані думки аналітиків щодо компанії</p>
+    <p>
+      <picture>
+        <source srcset="images/analysts_dark.png" media="(prefers-color-scheme: dark)" />
+        <img src="/images/analysts_light.png" alt="analysts" />
+      </picture>
+    </p>
+
+    <p>Як не складно догадатися червоним позначенно погіршення, зеленим поліпшення.</p>
+    <p>Складається ця табличка з:</p>
+    <ul>
+      <li>Дати публікації</li>
+      <li>Аналітик - це може бути як компанія так і конретна людина</li>
+      <li>Поточний стан або рекомендація - тут безліч варіантів, накшталт Buy - слід купувати, Outperform - компанія обганяє ринок, Overweight - компанія є переоціненою и т.д.</li>
+      <li><a href="/price.html">Ціна</a> яку аналітик вважає справедливою</li>
+    </ul>
+
+    <p>Так наприклад ми бачимож що Morgan Stanley вважає компанію переоціненою і змінює свою думку щодо справедливої ціни з $220 до $215.</p>
+
+    <p>Можна по різному відноситися до порад цих аналітиків, але з цікавості ми все одно хочему витягнути ці данні та підбити яцісь цифри з них.</p>
+    <p>
+      <iframe style="width: 887px; height: 490px" title="excel" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdBU3xwE_3m25SW8uaQgjYH8wv3lx7i9bdq2Dh9fl6JXhGKLeo3CzeOoRtc9dFbY0OyVroHeY7dAqD/pubhtml?gid=1479503792&amp;single=true&amp;widget=false&amp;headers=true&amp;chrome=false"></iframe>
+    </p>
+    <p>Так наприклад нам може бути цікавим вирахувати середью ціну, що аналитики вважають справедливою. Або ще цікавим булоб розрахувати топовий рейтинг.</p>
+
+    <p>Для витягування данних використовувалися наступні формули</p>
+    <table class="excel">
+      <tr>
+        <th>A1</th>
+        <td><code>=INDEX(IMPORTHTML("https://finviz.com/quote.ashx?t=AAPL","table","12"),,1)</code></td>
+      </tr>
+      <tr>
+        <th>B1</th>
+        <td><code>=ARRAYFORMULA(SUBSTITUTE(INDEX(IMPORTHTML("https://finviz.com/quote.ashx?t=AAPL","table","12"),,2),"*",""))</code></td>
+      </tr>
+      <tr>
+        <th>C1</th>
+        <td><code>=INDEX(IMPORTHTML("https://finviz.com/quote.ashx?t=AAPL","table","12"),,3)</code></td>
+      </tr>
+      <tr>
+        <th>D1</th>
+        <td><code>=INDEX(IMPORTHTML("https://finviz.com/quote.ashx?t=AAPL","table","12"),,4)</code></td>
+      </tr>
+      <tr>
+        <th>E1</th>
+        <td><code>=INDEX(IMPORTHTML("https://finviz.com/quote.ashx?t=AAPL","table","12"),,5)</code></td>
+      </tr>
+      <tr>
+        <th>F2</th>
+        <td><code>=IF(ISERROR(FIND("→",D2)),D2,INDEX(SPLIT(D2,"→"),1,1))</code></td>
+      </tr>
+      <tr>
+        <th>G2</th>
+        <td><code>=IF(ISERROR(FIND("→",D2)),D2,INDEX(SPLIT(D2,"→"),1,2))</code></td>
+      </tr>
+      <tr>
+        <th>H2</th>
+        <td><code>=VALUE(IF(ISERROR(FIND("→",E2)),E2,INDEX(SPLIT(E2,"→"),1,1)))</code></td>
+      </tr>
+      <tr>
+        <th>I2</th>
+        <td><code>=VALUE(IF(ISERROR(FIND("→",E2)),E2,INDEX(SPLIT(E2,"→"),1,2)))</code></td>
+      </tr>
+      <tr>
+        <th>I22</th>
+        <td><code>=AVERAGE(I2:I21)</code></td>
+      </tr>
+    </table>
+  </body>
+</html>

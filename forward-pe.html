@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forward P/E</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <h1>Forward P/E</h1>
+
+    <p>Варіація на тему Price to Earnings з тією різницею що ділимо не на минулу дохідність, а на прогнозовану майбутьню.</p>
+
+    <p>
+      <math>
+        <mrow>
+          <mtext>Forward PE</mtext>
+        </mrow>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mtext>price</mtext>
+          </mrow>
+          <mrow>
+            <mtext>estimated_future_earnings_per_share</mtext>
+          </mrow>
+        </mfrac>
+      </math>
+    </p>
+
+    <dl>
+      <dt><a href="/price.html">price</a></dt>
+      <dd>
+        <p>Поточна вартість акції, $178.18</p>
+        <p>
+          <picture>
+            <source srcset="images/metrics_dark.png" media="(prefers-color-scheme: dark)" />
+            <img src="/images/metrics_light.png" alt="metrics" />
+          </picture>
+        </p>
+      </dd>
+      <dt>estimated_future_earnings_per_share</dt>
+      <dd>
+        <p>Прогнозований майбтній дохід на акцію</p>
+      </dd>
+    </dl>
+
+    <p>Зазвичай аналітики використовують звичайний <a href="/pe.html">P/E</a> (щоб не плутатись його ще називають Trailing P/E) та Forward P/E впарі.</p>
+    <p>Справа в тому що розрахунок майбутнього P/E використовує поточну ціну, а отже в разі очікування росту прибутків значення Forward P/E буде меншим ніж Trailing P/E.</p>
+    <p>І навапки, якщо Forward P/E білший за Trailing P/E це свідчить про очікування зменшення прибутків.</p>
+
+    <p>Синоніми та аббревіатури:</p>
+    <ul>
+      <li>Forward Price to Earnings</li>
+      <li>Forward P/E</li>
+    </ul>
+
+    <p>Посилання на джерела:</p>
+    <ul>
+      <li>
+        <a href="https://en.wikipedia.org/wiki/Price–earnings_ratio">Wikipedia</a>
+      </li>
+      <li>
+        <a href="https://www.investopedia.com/terms/f/forwardpe.asp#:~:text=Forward%20P%2FE%20is%20a,earnings%20prove%20to%20be%20different.">Investopedia</a>
+      </li>
+    </ul>
+  </body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Price to Sales</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <h1>Price to Sales</h1>
+
+    <p>Скільки ми готові платити за кожен доллар прибутку компанії.</p>
+
+    <p>
+      <math>
+        <mrow>
+          <mtext>PS</mtext>
+        </mrow>
+        <mo>=</mo>
+        <mfrac>
+          <mi>MarketCap</mi>
+          <mi>Revenue</mi>
+        </mfrac>
+      </math>
+    </p>
+
+    <dl>
+      <dt><a href="/market-cap.html">MarketCap</a></dt>
+      <dd>
+        <p>Загальна вартість всех акцій компанії &mdash; 2762.33B</p>
+      </dd>
+      <dt><a href="/revenue.html">Revenue</a></dt>
+      <dd>
+        <p>Здобутки компанії &mdash; 383.93B</p>
+      </dd>
+    </dl>
+
+    <p>Розрахований показник &laquo;P/S&raquo; та значення &laquo;Market Cap&raquo; та &laquo;Sales&raquo; можна подивитися в таблиці</p>
+
+    <p>
+      <picture>
+        <source srcset="images/metrics_dark.png" media="(prefers-color-scheme: dark)" />
+        <img src="/images/metrics_light.png" alt="metrics" />
+      </picture>
+    </p>
+
+    <p>Отже для Apple цей показник буде дорівнювати</p>
+
+    <p>
+      <math>
+        <mrow>
+          <mtext>PS</mtext>
+        </mrow>
+        <mo>=</mo>
+        <mfrac>
+          <mi>MarketCap</mi>
+          <mi>Revenue</mi>
+        </mfrac>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mn>2762.33</mn>
+          </mrow>
+          <mrow>
+            <mn>383.93</mn>
+          </mrow>
+        </mfrac>
+        <mo>=</mo>
+        <mrow>
+          <mn>7,19</mn>
+        </mrow>
+      </math>
+    </p>
+
+    <p>На прикладі Apple, за минулий 2022 рік паказники прибутока склали 383.93B. Сумарна вартість всіх акцій (market capitalization) &mdash; - 15.70B. Отже співвідношення (P/S) &mdash; 7.19</p>
+    <p>Для порівняння Google &mdash; 5.95, а Microsoft &mdash; 11.69.</p>
+    <p>Кажуть нам що Apple та Google <b>можливо</b> не дооцінені (undervalued), а Microsoft переоцінений (overvalued).</p>
+
+    <p>
+      <iframe style="width: 192px; height: 133px" title="excel" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdBU3xwE_3m25SW8uaQgjYH8wv3lx7i9bdq2Dh9fl6JXhGKLeo3CzeOoRtc9dFbY0OyVroHeY7dAqD/pubhtml?gid=801482430&amp;single=true&amp;widget=false&amp;headers=true&amp;chrome=false"></iframe>
+    </p>
+
+    <table class="excel">
+      <thead>
+        <tr>
+          <th></th>
+          <th>A</th>
+          <th>B</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>1</th>
+          <td>Symbol</td>
+          <td>AAPL</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>2</th>
+          <td>PS</td>
+          <td>7.19</td>
+          <td><code>=VALUE(INDEX(ARRAYFORMULA(REGEXREPLACE(IMPORTHTML(CONCATENATE("https://finviz.com/quote.ashx?t=",B1),"table","10"),"\*","")),4,4))</code></td>
+        </tr>
+        <tr>
+          <th>3</th>
+          <td>Market Cap</td>
+          <td>2792.33</td>
+          <td><code>=VALUE(SUBSTITUTE(INDEX(ARRAYFORMULA(REGEXREPLACE(IMPORTHTML(CONCATENATE("https://finviz.com/quote.ashx?t=",B1),"table","10"),"\*","")),2,2),"B",""))</code></td>
+        </tr>
+        <tr>
+          <th>4</th>
+          <td>Sales</td>
+          <td>383.93</td>
+          <td><code>=VALUE(SUBSTITUTE(INDEX(ARRAYFORMULA(REGEXREPLACE(IMPORTHTML(CONCATENATE("https://finviz.com/quote.ashx?t=",B1),"table","10"),"\*","")),4,2),"B",""))</code></td>
+        </tr>
+        <tr>
+          <th>5</th>
+          <td>calculated</td>
+          <td>7.19</td>
+          <td><code>=B3/B4</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Синоніми та аббревіатури:</p>
+    <ul>
+      <li>Price to Sales</li>
+      <li>Price-sales ratio</li>
+      <li>PS</li>
+      <li>P/S</li>
+      <li>P/S Ratio</li>
+      <li>PSR</li>
+    </ul>
+
+    <p>Посилання на джерела:</p>
+    <ul>
+      <li>
+        <a href="https://en.wikipedia.org/wiki/Price–sales_ratio">Wikipedia</a>
+      </li>
+      <li>
+        <a href="https://www.investopedia.com/terms/p/price-to-salesratio.asp">Investopedia</a>
+      </li>
+      <li>
+        <a href="https://docs.google.com/spreadsheets/d/1e7EngYnq1yNCJtAPjP7wpJPw3hNg9H7sSxxjFnw8gCs/edit?usp=sharing">Google Sheet</a>
+      </li>
+    </ul>
+  </body>
+</html>

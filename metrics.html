@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Цифри</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <h1>Цифри</h1>
+
+    <p>Тут ми можемо подивитися безліч показників компанії</p>
+    <p>
+      <picture>
+        <source srcset="images/metrics_dark.png" media="(prefers-color-scheme: dark)" />
+        <img src="/images/metrics_light.png" alt="metrics" />
+      </picture>
+    </p>
+
+    <p>Розгляд кожного з показників складається з:</p>
+    <ul>
+      <li>Опис &mdash; що воно взагалі таке</li>
+      <li>Формула як воно має рахуватися - спойлер тут будуть питання до Finviz по деяким показникам</li>
+      <li>Нагадування де його можна подивитися</li>
+      <li>Приклад розрахунку</li>
+      <li>Список синонімів та аббревіатур які можна зустріти на інших ресурсах</li>
+      <li>Посилання на джерела з додатковою інформацією</li>
+    </ul>
+    <p>Деякі з показників обьеднані в одну сторінку.</p>
+
+    <p>Отже перелік показників:</p>
+    <table>
+      <tr>
+        <td><a href="/idx.html">Index</a></td>
+        <td><a href="/pe.html">P/E</a></td>
+        <td><a href="/eps.html">EPS (ttm)</a></td>
+        <td><a href="/own.html">Insider Own</a></td>
+        <td><a href="/outstanding-shares.html">Shs Outstand</a></td>
+        <td><a href="/perf.html">Perf Weekd</a></td>
+      </tr>
+      <tr>
+        <td><a href="/market-cap.html">Market Cap</a></td>
+        <td><a href="/forward-pe.html">Forward P/E</a></td>
+        <td><a href="/eps.html">EPS next Y</a></td>
+        <td><a href="/own.html">Insider Trans</a></td>
+        <td><a href="/outstanding-shares.html">Shs Float</a></td>
+        <td><a href="/perf.html">Perf Month</a></td>
+      </tr>
+      <tr>
+        <td><a href="/income.html">Income</a></td>
+        <td><a href="/peg.html">PEG</a></td>
+        <td><a href="/eps.html">EPS next Q</a></td>
+        <td><a href="/own.html">Inst Own</a></td>
+        <td><a href="/short-interest.html">Short Float / Ratio</a></td>
+        <td><a href="/perf.html">Perf Quarter</a></td>
+      </tr>
+      <tr>
+        <td><a href="/revenue.html">Sales</a></td>
+        <td><a href="/ps.html">P/S</a></td>
+        <td><a href="/eps.html">EPS this Y</a></td>
+        <td><a href="/own.html">Inst Trans</a></td>
+        <td><a href="/short-interest.html">Short Interest</a></td>
+        <td><a href="/perf.html">Perf Half Y</a></td>
+      </tr>
+      <tr>
+        <td><a href="/bvps.html">Book/sh</a></td>
+        <td><a href="/pb.html">P/B</a></td>
+        <td><a href="/eps.html">EPS next Y</a></td>
+        <td><a href="/roa.html">ROA</a></td>
+        <td><a href="/target-price.html">Target Price</a></td>
+        <td><a href="/perf.html">Perf Year</a></td>
+      </tr>
+      <tr>
+        <td><a href="/cps.html">Cash/sh</a></td>
+        <td><a href="/pc.html">P/C</a></td>
+        <td><a href="/eps.html">EPS next 5Y</a></td>
+        <td><a href="/roe.html">ROE</a></td>
+        <td><a href="/52w.html">52W Range</a></td>
+        <td><a href="/perf.html">Perf YTD</a></td>
+      </tr>
+      <tr>
+        <td><a href="/dividend.html">Dividend</a></td>
+        <td><a href="/pfcf.html">P/FCF</a></td>
+        <td><a href="/eps.html">EPS past 5Y</a></td>
+        <td><a href="/roi.html">ROI</a></td>
+        <td><a href="/52w.html">52W High</a></td>
+        <td><a href="/beta.html">Beta</a></td>
+      </tr>
+      <tr>
+        <td><a href="/dividend-yield.html">Dividend %</a></td>
+        <td><a href="/qr.html">Quick Ratio</a></td>
+        <td><a href="/revenue.html">Sales past 5Y</a></td>
+        <td><a href="/gross-margin.html">Gross Margin</a></td>
+        <td><a href="/52w.html">52W Low</a></td>
+        <td><a href="/atr.html">ATR</a></td>
+      </tr>
+      <tr>
+        <td><a href="/employees.html">Employees</a></td>
+        <td><a href="/cr.html">Current Ratio</a></td>
+        <td><a href="/revenue.html">Sales Q/Q</a></td>
+        <td><a href="/oper-margin.html">Oper. Margin</a></td>
+        <td><a href="/rsi.html">RSI (14)</a></td>
+        <td><a href="/volatility.html">Volatility</a></td>
+      </tr>
+      <tr>
+        <td>Optionable</td>
+        <td><a href="/de.html">Dept/Eq</a></td>
+        <td><a href="/eps.html">EPS Q/Q</a></td>
+        <td><a href="/profit-margin.html">Profit Margin</a></td>
+        <td><a href="/rel-volume.html">Rel Volume</a></td>
+        <td><a href="/price.html">Prev Close</a></td>
+      </tr>
+      <tr>
+        <td>Shortable</td>
+        <td><a href="/de.html">LT Dept/Eq</a></td>
+        <td><a href="/earnings.html">Earnings</a></td>
+        <td><a href="/payout.html">Payout</a></td>
+        <td><a href="/avg-volume.html">Avg Volume</a></td>
+        <td><a href="/price.html">Price</a></td>
+      </tr>
+      <tr>
+        <td><a href="/recom.html">Recom</a></td>
+        <td><a href="/sma.html">SMA20</a></td>
+        <td><a href="/sma.html">SMA50</a></td>
+        <td><a href="/sma.html">SMA200</a></td>
+        <td><a href="/volume.html">Volume</a></td>
+        <td><a href="/price.html">Change</a></td>
+      </tr>
+    </table>
+
+    <p>Ці примітки не можна розглядати як істинну в останній інстанції, чим глибше ви занурюватимеся у цю історію тим більше ви почнете розуміти що всі ці сервіси рахують, чому є розбіжності і як слід усе це сприймати.</p>
+
+    <h1>Імпорт данних</h1>
+
+    <p>Імпортувати всі ці показники у вігляді lookup таблички в якій перша колонка буде назвою, а друга значенням можно так:</p>
+    <table class="excel">
+      <tr>
+        <td><code>=LET(data,ARRAYFORMULA(SUBSTITUTE(IMPORTHTML("https://finviz.com/quote.ashx?t=AAPL","table","10"),"*","")),{INDEX(data,,1),INDEX(data,,2);INDEX(data,,3),INDEX(data,,4);INDEX(data,,5),INDEX(data,,6);INDEX(data,,7),INDEX(data,,8);INDEX(data,,9),INDEX(data,,10);INDEX(data,,11),INDEX(data,,12)})</code></td>
+      </tr>
+    </table>
+
+    <p>Якжо ж треба щоб була біль звична табличка, де перший рядок буде назвою, а другий значеннями то достатньо використати функції transpose от так:</p>
+    <table class="excel">
+      <tr>
+        <td><code>=TRANSPOSE(LET(data,ARRAYFORMULA(SUBSTITUTE(IMPORTHTML("https://finviz.com/quote.ashx?t=AAPL","table","10"),"*","")),{INDEX(data,,1),INDEX(data,,2);INDEX(data,,3),INDEX(data,,4);INDEX(data,,5),INDEX(data,,6);INDEX(data,,7),INDEX(data,,8);INDEX(data,,9),INDEX(data,,10);INDEX(data,,11),INDEX(data,,12)}))</code></td>
+      </tr>
+    </table>
+
+    <p>Маючи все це, можно за раз імпортувати данні по декількох компаніях, наприклад:</p>
+
+    <p>
+      <iframe style="width: 800px; height: 160px" title="excel" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdBU3xwE_3m25SW8uaQgjYH8wv3lx7i9bdq2Dh9fl6JXhGKLeo3CzeOoRtc9dFbY0OyVroHeY7dAqD/pubhtml?gid=321548439&amp;single=true&amp;widget=false&amp;headers=true&amp;chrome=false"></iframe>
+    </p>
+
+    <p>Посилання на джерела:</p>
+    <ul>
+      <li>
+        <a href="https://docs.google.com/spreadsheets/d/1e7EngYnq1yNCJtAPjP7wpJPw3hNg9H7sSxxjFnw8gCs/edit?usp=sharing">Excel</a>
+      </li>
+    </ul>
+  </body>
+</html>

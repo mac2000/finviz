@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Price</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <h1>Price</h1>
+
+    <p>Скільки треба грошей за для того щоб стати спів власником Apple.</p>
+    <p>У нашому прикладі - $178.18.</p>
+
+    <p>Ціну можна знайти в табличці показників компанії в правому нижньому куті.</p>
+    <p>
+      <picture>
+        <source srcset="images/metrics_dark.png" media="(prefers-color-scheme: dark)" />
+        <img src="/images/metrics_light.png" alt="metrics" />
+      </picture>
+    </p>
+
+    <p>Цікавий факт: ціну виставляє не компанія, а ми. Робимо ми це виходячи з власних відчуттів, показників компанії, фази луни, тощо.</p>
+
+    <p>
+      <iframe style="width: 190px; height: 91px" title="excel" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdBU3xwE_3m25SW8uaQgjYH8wv3lx7i9bdq2Dh9fl6JXhGKLeo3CzeOoRtc9dFbY0OyVroHeY7dAqD/pubhtml?gid=1117386258&amp;single=true&amp;widget=false&amp;headers=true&amp;chrome=false"></iframe>
+    </p>
+
+    <table class="excel">
+      <thead>
+        <tr>
+          <th></th>
+          <th>A</th>
+          <th>B</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>1</th>
+          <td>Symbol</td>
+          <td>AAPL</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>2</th>
+          <td>Price (Finviz)</td>
+          <td>178.18</td>
+          <td><code>=VALUE(INDEX(ARRAYFORMULA(REGEXREPLACE(IMPORTHTML(CONCATENATE("https://finviz.com/quote.ashx?t=",B1),"table","10"),"\*","")),11,12))</code></td>
+        </tr>
+        <tr>
+          <th>3</th>
+          <td>Price (Google)</td>
+          <td>178.18</td>
+          <td><code>=GOOGLEFINANCE(B1,"price")</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Синоніми та аббревіатури:</p>
+    <ul>
+      <li>Price</li>
+      <li>Share price</li>
+    </ul>
+
+    <p>Також Finviz показує нам показник Prev Close &mdash; це ціна за попередній день, та її співвідношення (Change) до поточної ціни.</p>
+    <p>
+      <iframe style="width: 170px; height: 112px" title="excel" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdBU3xwE_3m25SW8uaQgjYH8wv3lx7i9bdq2Dh9fl6JXhGKLeo3CzeOoRtc9dFbY0OyVroHeY7dAqD/pubhtml?gid=480025734&amp;single=true&amp;widget=false&amp;headers=true&amp;chrome=false"></iframe>
+    </p>
+
+    <table class="excel">
+      <thead>
+        <tr>
+          <th></th>
+          <th>A</th>
+          <th>B</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>1</th>
+          <td>Symbol</td>
+          <td>AAPL</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>2</th>
+          <td>Price</td>
+          <td>178.18</td>
+          <td><code>=INDEX(GOOGLEFINANCE(B1,"price", workday(today(),-1)),2,2)</code></td>
+        </tr>
+        <tr>
+          <th>3</th>
+          <td>Prev Close</td>
+          <td>177.56</td>
+          <td><code>=INDEX(GOOGLEFINANCE(B1,"price",WORKDAY(TODAY(),-2)),2,2)</code></td>
+        </tr>
+        <tr>
+          <th>4</th>
+          <td>Change</td>
+          <td>0.35%</td>
+          <td><code>=(B2-B3)/B3</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Використовується в разрахунках:</p>
+    <ul>
+      <li>
+        <a href="/pe.html">Price to Earnings (PE)</a>
+      </li>
+      <li>
+        <a href="/roa.html">Return on Assets (ROA)</a>
+      </li>
+      <li>
+        <a href="/roi.html">Return on Investment (ROI)</a>
+      </li>
+      <li>
+        <a href="/sma.html">Simple Moving Average (SMA 20, SMA 50, SMA 200)</a>
+      </li>
+      <li>
+        <a href="/rsi.html">Relative Strength Index (RSI)</a>
+      </li>
+      <li>
+        <a href="/atr.html">Average True Range (ATR)</a>
+      </li>
+      <li>
+        <a href="/beta.html">Beta</a>
+      </li>
+      <li>
+        <a href="/52w.html">52W Log, High, Range</a>
+      </li>
+      <li>
+        <a href="/perf.html">Perf Month, Quarter, Year, ...</a>
+      </li>
+      <li>
+        <a href="/volatility.html">Volatility</a>
+      </li>
+    </ul>
+
+    <p>Посилання на джерела:</p>
+    <ul>
+      <li>
+        <a href="https://en.wikipedia.org/wiki/Share_price">Wikipedia</a>
+      </li>
+      <li>
+        <a href="https://www.investopedia.com/ask/answers/061615/how-companys-share-price-determined.asp">Investopedia</a>
+      </li>
+      <li>
+        <a href="https://docs.google.com/spreadsheets/d/1e7EngYnq1yNCJtAPjP7wpJPw3hNg9H7sSxxjFnw8gCs/edit?usp=sharing">Excel</a>
+      </li>
+    </ul>
+  </body>
+</html>

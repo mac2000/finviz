@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Volume</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <h1>Volume</h1>
+
+    <p>Кількість акцій, що змінили власника за попередній проміжок часу (день).</p>
+    <p>Тобто як активно відбуваються торги бумагою, наприклад якщо б за вчора взагалі нічого не відбувалося б, цей показник дорівнював би нулю.</p>
+    <p>Або з іншого боку, уявімо, що ща звичай десь мільйон акцій туди сюди ходять, а тут приходить якійсь з співласників і продає все що в нього є - це буде значний скачок цього показника.</p>
+
+    <p>Подивитися можна лівому куті таблички</p>
+    <p>
+      <picture>
+        <source srcset="images/metrics_dark.png" media="(prefers-color-scheme: dark)" />
+        <img src="/images/metrics_light.png" alt="metrics" />
+      </picture>
+    </p>
+
+    <p>Так, для прикладу, ось похвилинний графік Apple за перше вересня з сервісу tradingview.</p>
+    <p><img src="/images/dailyvolume.png" alt="Apple, September 1 2023, daily chart" /></p>
+    <p>З метою наглядності ми увімкнули показ не робочих годин, та переключили часовий поясь до часу біржі.</p>
+    <p>На графіку окрім ціни акції, знизу, відібражається той самий Volume.</p>
+    <p>Жовтими та синіми зонами зазначені не робочі години.</p>
+    <p>Дуже наглядно видно як умовно вночі нічого не відбувається, зранку спрацьовують автоматизації, маєто скачок Volue, потім звичайна торгівля, потім обід, потім знову звичайна торгівля і під кінець дня ще один скачок - це знову таки спрацювали автоматизації.</p>
+
+    <p>Цей показник важливий так як відсутність значного Volume дорівнює не можливості купити або продати акції, а як результат вже не важливо скльки у нас грошей або акцій якщо ми єдиний чоловік хто готовий в цю мить робити з ними будь що.</p>
+    <p>З іншої сторони, неочікувані скачки також можут слугувати сигналами що відбувається щось дивне, як в фількам коли кажуть &laquo;вони зливають акції&raquo; - це і будет той самий скачок Volume.</p>
+
+    <p>
+      <iframe style="width: 167px; height: 93px" title="excel" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdBU3xwE_3m25SW8uaQgjYH8wv3lx7i9bdq2Dh9fl6JXhGKLeo3CzeOoRtc9dFbY0OyVroHeY7dAqD/pubhtml?gid=44945425&amp;single=true&amp;widget=false&amp;headers=true&amp;chrome=false"></iframe>
+    </p>
+
+    <table class="excel">
+      <thead>
+        <tr>
+          <th></th>
+          <th>A</th>
+          <th>B</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>1</th>
+          <td>Symbol</td>
+          <td>AAPL</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>2</th>
+          <td>Volume</td>
+          <td>65349443</td>
+          <td><code>=VALUE(SUBSTITUTE(INDEX(ARRAYFORMULA(REGEXREPLACE(IMPORTHTML(CONCATENATE("https://finviz.com/quote.ashx?t=",B1),"table","10"),"\*","")),12,10),"M",""))</code></td>
+        </tr>
+        <tr>
+          <th>2</th>
+          <td>Goolge</td>
+          <td>65602066</td>
+          <td><code>=GOOGLEFINANCE(B1,"volume")</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Синоніми та аббревіатури:</p>
+    <ul>
+      <li>Volume</li>
+      <li>Average Daily Trading Volume</li>
+      <li>ADTV</li>
+    </ul>
+
+    <p>Використовується в разрахунках:</p>
+    <ul>
+      <li>
+        <a href="/avg-volume.html">Average Volume</a>
+      </li>
+      <li>
+        <a href="/rel-volume.html">Relative Volume</a>
+      </li>
+    </ul>
+
+    <p>Посилання на джерела:</p>
+    <ul>
+      <li>
+        <a href="https://en.wikipedia.org/wiki/Volume_(finance)">Wikipedia</a>
+      </li>
+      <li>
+        <a href="https://www.investopedia.com/terms/v/volume.asp">Investopedia</a>
+      </li>
+      <li>
+        <a href="https://docs.google.com/spreadsheets/d/1e7EngYnq1yNCJtAPjP7wpJPw3hNg9H7sSxxjFnw8gCs/edit?usp=sharing">Google Sheet</a>
+      </li>
+    </ul>
+  </body>
+</html>

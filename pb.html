@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Price to Book</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <h1>Price to Book</h1>
+
+    <p>Співвідношення вартості акції до загальної вартості компанії (всіх її частин, що у разі ліквідації були би розпродані). Низькі значеня можуть свідчиті про те що компанія недооцінена, оскількі її ціна менша ніж кількість грошей що можна отримати розпродавши майно компанії.</p>
+    <p>Переоцінені ростучі компанії зазвичай показують комбінацію низького <a href="/roe.html">ROE</a> та високого P/B. Компанії з справедливою ціною мають ці показники що ростуть більш менш однаково, тому що акції, дорожаючи з часом, залучують більше інвесторів, зо збільшує вартість.</p>
+
+    <p>
+      <math>
+        <mrow>
+          <mtext>PB</mtext>
+        </mrow>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mtext>price</mtext>
+          </mrow>
+          <mrow>
+            <mtext>BVPS</mtext>
+          </mrow>
+        </mfrac>
+      </math>
+    </p>
+
+    <dl>
+      <dt><a href="/price.html">price</a></dt>
+      <dd>
+        <p>Поточна вартість акції, $178.18</p>
+      </dd>
+      <dt><a href="/bvps.html">Book Value per Share (BVPS)</a></dt>
+      <dd>
+        <p>Співвідношення вартості компанії до вартості акції, 3.84</p>
+      </dd>
+    </dl>
+
+    <p>Подивитися значення показників Price, Book/sh та рорзахований результат P/B можно в табличці</p>
+    <p>
+      <picture>
+        <source srcset="images/metrics_dark.png" media="(prefers-color-scheme: dark)" />
+        <img src="/images/metrics_light.png" alt="metrics" />
+      </picture>
+    </p>
+
+    <p>Отже для Apple цей показник буде дорівнювати</p>
+
+    <p>
+      <math>
+        <mrow>
+          <mtext>PB</mtext>
+        </mrow>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mtext>price</mtext>
+          </mrow>
+          <mrow>
+            <mtext>BVPS</mtext>
+          </mrow>
+        </mfrac>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mn>178.18</mn>
+          </mrow>
+          <mrow>
+            <mn>3.84</mn>
+          </mrow>
+        </mfrac>
+        <mo>=</mo>
+        <mrow>
+          <mn>46.4</mn>
+        </mrow>
+      </math>
+    </p>
+
+    <p>Співвідношення вартості компанії до вартості акциї.</p>
+    <p>Вважається що значення нижчі за 1.0 є гарними.</p>
+    <p>В парі з <a href="/roe.html">ROE</a> дає змогу оцінити реальність - великий розрив між показниками - червоний прапорець.</p>
+    <p>Вискі значення можут свідчиті про переоцінену (overvalued) вартість, і навпаки, низкі значення можуть свідчиті про недооцінену (undervalued) вартість.</p>
+
+    <p>
+      <iframe style="width: 185px; height: 133px" title="excel" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdBU3xwE_3m25SW8uaQgjYH8wv3lx7i9bdq2Dh9fl6JXhGKLeo3CzeOoRtc9dFbY0OyVroHeY7dAqD/pubhtml?gid=1623726953&amp;single=true&amp;widget=false&amp;headers=true&amp;chrome=false"></iframe>
+    </p>
+
+    <table class="excel">
+      <thead>
+        <tr>
+          <th></th>
+          <th>A</th>
+          <th>B</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>1</th>
+          <td>Symbol</td>
+          <td>AAPL</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>2</th>
+          <td>P/B</td>
+          <td>46.40</td>
+          <td><code>=VALUE(INDEX(ARRAYFORMULA(REGEXREPLACE(IMPORTHTML(CONCATENATE("https://finviz.com/quote.ashx?t=",B1),"table","10"),"\*","")),5,4))</code></td>
+        </tr>
+        <tr>
+          <th>3</th>
+          <td>Price</td>
+          <td>178.18</td>
+          <td><code>=VALUE(INDEX(ARRAYFORMULA(REGEXREPLACE(IMPORTHTML(CONCATENATE("https://finviz.com/quote.ashx?t=",B1),"table","10"),"\*","")),11,12))</code></td>
+        </tr>
+        <tr>
+          <th>4</th>
+          <td>Book/sh</td>
+          <td>3.84</td>
+          <td><code>=VALUE(INDEX(ARRAYFORMULA(REGEXREPLACE(IMPORTHTML(CONCATENATE("https://finviz.com/quote.ashx?t=",B1),"table","10"),"\*","")),5,2))</code></td>
+        </tr>
+        <tr>
+          <th>5</th>
+          <td>calculated</td>
+          <td>46.40</td>
+          <td><code>=B3/B4</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Синоніми та аббревіатури:</p>
+    <ul>
+      <li>Price to Book</li>
+      <li>P/B</li>
+      <li>P/B ratio</li>
+      <li>price-to-book ratio</li>
+    </ul>
+
+    <p>Посилання на джерела:</p>
+    <ul>
+      <li>
+        <a href="https://en.wikipedia.org/wiki/P/B_ratio">Wikipedia</a>
+      </li>
+      <li>
+        <a href="https://www.investopedia.com/terms/p/price-to-bookratio.asp">Investopedia</a>
+      </li>
+      <li>
+        <a href="https://docs.google.com/spreadsheets/d/1e7EngYnq1yNCJtAPjP7wpJPw3hNg9H7sSxxjFnw8gCs/edit?usp=sharing">Google Sheet</a>
+      </li>
+    </ul>
+  </body>
+</html>

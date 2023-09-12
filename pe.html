@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Price to Earnings</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <h1>Price to Earnings</h1>
+
+    <p>Цей показник відповідає на питання: якщо ми купимо всі всі 100% акцій Apple, тобто всю компанію - скільки років знадобиться за для відбиття такої інвестиції?</p>
+    <p>Але важливо зрозуміти наступне - ми, зазвичай, не купуємо компанію цілком, отже ми не маємо доступу до її здобутків, тому не так важливо за скільки років вона відібьє себе, так наприклад сьогодні акція коштує $178.18 і через 30 років вона так само може коштувати $178.18.</p>
+
+    <p>
+      <math>
+        <mrow>
+          <mtext>PE</mtext>
+        </mrow>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mtext>price</mtext>
+          </mrow>
+          <mrow>
+            <mtext>earnings_per_share</mtext>
+          </mrow>
+        </mfrac>
+      </math>
+    </p>
+
+    <dl>
+      <dt><a href="/price.html">price</a></dt>
+      <dd>
+        <p>Поточна вартість акції, $178.18</p>
+        <p>
+          <picture>
+            <source srcset="images/metrics_dark.png" media="(prefers-color-scheme: dark)" />
+            <img src="/images/metrics_light.png" alt="metrics" />
+          </picture>
+        </p>
+      </dd>
+      <dt><a href="/eps.html">earnings_per_share</a></dt>
+      <dd>
+        <p>Співвідношення прибутків компанії до кількості акцій, є в тій самій таблиці &laquo;EPS (ttm)&raquo; і має значення 5.95</p>
+      </dd>
+    </dl>
+
+    <p>Отже для Apple цей показник буде дорівнювати</p>
+
+    <p>
+      <math>
+        <mrow>
+          <mtext>PE</mtext>
+        </mrow>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mtext>price</mtext>
+          </mrow>
+          <mrow>
+            <mtext>earnings_per_share</mtext>
+          </mrow>
+        </mfrac>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mn>178.18</mn>
+          </mrow>
+          <mrow>
+            <mn>5.95</mn>
+          </mrow>
+        </mfrac>
+        <mo>=</mo>
+        <mrow>
+          <mn>29,95</mn>
+        </mrow>
+      </math>
+    </p>
+
+    <p>Велике значення може свідчиті про переоцінену (overvalued) вартість або високі очікування щодо майбутнього росту показників.</p>
+    <p>Збиткові компанії не мають цього показника так як нема на що ділити.</p>
+    <p>Якщо показник х20, це можна інтерпретувати як згоду платити $20 за кожен $1 поточного прибутку.</p>
+    <p>Загалом, високий показник свідчить про високі очікування від компанії порівнянно з її конкурентами з меншим P/E. Маленькі значення свідчать про недооціненість компанії (undervalued) або про те що справи у компанії пішли набагато ліпше ніж в попередні періоди.</p>
+    <p>Слід памьятати, що цей показник дуже різниця від індустрії та сектору, тож слід порівнювати его з відповідною індустрією або компаніями з цієї ж індустрії.</p>
+
+    <p>
+      <iframe style="width: 185px; height: 280px" title="excel" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdBU3xwE_3m25SW8uaQgjYH8wv3lx7i9bdq2Dh9fl6JXhGKLeo3CzeOoRtc9dFbY0OyVroHeY7dAqD/pubhtml?gid=1782503617&amp;single=true&amp;widget=false&amp;headers=true&amp;chrome=false"></iframe>
+    </p>
+
+    <table class="excel">
+      <thead>
+        <tr>
+          <th></th>
+          <th>A</th>
+          <th>B</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>1</th>
+          <td>Symbol</td>
+          <td>AAPL</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>2</th>
+          <td colspan="2" align="center">finviz</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>3</th>
+          <td>Price</td>
+          <td>178.18</td>
+          <td><code>=VALUE(INDEX(ARRAYFORMULA(REGEXREPLACE(IMPORTHTML(CONCATENATE("https://finviz.com/quote.ashx?t=",B1),"table","10"),"\*","")),11,12))</code></td>
+        </tr>
+        <tr>
+          <th>4</th>
+          <td>EPS</td>
+          <td>5.95</td>
+          <td><code>=VALUE(INDEX(ARRAYFORMULA(REGEXREPLACE(IMPORTHTML(CONCATENATE("https://finviz.com/quote.ashx?t=",B1),"table","10"),"\*","")),1,6))</code></td>
+        </tr>
+        <tr>
+          <th>5</th>
+          <td>PE</td>
+          <td>29.95</td>
+          <td><code>=B3/B4</code></td>
+        </tr>
+        <tr>
+          <th>6</th>
+          <td colspan="2" align="center">google</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>7</th>
+          <td>PE</td>
+          <td>29.94</td>
+          <td><code>=GOOGLEFINANCE(B1,"pe")</code></td>
+        </tr>
+        <tr>
+          <th>8</th>
+          <td colspan="2" align="center">calculated</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>9</th>
+          <td>Income</td>
+          <td>94.76</td>
+          <td><code>=VALUE(REGEXREPLACE(INDEX(ARRAYFORMULA(REGEXREPLACE(IMPORTHTML(CONCATENATE("https://finviz.com/quote.ashx?t=",B1),"table","10"),"\*","")),3,2),"B$",""))</code></td>
+        </tr>
+        <tr>
+          <th>10</th>
+          <td>Shs Outstand</td>
+          <td>15.7</td>
+          <td><code>=VALUE(REGEXREPLACE(INDEX(ARRAYFORMULA(REGEXREPLACE(IMPORTHTML(CONCATENATE("https://finviz.com/quote.ashx?t=",B1),"table","10"),"\*","")),1,10),"B$",""))</code></td>
+        </tr>
+        <tr>
+          <th>11</th>
+          <td>EPS</td>
+          <td>6.04</td>
+          <td><code>=B7/B8</code></td>
+        </tr>
+        <tr>
+          <th>12</th>
+          <td>PE</td>
+          <td>29.52</td>
+          <td><code>=B3/B9</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Синоніми та аббревіатури:</p>
+    <ul>
+      <li>Price to Earnings</li>
+      <li>P/E</li>
+      <li>PE</li>
+      <li>PER</li>
+      <li>P/E Ratio</li>
+      <li>Price–earnings ratio</li>
+    </ul>
+
+    <p>Використовується в разрахунках:</p>
+    <ul>
+      <li>
+        <a href="/peg.html">P/E to Growth (PEG)</a>
+      </li>
+    </ul>
+
+    <p>Посилання на джерела:</p>
+    <ul>
+      <li>
+        <a href="https://en.wikipedia.org/wiki/Price–earnings_ratio">Wikipedia</a>
+      </li>
+      <li>
+        <a href="https://www.investopedia.com/terms/p/price-earningsratio.asp">Investopedia</a>
+      </li>
+      <li>
+        <a href="https://www.youtube.com/watch?v=AuxGYz5nsGQ">YouTube</a>
+      </li>
+      <li>
+        <a href="https://docs.google.com/spreadsheets/d/1e7EngYnq1yNCJtAPjP7wpJPw3hNg9H7sSxxjFnw8gCs/edit?usp=sharing">Google Sheet</a>
+      </li>
+    </ul>
+  </body>
+</html>

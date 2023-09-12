@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Price to Cash</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <h1>Price to Cash</h1>
+
+    <p>Співвідношення вартості акції до готівки що на неї припадає.</p>
+
+    <p>
+      <math>
+        <mrow>
+          <mtext>PC</mtext>
+        </mrow>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mtext>Price</mtext>
+          </mrow>
+          <mrow>
+            <mtext>Cash per Share</mtext>
+          </mrow>
+        </mfrac>
+      </math>
+    </p>
+
+    <dl>
+      <dt><a href="/price.html">price</a></dt>
+      <dd>
+        <p>Поточна вартість акції, $178.18</p>
+      </dd>
+      <dt><a href="/cps.html">Cash per Share (Cash/sh)</a></dt>
+      <dd>
+        <p>Співвідношення готівки до кількості акцій, 4.01</p>
+      </dd>
+    </dl>
+
+    <p>Подивитися значення показників Price, Cash/sh та рорзахований результат P/C можно в табличці</p>
+    <p>
+      <picture>
+        <source srcset="images/metrics_dark.png" media="(prefers-color-scheme: dark)" />
+        <img src="/images/metrics_light.png" alt="metrics" />
+      </picture>
+    </p>
+
+    <p>Отже для Apple цей показник буде дорівнювати</p>
+
+    <p>
+      <math>
+        <mrow>
+          <mtext>PC</mtext>
+        </mrow>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mtext>price</mtext>
+          </mrow>
+          <mrow>
+            <mtext>Cash/sh</mtext>
+          </mrow>
+        </mfrac>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mn>178.18</mn>
+          </mrow>
+          <mrow>
+            <mn>4.01</mn>
+          </mrow>
+        </mfrac>
+        <mo>=</mo>
+        <mrow>
+          <mn>44.43</mn>
+        </mrow>
+      </math>
+    </p>
+
+    <p>Так само як і Cash per Share цей показник в деяких випадках є біль надійним, так як на відмину <a href="/pe.html">P/E</a> яким досить легко маніпулювати, маніпулювати готівкою не так просто.</p>
+
+    <p>
+      <iframe style="width: 185px; height: 133px" title="excel" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdBU3xwE_3m25SW8uaQgjYH8wv3lx7i9bdq2Dh9fl6JXhGKLeo3CzeOoRtc9dFbY0OyVroHeY7dAqD/pubhtml?gid=371686763&amp;single=true&amp;widget=false&amp;headers=true&amp;chrome=false"></iframe>
+    </p>
+
+    <table class="excel">
+      <thead>
+        <tr>
+          <th></th>
+          <th>A</th>
+          <th>B</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>1</th>
+          <td>Symbol</td>
+          <td>AAPL</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>2</th>
+          <td>P/C</td>
+          <td>44.72</td>
+          <td><code>=VALUE(INDEX(ARRAYFORMULA(REGEXREPLACE(IMPORTHTML(CONCATENATE("https://finviz.com/quote.ashx?t=",B1),"table","10"),"\*","")),6,4))</code></td>
+        </tr>
+        <tr>
+          <th>3</th>
+          <td>Price</td>
+          <td>179.36</td>
+          <td><code>=VALUE(INDEX(ARRAYFORMULA(REGEXREPLACE(IMPORTHTML(CONCATENATE("https://finviz.com/quote.ashx?t=",B1),"table","10"),"\*","")),11,12))</code></td>
+        </tr>
+        <tr>
+          <th>4</th>
+          <td>Cash/sh</td>
+          <td>4.01</td>
+          <td><code>=VALUE(INDEX(ARRAYFORMULA(REGEXREPLACE(IMPORTHTML(CONCATENATE("https://finviz.com/quote.ashx?t=",B1),"table","10"),"\*","")),6,2))</code></td>
+        </tr>
+        <tr>
+          <th>5</th>
+          <td>calculated</td>
+          <td>44.73</td>
+          <td><code>=B3/B4</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Синоніми та аббревіатури:</p>
+    <ul>
+      <li>Price to Cash</li>
+      <li>P/C</li>
+      <li>P/C ratio</li>
+      <li>price-to-cash ratio</li>
+    </ul>
+
+    <p>Посилання на джерела:</p>
+    <ul>
+      <li>
+        <a href="https://docs.google.com/spreadsheets/d/1e7EngYnq1yNCJtAPjP7wpJPw3hNg9H7sSxxjFnw8gCs/edit?usp=sharing">Google Sheet</a>
+      </li>
+    </ul>
+  </body>
+</html>

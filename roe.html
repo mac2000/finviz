@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Return on Equity</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <h1>Return on Equity</h1>
+
+    <p>ROE - показник спідометр прибутковості компанії та того як єффективно вона генерує цей прибуток.</p>
+
+    <p>
+      <math>
+        <mrow>
+          <mtext>ROE</mtext>
+        </mrow>
+        <mo>=</mo>
+        <mfrac>
+          <mi>Net Income</mi>
+          <mi>Total Equity</mi>
+        </mfrac>
+      </math>
+    </p>
+
+    <dl>
+      <dt><a href="/price.html">Net Income</a></dt>
+      <dd>
+        <p>Чистий прибуток, 94.76B</p>
+      </dd>
+      <dt><a href="/bv.html">Total Equity (Book Value)</a></dt>
+      <dd>
+        <p>Чиста вартість компанії, 50,672.00</p>
+      </dd>
+    </dl>
+
+    <p>Подивитися значення показників Net Income (Income) та рорзахований результат ROE можна в табличці</p>
+    <p>
+      <picture>
+        <source srcset="images/metrics_dark.png" media="(prefers-color-scheme: dark)" />
+        <img src="/images/metrics_light.png" alt="metrics" />
+      </picture>
+    </p>
+
+    <p>Значення Total Equity є в звіті balance, за бажання, в звіті income можна забрати net income</p>
+    <p>
+      <picture>
+        <source srcset="images/balance_dark.png" media="(prefers-color-scheme: dark)" />
+        <img src="/images/balance_light.png" alt="balance" />
+      </picture>
+    </p>
+
+    <p>Отже для Apple цей показник буде дорівнювати</p>
+
+    <p>
+      <math>
+        <mrow>
+          <mtext>ROE</mtext>
+        </mrow>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mtext>Net Income</mtext>
+          </mrow>
+          <mrow>
+            <mtext>Total Equity</mtext>
+          </mrow>
+        </mfrac>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mn>94,760.00</mn>
+          </mrow>
+          <mrow>
+            <mn>50,672.00</mn>
+          </mrow>
+        </mfrac>
+        <mo>=</mo>
+        <mrow>
+          <mn>1.87</mn>
+        </mrow>
+      </math>
+    </p>
+
+    <p>Приклад коли збільшення цього показника є поганим - уявімо що компанія взяла крдит на купу грошей, це зменшить її чисту вартість, аля як результат збільшить значення цього показника.</p>
+
+    <p>
+      <iframe style="width: 196px; height: 133px" title="excel" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdBU3xwE_3m25SW8uaQgjYH8wv3lx7i9bdq2Dh9fl6JXhGKLeo3CzeOoRtc9dFbY0OyVroHeY7dAqD/pubhtml?gid=1555580526&amp;single=true&amp;widget=false&amp;headers=true&amp;chrome=false"></iframe>
+    </p>
+
+    <table class="excel">
+      <thead>
+        <tr>
+          <th></th>
+          <th>A</th>
+          <th>B</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>1</th>
+          <td>Symbol</td>
+          <td>AAPL</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>2</th>
+          <td>ROE</td>
+          <td>164.90%</td>
+          <td><code>=VALUE(INDEX(ARRAYFORMULA(REGEXREPLACE(IMPORTHTML(CONCATENATE("https://finviz.com/quote.ashx?t=",B1),"table","10"),"\*","")),6,8))</code></td>
+        </tr>
+        <tr>
+          <th>3</th>
+          <td>Income</td>
+          <td>94760</td>
+          <td><code>=VALUE(SUBSTITUTE(INDEX(ARRAYFORMULA(REGEXREPLACE(IMPORTHTML(CONCATENATE("https://finviz.com/quote.ashx?t=",B1),"table","10"),"\*","")),3,2), "B",""))*1000</code></td>
+        </tr>
+        <tr>
+          <th>4</th>
+          <td>Total Equity</td>
+          <td>50672</td>
+          <td><code>=VALUE(SUBSTITUTE(REGEXREPLACE(REGEXREPLACE(IMPORTDATA(CONCATENATE("https://finviz.com/api/statement.ashx?t=",B1,"&s=BA"),"|"),".+Total Equity"":\[""",""),""".+",""),",",""))</code></td>
+        </tr>
+        <tr>
+          <th>5</th>
+          <td>calculated</td>
+          <td>187.01%</td>
+          <td><code>=B3/B4</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Синоніми та аббревіатури:</p>
+    <ul>
+      <li>Return on equity</li>
+      <li>ROE</li>
+    </ul>
+
+    <p>Посилання на джерела:</p>
+    <ul>
+      <li>
+        <a href="https://en.wikipedia.org/wiki/Return_on_equity">Wikipedia</a>
+      </li>
+      <li>
+        <a href="https://www.investopedia.com/terms/r/returnonequity.asp">Investopedia</a>
+      </li>
+      <li>
+        <a href="https://www.youtube.com/watch?v=3OBOSaVWvzA">YouTube</a>
+      </li>
+      <li>
+        <a href="https://docs.google.com/spreadsheets/d/1e7EngYnq1yNCJtAPjP7wpJPw3hNg9H7sSxxjFnw8gCs/edit?usp=sharing">Google Sheet</a>
+      </li>
+    </ul>
+  </body>
+</html>

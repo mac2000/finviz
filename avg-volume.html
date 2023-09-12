@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Average Volume</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <h1>Average Volume</h1>
+
+    <p>Finviz показуе Average Volume (3 month) - середнє значення <a href="/volume.html">Volume</a> за 3 місяці.</p>
+    <p>Тут все без сюрпризів і використовується для пошуку біль менш активних позицій що торгуються на біржі.</p>
+
+    <p>Подивитися можна павому нижньому куті таблички</p>
+    <p>
+      <picture>
+        <source srcset="images/metrics_dark.png" media="(prefers-color-scheme: dark)" />
+        <img src="/images/metrics_light.png" alt="metrics" />
+      </picture>
+    </p>
+
+    <p>Розраховується так, беремо данні за три місяці</p>
+    <p><img src="/images/vol_3m_data.png" alt="Apple Volume last 3 months data" /></p>
+
+    <p>Та рахуємо середьне значення</p>
+    <p><img src="/images/avg_volume.png" alt="Apple Average Volume last 3 months data" /></p>
+
+    <p>Нічого складного тут немає, насправді Finviz міг зробити так само як з SMA 20, 50, 100 та Perf показниками та розмножити цей, але насправді це не має дуже великого сенсу і за необхідністью може будти разрахованим.</p>
+
+    <p>Синоніми та аббревіатури:</p>
+    <ul>
+      <li>Average Volume</li>
+      <li>Avg Volume</li>
+    </ul>
+
+    <p>Посилання на джерела:</p>
+    <ul>
+      <li>
+        <a href="https://en.wikipedia.org/wiki/Volume_(finance)">Wikipedia</a>
+      </li>
+      <li>
+        <a href="https://www.investopedia.com/terms/v/volume.asp">Investopedia</a>
+      </li>
+    </ul>
+  </body>
+</html>

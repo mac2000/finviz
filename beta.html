@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beta</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <h1>Beta</h1>
+
+    <p>Показує кореляції з ринком (умовно S&P 500).</p>
+    <p>Значення 0 - показує відсутність кореляції, тобто S&P 500 може рости, а наша бумага буде стояти на містці, або падати в ціні, або теж рости.</p>
+    <p>Значення близьке до 1 - показує високу кореляцію і наша бумага будет вести себя так само як ринок.</p>
+    <p>Значення близьке до -1 - також показує високу кореляції, але в зворотньому напрямку, тобто коли ринок падає наша акція росте і навпаки.</p>
+    <p>Значення більше 1, не важливо позитивні чи негативні - працюють як множителі і працють так само, тобто акція веде себе так само як ринок але більш зухвало.</p>
+
+    <p>
+      <math>
+        <mi>&beta;</mi>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mtext>Covariance</mtext>
+            <mo>(</mo>
+            <msub>
+              <mi>R</mi>
+              <mi>e</mi>
+            </msub>
+            <mo>,</mo>
+            <msub>
+              <mi>R</mi>
+              <mi>m</mi>
+            </msub>
+            <mo>)</mo>
+          </mrow>
+          <mrow>
+            <mtext>Variance</mtext>
+            <mo>(</mo>
+            <msub>
+              <mi>R</mi>
+              <mi>m</mi>
+            </msub>
+            <mo>)</mo>
+          </mrow>
+        </mfrac>
+      </math>
+    </p>
+
+    <dl>
+      <dt>
+        <math>
+          <msub><mi>R</mi><mi>e</mi></msub>
+        </math>
+      </dt>
+      <dd>
+        <p>Дохідність акції.</p>
+      </dd>
+      <dt>
+        <math>
+          <msub><mi>R</mi><mi>m</mi></msub>
+        </math>
+      </dt>
+      <dd>
+        <p>Дохідність ринку.</p>
+      </dd>
+      <dt>Covariance</dt>
+      <dd>
+        <p>Як зміни в доходах акцій пов'язані зі змінами в доходах на ринку.</p>
+      </dd>
+      <dt>Variance</dt>
+      <dd>
+        <p>Дисперсія - як далеко розходяться точки ринкових даних від їх середнього значення.</p>
+      </dd>
+    </dl>
+
+    <p>Для розрахунку нам знадобляться данні Apple та S&P 500</p>
+    <p><img src="/images/beta_data.png" alt="Apple and S&P 500 prices" /></p>
+
+    <p>З разрахованним показником Change (current-previous)/previous</p>
+    <p><img src="/images/beta_change.png" alt="Apple and S&P 500 price changes over the time" /></p>
+
+    <p>Після чого можна скористатися формулою</p>
+    <p><img src="/images/beta.png" alt="Apple Beta" /></p>
+
+    <p>Прикрал розрахунку з графіком за для наглядності кореляції.</p>
+    <p>
+      <iframe style="width: 880px; height: 322px" title="excel" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdBU3xwE_3m25SW8uaQgjYH8wv3lx7i9bdq2Dh9fl6JXhGKLeo3CzeOoRtc9dFbY0OyVroHeY7dAqD/pubhtml?gid=821733655&amp;single=true&amp;widget=false&amp;headers=true&amp;chrome=false"></iframe>
+    </p>
+
+    <table class="excel">
+      <tbody>
+        <tr>
+          <th>A2</th>
+          <td><code>=GOOGLEFINANCE(A1,"price",EDATE(TODAY(),-12),TODAY(),"WEEKLY")</code></td>
+        </tr>
+        <tr>
+          <th>E2</th>
+          <td><code>=GOOGLEFINANCE(E1,"price",EDATE(TODAY(),-12),TODAY(),"WEEKLY")</code></td>
+        </tr>
+        <tr>
+          <th>C4</th>
+          <td><code>=(B4-B3)/B3</code></td>
+        </tr>
+        <tr>
+          <th>E4</th>
+          <td><code>=(F4-F3)/F3</code></td>
+        </tr>
+        <tr>
+          <th>J1</th>
+          <td><code>=COVARIANCE.P(C:C,G:G)/VARP(G:G)</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Синоніми та аббревіатури:</p>
+    <ul>
+      <li>Beta</li>
+      <li>B</li>
+      <li>&beta;</li>
+    </ul>
+
+    <p>Посилання на джерела:</p>
+    <ul>
+      <li>
+        <a href="https://en.wikipedia.org/wiki/Beta_(finance)">Wikipedia</a>
+      </li>
+      <li>
+        <a href="https://www.investopedia.com/terms/b/beta.asp">Investopedia</a>
+      </li>
+      <li>
+        <a href="https://www.youtube.com/watch?v=0QX1EHV2Ml8">YouTube</a>
+      </li>
+      <li>
+        <a href="https://docs.google.com/spreadsheets/d/1e7EngYnq1yNCJtAPjP7wpJPw3hNg9H7sSxxjFnw8gCs/edit?usp=sharing">Google Sheet</a>
+      </li>
+    </ul>
+  </body>
+</html>

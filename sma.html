@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Moving Average (SMA 20, SMA 50, SMA 100)</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <h1>Simple Moving Average</h1>
+
+    <p>Дуже простий показник - середнє значення вартості акції за останні X днів.</p>
+
+    <p>
+      <math>
+        <mrow>
+          <mi>SMA20</mi>
+          <mo>=</mo>
+          <mfrac>
+            <mrow>
+              <mi>price 20 days ago</mi>
+              <mo>+</mo>
+              <mi>price 19 days ago</mi>
+              <mo>+</mo>
+              <mi>&hellip;</mi>
+              <mo>+</mo>
+              <mi>price today</mi>
+            </mrow>
+            <mi>20</mi>
+          </mfrac>
+        </mrow>
+      </math>
+    </p>
+
+    <dl>
+      <dt><a href="/price.html">price</a></dt>
+      <dd>
+        <p>Вартість акції</p>
+      </dd>
+    </dl>
+
+    <p>Подивитися значення ціни та SMA 20 можно на графіку</p>
+
+    <p>
+      <picture>
+        <source srcset="images/chart_dark.png" media="(prefers-color-scheme: dark)" />
+        <img src="/images/chart_light.png" alt="chart" />
+      </picture>
+    </p>
+
+    <p>Загалом цей показник зручний за для розуміння як веде себе вартість акції на довгому проміжку часу без щоденних перепетій що вносять трейдери.</p>
+    <p>Причому чим довший період ми беремо тим більш лінивим стає показник, тобто він більше про загальний тренд ніж про те що сьогодні акция виросла на якийсь процент, а завтара впала.</p>
+    <p>Найбіль вдалим рішенням є розгляд ціх метрик в часі та на графіку, адже значення $150 для SMA100 само собою ні про що не каже.</p>
+    <p>Finviz для відображення в табличці показує ці значення у вигляді процентів відносно поточної вартості акції (нижній рядок).</p>
+
+    <p>
+      <picture>
+        <source srcset="images/metrics_dark.png" media="(prefers-color-scheme: dark)" />
+        <img src="/images/metrics_light.png" alt="metrics" />
+      </picture>
+    </p>
+
+    <p>Приклад розрахунку SMA 20</p>
+    <p>
+      <iframe style="width: 239px; height: 196px" title="excel" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdBU3xwE_3m25SW8uaQgjYH8wv3lx7i9bdq2Dh9fl6JXhGKLeo3CzeOoRtc9dFbY0OyVroHeY7dAqD/pubhtml?gid=904159475&amp;single=true&amp;widget=false&amp;headers=true&amp;chrome=false"></iframe>
+    </p>
+
+    <table class="excel">
+      <thead>
+        <tr>
+          <th></th>
+          <th>A</th>
+          <th>B</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>1</th>
+          <td>Symbol</td>
+          <td>AAPL</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>2</th>
+          <td>Today</td>
+          <td>9/11/2023</td>
+          <td><code>=TODAY()</code></td>
+        </tr>
+        <tr>
+          <th>3</th>
+          <td>Closest working day</td>
+          <td>9/8/2023</td>
+          <td><code>=WORKDAY(TODAY(),-1)</code></td>
+        </tr>
+        <tr>
+          <th>4</th>
+          <td>20 days ago</td>
+          <td>8/11/2023</td>
+          <td><code>=WORKDAY(TODAY(),-21)</code></td>
+        </tr>
+        <tr>
+          <th>5</th>
+          <td>Price</td>
+          <td>178.18</td>
+          <td><code>=GOOGLEFINANCE(B1,"price")</code></td>
+        </tr>
+        <tr>
+          <th>6</th>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>7</th>
+          <td>SMA 20</td>
+          <td>180.44</td>
+          <td><code>=AVERAGE(INDEX(GOOGLEFINANCE(B1,"price",B4,B3),,2))</code></td>
+        </tr>
+        <tr>
+          <th>8</th>
+          <td>price/SMA20</td>
+          <td>-1.25%</td>
+          <td><code>=B5/B7-1</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Практичний приклад використання SMA 50 та SMA 200: перетин цих двух показників свідчить про те що ціна пішла в гору або в низ.</p>
+    <p>Важливо розуміти, що ці показники досить ліниві, и ціна вже змінилася, і відбулось це не в цю мить.</p>
+    <p>Перетин цих двох показників:</p>
+    <ul>
+      <li><b>Death cross</b> (крест смерті) - SMA 200 росте, SMA 50 падає, графіки пересікаються (звідси і назва крест) - в такому випадку ціна пішла в низ (саме тому death)</li>
+      <li><b>Golden cross</b> - SMA 200 падає, SMA 50 росте, графіки пересікаються (крест), в такому випадку ціна пішла в гору (gold)</li>
+    </ul>
+    <p>Так наприклад на графіку вище можно побачити такий перетин.</p>
+    <p>Для біль короткострокового аналізу можно розглядати SMA 50 та SMA 20 або будь які інші комбінації.</p>
+
+    <p>Приклад розрахунку та візуалізації</p>
+    <p>
+      <iframe style="width: 1000px; height: 447px" title="excel" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdBU3xwE_3m25SW8uaQgjYH8wv3lx7i9bdq2Dh9fl6JXhGKLeo3CzeOoRtc9dFbY0OyVroHeY7dAqD/pubhtml?gid=644171792&amp;single=true&amp;widget=false&amp;headers=true&amp;chrome=false"></iframe>
+    </p>
+
+    <table class="excel">
+      <thead></thead>
+      <tbody>
+        <tr>
+          <th>A1</th>
+          <td><code>=GOOGLEFINANCE("AAPL","price",WORKDAY(TODAY(),-200),WORKDAY(TODAY(),-1))</code></td>
+        </tr>
+        <tr>
+          <th>C2</th>
+          <td><code>=AVERAGE(INDEX(GOOGLEFINANCE("AAPL", "price", WORKDAY(A2,-50), A2),,2))</code></td>
+        </tr>
+        <tr>
+          <th>D2</th>
+          <td><code>=AVERAGE(INDEX(GOOGLEFINANCE("AAPL", "price", WORKDAY(A2,-200), A2),,2))</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Оскількі данні оновлюватимуться, ось як воно виглядало на момент нотування</p>
+    <p><img src="/images/sma.png" alt="Example Golden Cross when SMA 50 growths and crosses SMA 200" /></p>
+    <p>Тут наглядно видно як працює golden cross та що мається на увазі під лінивістью показників.</p>
+
+    <p>Синоніми та аббревіатури:</p>
+    <ul>
+      <li>Simple Moving Average</li>
+      <li>SMA 20</li>
+      <li>SMA 50</li>
+      <li>SMA 100</li>
+    </ul>
+
+    <p>Посилання на джерела:</p>
+    <ul>
+      <li>
+        <a href="https://www.investopedia.com/terms/s/sma.asp">Investopedia</a>
+      </li>
+      <li>
+        <a href="https://www.youtube.com/watch?v=ihB4nCR4i4A">YouTube</a>
+      </li>
+      <li>
+        <a href="https://docs.google.com/spreadsheets/d/1e7EngYnq1yNCJtAPjP7wpJPw3hNg9H7sSxxjFnw8gCs/edit?usp=sharing">Google Sheet</a>
+      </li>
+    </ul>
+  </body>
+</html>

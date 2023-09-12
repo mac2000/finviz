@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Outstanding Shares</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <h1>Outstanding Shares</h1>
+
+    <p>Кількість акцій в обігу</p>
+
+    <p>Кількисть акцій, є в розділі &laquo;balance sheet&raquo; та називаеться Total Common Shares Outstanding і в нашому випадку дорівнює 15,943.42</p>
+    <p>
+      <picture>
+        <source srcset="images/balance_dark.png" media="(prefers-color-scheme: dark)" />
+        <img src="/images/balance_light.png" alt="balance" />
+      </picture>
+    </p>
+
+    <p>А також серед показників компанії &laquo;Shs Outstand&raquo;</p>
+    <p>
+      <picture>
+        <source srcset="images/metrics_dark.png" media="(prefers-color-scheme: dark)" />
+        <img src="/images/metrics_light.png" alt="metrics" />
+      </picture>
+    </p>
+
+    <p>
+      <iframe style="width: 178px; height: 70px" title="excel" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdBU3xwE_3m25SW8uaQgjYH8wv3lx7i9bdq2Dh9fl6JXhGKLeo3CzeOoRtc9dFbY0OyVroHeY7dAqD/pubhtml?gid=94225940&amp;single=true&amp;widget=false&amp;headers=true&amp;chrome=false"></iframe>
+    </p>
+
+    <table class="excel">
+      <thead>
+        <tr>
+          <th></th>
+          <th>A</th>
+          <th>B</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>1</th>
+          <td>Symbol</td>
+          <td>AAPL</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>2</th>
+          <td>Shs Outstand</td>
+          <td>15.7</td>
+          <td><code>=VALUE(REGEXREPLACE(INDEX(ARRAYFORMULA(REGEXREPLACE(IMPORTHTML(CONCATENATE("https://finviz.com/quote.ashx?t=",B1),"table","10"),"\*","")),1,10),"B$",""))</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h1>Shares Float (Shs Float)</h1>
+
+    <p>Кількість акцій в публічному обігу</p>
+    <p>З опису Finviz розраховується як</p>
+    <p>
+      <math>
+        <mrow>
+          <mtext>Shs Float</mtext>
+        </mrow>
+        <mo>=</mo>
+        <mi>Shares Outstanding</mi>
+        <mo>-</mo>
+        <mi>Insider Shares</mi>
+        <mo>-</mo>
+        <mi>Above 5% Owners</mi>
+        <mo>-</mo>
+        <mi>Rule 144 Shares</mi>
+      </math>
+    </p>
+    <p>Складно перевірити цей показник, адже він розраховується на великому обїемі данних з урахуванням фондів та публічних осіб.</p>
+
+    <p>Синоніми та аббревіатури:</p>
+    <ul>
+      <li>Outstanding Shares</li>
+      <li>Total Common Shares Outstanding</li>
+      <li>Shs Outstand</li>
+      <li>us-gaap:CommonStockSharesOutstanding</li>
+      <li>Common Stock, Shares, Outstanding</li>
+      <li>dei:EntityCommonStockSharesOutstanding</li>
+      <li>Entity Common Stock, Shares Outstanding</li>
+      <li>Weighted Average Number of Shares Outstanding, Basic</li>
+      <li>us-gaap:WeightedAverageNumberOfSharesOutstandingBasic</li>
+    </ul>
+
+    <p>Використовується в разрахунках:</p>
+    <ul>
+      <li>
+        <a href="/eps.html">Earnings per Share (EPS)</a>
+      </li>
+      <li>
+        <a href="/cps.html">Cash per Share (CPS)</a>
+      </li>
+    </ul>
+
+    <p>Посилання на джерела:</p>
+    <ul>
+      <li>
+        <a href="https://en.wikipedia.org/wiki/Shares_outstanding">Wikipedia</a>
+      </li>
+      <li>
+        <a href="https://www.investopedia.com/terms/o/outstandingshares.asp">Investopedia</a>
+      </li>
+      <li>
+        <a href="https://docs.google.com/spreadsheets/d/1e7EngYnq1yNCJtAPjP7wpJPw3hNg9H7sSxxjFnw8gCs/edit?usp=sharing">Excel</a>
+      </li>
+    </ul>
+  </body>
+</html>

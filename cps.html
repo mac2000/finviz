@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cash per Share</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <h1>Cash per Share</h1>
+
+    <p>Аналогічно до <a href="/bvps.html">Book Value per Share</a> але в розрізі доступних коштів.</p>
+    <p>Тобто скільки готівки припадає на одну акцію.</p>
+
+    <p>
+      <math>
+        <mrow>
+          <mi>CPS</mi>
+          <mo>=</mo>
+          <mfrac>
+            <mi>cash</mi>
+            <mi>outstanding_shares</mi>
+          </mfrac>
+        </mrow>
+      </math>
+    </p>
+
+    <dl>
+      <dt>cash</dt>
+      <dd>
+        <p>Доступні кошти &laquo;Cash and cash equivalents&raquo; (us-gaap:CashAndCashEquivalentsAtCarryingValue)</p>
+      </dd>
+      <dt><a href="/outstanding-shares.html">outstanding_shares</a></dt>
+      <dd>
+        <p>Кількисть акцій, є в розділі &laquo;balance sheet&raquo; та називаеться <a href="/outstanding-shares.html">Total Common Shares Outstanding</a> і в нашому випадку дорівнює 15,943.42</p>
+      </dd>
+    </dl>
+
+    <p>Подивитися розраховане значення можно в лівому кути таблички &laquo;Cash/sh&raquo;</p>
+
+    <p>
+      <picture>
+        <source srcset="images/metrics_dark.png" media="(prefers-color-scheme: dark)" />
+        <img src="/images/metrics_light.png" alt="metrics" />
+      </picture>
+    </p>
+
+    <p>Кількість наявного кєшу має відображатися в відповідному звіти &laquo;cash flow&raquo; але на разі не можу зрозуміти де воно тут, тому слід оріентуватися на офіційні звіти компанії та факт us-gaap:CashAndCashEquivalentsAtCarryingValue</p>
+
+    <p>
+      <picture>
+        <source srcset="images/cash_dark.png" media="(prefers-color-scheme: dark)" />
+        <img src="/images/cash_light.png" alt="cash" />
+      </picture>
+    </p>
+
+    <p>Тобто для Apple співвідношення дорівнюватиме:</p>
+
+    <p>
+      <math>
+        <mrow>
+          <mi>CPS</mi>
+          <mo>=</mo>
+          <mfrac>
+            <mi>cash</mi>
+            <mi>outstanding_shares</mi>
+          </mfrac>
+          <mo>=</mo>
+          <mfrac>
+            <mi>23,646</mi>
+            <mi>15,943.42</mi>
+          </mfrac>
+          <mo>=</mo>
+          <mi>1,48</mi>
+        </mrow>
+      </math>
+    </p>
+
+    <p>Високі значення цього показника скоріше поганий знак ніж хороший, адже кажуть про можливі складнощі керівнитцтва компанії щодо довгострокових планів.</p>
+    <p>Цей показник важжається більш корисним ніж <a href="/eps.html">EPS</a>, справа в тому що високий EPS хоч і виглядає привабливо не гарантує світлого майбутнього для компанії в довгосрочній перспективі, плюс показником EPS дуже легко маніпулювати, а ось фактичними грошима в наявності - ні.</p>
+
+    <p>Наразі не є можливим створити якусь табличку з прикладом розрахунку цієї метрики, адже не зрозуміло звідки береться її цифра</p>
+
+    <p>Finviz стверджує що показує цифру за останній звітний квартал</p>
+    <p>Отсанній звіт станом на момент написання цієї примітки є звіт за <a href="https://www.sec.gov/ix?doc=/Archives/edgar/data/320193/000032019323000077/aapl-20230701.htm">10-Q: 1 Jul 2023</a></p>
+    <p>Звітна формула</p>
+    <p>
+      <math>
+        <mrow>
+          <mi>CPS</mi>
+          <mo>=</mo>
+          <mfrac>
+            <mi>gaap:CashAndCashEquivalentsAtCarryingValue</mi>
+            <mi>gaap:CommonStockSharesOutstanding</mi>
+          </mfrac>
+          <mo>=</mo>
+          <mfrac>
+            <mi>28,408,000,000</mi>
+            <mi>15,697,614,000</mi>
+          </mfrac>
+          <mo>=</mo>
+          <mi>1,82</mi>
+        </mrow>
+      </math>
+    </p>
+
+    <p>І це дуже далеко від 4.03 що показуе finviz.</p>
+
+    <p>Синоніми та аббревіатури:</p>
+    <ul>
+      <li>Cash per Share</li>
+      <li>CPS</li>
+    </ul>
+
+    <p>Використовується в разрахунках:</p>
+    <ul>
+      <li>
+        <a href="/pc.html">Price to Cash per Share (P/C)</a>
+      </li>
+    </ul>
+
+    <p>Посилання на джерела:</p>
+    <ul>
+      <li>
+        <a href="https://www.investopedia.com/terms/c/cash-per-share.asp">Investopedia</a>
+      </li>
+      <li>
+        <a href="https://docs.google.com/spreadsheets/d/1e7EngYnq1yNCJtAPjP7wpJPw3hNg9H7sSxxjFnw8gCs/edit?usp=sharing">Google Sheet</a>
+      </li>
+    </ul>
+  </body>
+</html>

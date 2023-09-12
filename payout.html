@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dividend Payout Ratio</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <h1>Dividend Payout Ratio</h1>
+
+    <p>Процент коштів з доходів, що компанія виплачує у вигляді дивідендів.</p>
+    <p>Маленьке значення може казати про те що компанія реінвестує в себе за для збільшення майбутніх прибутків.</p>
+    <p>Значення більше 100% означає що компанія виплачую дивідендів більше ніж заробляє коштів.</p>
+
+    <p>
+      <math>
+        <mrow>
+          <mtext>DPR</mtext>
+        </mrow>
+        <mo>=</mo>
+        <mfrac>
+          <mi>Dividends</mi>
+          <mi>Net income</mi>
+        </mfrac>
+      </math>
+    </p>
+
+    <dl>
+      <dt>Dividends</dt>
+      <dd>Виплачені дивіденди, подається в звіті Cash Flow як Total Cash Dividends Paid, розмічається як us-gaap:PaymentsOfDividends і в нашому випадку дорівнює 14,970.00</dd>
+      <dt><a href="/net-income.html">Net income</a></dt>
+      <dd>Чистий прибуток з продажів, подається в звіті Cash Flow, розмічається як us-gaap:NetIncomeLoss і в нашому випадку дорівнює 94,760.00</dd>
+    </dl>
+
+    <p>Розраховане значення Payout можна побачити в табличці.</p>
+    <p>
+      <picture>
+        <source srcset="images/metrics_dark.png" media="(prefers-color-scheme: dark)" />
+        <img src="/images/metrics_light.png" alt="metrics" />
+      </picture>
+    </p>
+
+    <p>А показники Net Income та Dividends в звіті Cash flow.</p>
+    <p>
+      <picture>
+        <source srcset="images/cash_dark.png" media="(prefers-color-scheme: dark)" />
+        <img src="/images/cash_light.png" alt="cash" />
+      </picture>
+    </p>
+
+    <p>
+      <iframe style="width: 262px; height: 133px" title="excel" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdBU3xwE_3m25SW8uaQgjYH8wv3lx7i9bdq2Dh9fl6JXhGKLeo3CzeOoRtc9dFbY0OyVroHeY7dAqD/pubhtml?gid=1028631925&amp;single=true&amp;widget=false&amp;headers=true&amp;chrome=false"></iframe>
+    </p>
+
+    <table class="excel">
+      <thead>
+        <tr>
+          <th></th>
+          <th>A</th>
+          <th>B</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>1</th>
+          <td>Symbol</td>
+          <td>AAPL</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>2</th>
+          <td>Payout</td>
+          <td>15.60%</td>
+          <td><code>=VALUE(INDEX(ARRAYFORMULA(REGEXREPLACE(IMPORTHTML(CONCATENATE("https://finviz.com/quote.ashx?t=",B1),"table","10"),"\*","")),11,8))</code></td>
+        </tr>
+        <tr>
+          <th>3</th>
+          <td>Total Cash Dividends Paid</td>
+          <td>14841</td>
+          <td><code>=-1*INDEX(SPLIT(SUBSTITUTE(REGEXREPLACE(REGEXREPLACE(IMPORTDATA(CONCATENATE("https://finviz.com/api/statement.ashx?t=",$B$1,"&s=CA"),"|"),CONCATENATE(".+",A3,""":\["""),""),"""\].+",""),""",""","|"),"|"),1,2)</code></td>
+        </tr>
+        <tr>
+          <th>4</th>
+          <td>Net Income</td>
+          <td>99803</td>
+          <td><code>=INDEX(SPLIT(SUBSTITUTE(REGEXREPLACE(REGEXREPLACE(IMPORTDATA(CONCATENATE("https://finviz.com/api/statement.ashx?t=",$B$1,"&s=CA"),"|"),CONCATENATE(".+",A4,""":\["""),""),"""\].+",""),""",""","|"),"|"),1,2)</code></td>
+        </tr>
+        <tr>
+          <th>4</th>
+          <td>calculated</td>
+          <td>14.87%</td>
+          <td><code>=B3/B4</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Синоніми та аббревіатури:</p>
+    <ul>
+      <li>Payout</li>
+      <li>Payout Ratio</li>
+      <li>Dividend Payout Ratio</li>
+      <li>DPR</li>
+    </ul>
+
+    <p>Посилання на джерела:</p>
+    <ul>
+      <li>
+        <a href="https://en.wikipedia.org/wiki/Dividend_payout_ratio">Wikipedia</a>
+      </li>
+      <li>
+        <a href="https://www.investopedia.com/terms/p/payoutratio.asp">Investopedia</a>
+      </li>
+      <li>
+        <a href="https://www.youtube.com/watch?v=6wUsVZsRKfw">YouTube</a>
+      </li>
+      <li>
+        <a href="https://docs.google.com/spreadsheets/d/1e7EngYnq1yNCJtAPjP7wpJPw3hNg9H7sSxxjFnw8gCs/edit?usp=sharing">Excel</a>
+      </li>
+    </ul>
+  </body>
+</html>

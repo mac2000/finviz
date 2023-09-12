@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Earnings per Share</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <h1>Earnings per Share</h1>
+
+    <p>Співвідношення прибутків компанії до вартості акції.</p>
+
+    <p>
+      <math>
+        <mrow>
+          <mtext>EPS</mtext>
+        </mrow>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mtext>NetIncomeLoss</mtext>
+          </mrow>
+          <mrow>
+            <mtext>WeightedAverageNumberOfSharesOutstandingBasic</mtext>
+          </mrow>
+        </mfrac>
+      </math>
+    </p>
+
+    <dl>
+      <dt><a href="/net-income.html">NetIncomeLoss</a></dt>
+      <dd>
+        <p>Чистий прибуток, його можна подивитися в розділі &laquo;income statement&raquo;, в нашому прикладі він дорівнює 99,803.00</p>
+        <p>
+          <picture>
+            <source srcset="images/income_dark.png" media="(prefers-color-scheme: dark)" />
+            <img src="/images/income_light.png" alt="income" />
+          </picture>
+        </p>
+      </dd>
+      <dt><a href="/outstanding-shares.html">WeightedAverageNumberOfSharesOutstandingBasic</a></dt>
+      <dd>
+        <p>Кількисть акцій, є в розділі &laquo;balance sheet&raquo; та називаеться <a href="/outstanding-shares.html">Total Common Shares Outstanding</a> і в нашому випадку дорівнює 15,943.42</p>
+        <p>
+          <picture>
+            <source srcset="images/balance_dark.png" media="(prefers-color-scheme: dark)" />
+            <img src="/images/balance_light.png" alt="balance" />
+          </picture>
+        </p>
+      </dd>
+    </dl>
+
+    <p>Отже для Apple цей показник буде дорівнювати</p>
+
+    <p>
+      <math>
+        <mrow>
+          <mtext>EPS</mtext>
+        </mrow>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mtext>NetIncomeLoss</mtext>
+          </mrow>
+          <mrow>
+            <mtext>WeightedAverageNumberOfSharesOutstandingBasic</mtext>
+          </mrow>
+        </mfrac>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mn>99,803.00</mn>
+          </mrow>
+          <mrow>
+            <mn>15,943.42</mn>
+          </mrow>
+        </mfrac>
+        <mo>=</mo>
+        <mrow>
+          <mn>6.25</mn>
+        </mrow>
+      </math>
+    </p>
+
+    <p>Наприклад маєкомо компанію що заробляє 1000 грошей та має 1000 акцій в обігу, її показник буде дорівнювати 1.</p>
+    <p>Чи це багато чи мало? (Цей показник є сенс порівнювати між компаніями або в часі.)</p>
+
+    <p>Але в той самий час, він використовується для розрахунку <a href="/pe.html">P/E</a> який є дуже цінним та широко уживаним.</p>
+
+    <p>Зауваження: з метою полегшення розуміння тут приведено найпростіший з можливих розрахунків &laquo;EarningsPerShareBasic&laquo;, що не враховує &laquo;приватні&raquo; акції. Також є &laquo;EarningsPerShareDiluted&raquo; що враховує приватні акції.</p>
+
+    <p>Також варто подивитися на показник <a href="/cps.html">CPS</a>, що може виявитися більш значущим оцінці компанії.</p>
+
+    <p>
+      <iframe style="width: 178px; height: 134px" title="excel" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdBU3xwE_3m25SW8uaQgjYH8wv3lx7i9bdq2Dh9fl6JXhGKLeo3CzeOoRtc9dFbY0OyVroHeY7dAqD/pubhtml?gid=0&amp;single=true&amp;widget=false&amp;headers=true&amp;chrome=false"></iframe>
+    </p>
+
+    <table class="excel">
+      <thead>
+        <tr>
+          <th></th>
+          <th>A</th>
+          <th>B</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>1</th>
+          <td>Symbol</td>
+          <td>AAPL</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>2</th>
+          <td>Income</td>
+          <td>94.75</td>
+          <td><code>=VALUE(REGEXREPLACE(INDEX(ARRAYFORMULA(REGEXREPLACE(IMPORTHTML(CONCATENATE("https://finviz.com/quote.ashx?t=",B1),"table","10"),"\*","")),3,2),"B$",""))</code></td>
+        </tr>
+        <tr>
+          <th>3</th>
+          <td>Shs Outstand</td>
+          <td>15.7</td>
+          <td><code>=VALUE(REGEXREPLACE(INDEX(ARRAYFORMULA(REGEXREPLACE(IMPORTHTML(CONCATENATE("https://finviz.com/quote.ashx?t=",B1),"table","10"),"\*","")),1,10),"B$",""))</code></td>
+        </tr>
+        <tr>
+          <th>4</th>
+          <td>EPS</td>
+          <td>6.04</td>
+          <td><code>=B2/B3</code></td>
+        </tr>
+        <tr>
+          <th>5</th>
+          <td>Google</td>
+          <td>5.95</td>
+          <td><code>=GOOGLEFINANCE(B1,"eps")</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h1>Quarterly earnings growth (YoY) (EPS Q/Q)</h1>
+
+    <p>Як змінився EPS за квартал рік до року.</p>
+    <p>Отже для його розрахунку нам достатньо зробити щось накшталт</p>
+    <p>
+      <math>
+        <mrow>
+          <mtext>EPS Q/Q</mtext>
+        </mrow>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mi>Current Quarter</mi>
+            <mo>-</mo>
+            <mi>Year Ago</mi>
+          </mrow>
+          <mrow>
+            <mi>Year Ago</mi>
+          </mrow>
+        </mfrac>
+      </math>
+    </p>
+
+    <p>Для розрахунку нам знадобиться показник Net Income зі звіту Income statement.</p>
+    <p>
+      <picture>
+        <source srcset="images/income_dark.png" media="(prefers-color-scheme: dark)" />
+        <img src="/images/income_light.png" alt="income" />
+      </picture>
+    </p>
+
+    <p>Та показник Total Common Shares Outstanding зі звіту balance sheet.</p>
+    <p>
+      <picture>
+        <source srcset="images/balance_dark.png" media="(prefers-color-scheme: dark)" />
+        <img src="/images/balance_light.png" alt="balance" />
+      </picture>
+    </p>
+
+    <p>
+      <iframe style="width: 349px; height: 154px" title="excel" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdBU3xwE_3m25SW8uaQgjYH8wv3lx7i9bdq2Dh9fl6JXhGKLeo3CzeOoRtc9dFbY0OyVroHeY7dAqD/pubhtml?gid=85080503&amp;single=true&amp;widget=false&amp;headers=true&amp;chrome=false"></iframe>
+    </p>
+
+    <table class="excel">
+      <tr>
+        <th>B1</th>
+        <td><code>=YEAR(TODAY())-1</code></td>
+      </tr>
+      <tr>
+        <th>C1</th>
+        <td><code>=YEAR(TODAY())-2</code></td>
+      </tr>
+      <tr>
+        <th>B2</th>
+        <td><code>=INDEX(SPLIT(SUBSTITUTE(REGEXREPLACE(REGEXREPLACE(IMPORTDATA(CONCATENATE("https://finviz.com/api/statement.ashx?t=",$A$1,"&s=CA"),"|"),CONCATENATE(".+",$A2,""":\["""),""),"""\].+",""),""",""","|"),"|"),1,YEAR(TODAY())-B1+1)</code></td>
+      </tr>
+      <tr>
+        <th>B3</th>
+        <td><code>=INDEX(SPLIT(SUBSTITUTE(REGEXREPLACE(REGEXREPLACE(IMPORTDATA(CONCATENATE("https://finviz.com/api/statement.ashx?t=",$A$1,"&s=BA"),"|"),CONCATENATE(".+",$A$3,""":\["""),""),"""\].+",""),""",""","|"),"|"),1,YEAR(TODAY())-B1)</code></td>
+      </tr>
+      <tr>
+        <th>B4</th>
+        <td><code>=B2/B3</code></td>
+      </tr>
+      <tr>
+        <th>B5</th>
+        <td><code>=(B4-C4)/C4</code></td>
+      </tr>
+      <tr>
+        <th>B6</th>
+        <td><code>=VALUE(INDEX(ARRAYFORMULA(REGEXREPLACE(IMPORTHTML(CONCATENATE("https://finviz.com/quote.ashx?t=",A1),"table","10"),"\*","")),10,6))</code></td>
+      </tr>
+    </table>
+
+    <p>Але судячи з цифри що отримали у розрахунку воно більше схоже на EPS growth this year (EPS this Y), але нема більш детального пояснення що і як рахується</p>
+    <p>В будь якому випадку EPS Growth за рік рахується так само, отже якщо є данні не має бути проблемою.</p>
+    <p>Annual EPS growth past 5 years (EPS past 5Y) мені виглядає так само.</p>
+
+    <h1>EPS next Q, EPS next Y, EPS next 5Y</h1>
+    <p>Спекуляції на тему майбутнього значення показника.</p>
+
+    <p>Синоніми та аббревіатури:</p>
+    <ul>
+      <li>Earnings per Share</li>
+      <li>EPS</li>
+      <li>Earnings Per Share, Basic</li>
+      <li>us-gaap:EarningsPerShareBasic</li>
+      <li>Earnings Per Share, Diluted</li>
+      <li>us-gaap:EarningsPerShareDiluted</li>
+    </ul>
+
+    <p>Використовується в разрахунках:</p>
+    <ul>
+      <li>
+        <a href="/pe.html">Price to Earnings (PE)</a>
+      </li>
+    </ul>
+
+    <p>Посилання на джерела:</p>
+    <ul>
+      <li>
+        <a href="https://en.wikipedia.org/wiki/Earnings_per_share">Wikipedia</a>
+      </li>
+      <li>
+        <a href="https://www.investopedia.com/terms/e/eps.asp">Investopedia</a>
+      </li>
+      <li>
+        <a href="https://www.youtube.com/watch?v=T1dw2hPSZmQ">YouTube</a>
+      </li>
+      <li>
+        <a href="https://docs.google.com/spreadsheets/d/1e7EngYnq1yNCJtAPjP7wpJPw3hNg9H7sSxxjFnw8gCs/edit?usp=sharing">Google Sheet</a>
+      </li>
+    </ul>
+  </body>
+</html>

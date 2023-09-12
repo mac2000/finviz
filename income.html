@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Income statement</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <h1>Income statement</h1>
+    <p>Звіт щодо виручки компанії</p>
+    <p>
+      <picture>
+        <source srcset="images/income_dark.png" media="(prefers-color-scheme: dark)" />
+        <img src="/images/income_light.png" alt="income" />
+      </picture>
+    </p>
+    <p><b>Trailing Twelve Months (TTM)</b> - розрахунок в якому беруть участь чотири останні квартальні звіти вне залежності від поточного року, тобто це спроба отримати річний звіт в середині року. <a href="https://www.investopedia.com/terms/t/ttm.asp">Investopedia</a></p>
+
+    <p>В нашому розборі ми не будемо використовувати TTM і будемо оріентуватися на останній звіт, тому ще - в інших звітах Finviz не дає TTM, а також ми хотіли б порівняти те що нам показує Finviz зі <a href="https://www.sec.gov/ix?doc=/Archives/edgar/data/320193/000032019322000108/aapl-20220924.htm">звітом</a> що подала Apple.</p>
+    <p>Всюду будемо використовувати цифру як є, без мультиплікаторів, тобто якщо мільони то прямо з шістью нулями і будемо писати. Також у разі нестиковок, з зазначенням цього будемо використовувати цифру зі звіту, а не finviz.</p>
+    <p><a href="https://www.investopedia.com/terms/i/incomestatement.asp">Investopedia</a></p>
+
+    <p>Далі показники що мабуть є найбіль важливими</p>
+
+    <h1><a href="/revenue.html">Total Revenue (Revenue)</a></h1>
+    <p>
+      <math>
+        <mrow>
+          <mi>Total Revenue</mi>
+          <mo>=</mo>
+          <mi>$394,328,000,000</mi>
+        </mrow>
+      </math>
+    </p>
+    <p>Оборот, тобто скільки грошей компанія заробила від &laquo;продажів&raquo; без врахування витрат та налогів, цей самий показник є у <a href="/metrics.html">таблиці</a> і називається &laquo;Sales&raquo;.</p>
+    <p>Під продажами слід розуміти все на чому генерує гроші компанія, в нашому прикладі з Apple це не тільки продажі iPhone та MacBook але ще й гроші з підписок на Apple TV+, Music та проценти що Apple отримує з продажів всередині App Store.</p>
+
+    <h1>Cost of Revenue (COGS)</h1>
+    <p>
+      <math>
+        <mrow>
+          <mi>COGS</mi>
+          <mo>=</mo>
+          <mi>$223,546,000,000</mi>
+        </mrow>
+      </math>
+    </p>
+    <p>Собівартість проданого товару. Тобто якою є собівартість проданих iPhone.</p>
+    <p><a href="https://www.investopedia.com/terms/c/cogs.asp">Investopedia</a></p>
+
+    <h1>Gross Profit</h1>
+    <p>
+      <math>
+        <mrow>
+          <mi>Gross Profit</mi>
+          <mo>=</mo>
+          <mi>Revenue</mi>
+          <mo>-</mo>
+          <mi>COGS</mi>
+          <mo>=</mo>
+          <mi>$394,328,000,000</mi>
+          <mo>-</mo>
+          <mi>$223,546,000,000</mi>
+          <mo>=</mo>
+          <mi>$170,782,000,000</mi>
+        </mrow>
+      </math>
+    </p>
+    <p>Різниця між продажами (Revenue) та собівартістью (COGS), тобто скілки виручки ми отримали.</p>
+    <p><a href="https://www.investopedia.com/terms/g/grossprofit.asp">Investopedia</a></p>
+
+    <h1>Total Operating Expense (OpEx)</h1>
+    <p>
+      <math>
+        <mrow>
+          <mi>Total Operating Expense</mi>
+          <mo>=</mo>
+          <mi>$51,345,000,000</mi>
+        </mrow>
+      </math>
+    </p>
+    <p>Він же OpEx, операційні витрати накшталт оренди, інветаря, зарплатні, маркетингу, тощо.</p>
+    <p>Зауваження: finviz показує 274,891.00 що не збігається з цифрою зі звіту.</p>
+    <p>Але з розрахунків видно що цифри сходяться і можливо цей показник має буте розрахованим як різниця між Revenue та Operating Invome.</p>
+    <p>В обох джерелах зазначені операційні загальні витрати та витрати на розробку - їх сума сходиться зі звітом, та не сходиться з тим що показуе finviz.</p>
+    <p><a href="https://www.investopedia.com/terms/o/operating_expense.asp">Investopedia</a></p>
+
+    <h1>Operating Income</h1>
+    <p>
+      <math>
+        <mrow>
+          <mi>Operating Income</mi>
+          <mo>=</mo>
+          <mi>Total Revenue</mi>
+          <mo>-</mo>
+          <mi>Total Operating Expense</mi>
+          <mo>=</mo>
+          <mi>$394,328,000,000</mi>
+          <mo>-</mo>
+          <mi>$274,891,000,000</mi>
+          <mo>=</mo>
+          <mi>$119,437,000,000</mi>
+        </mrow>
+      </math>
+    </p>
+    <p>Операційний прибуток, тобто скільки з грошей що заробляє компанія залишається пілся вирахування операційних витрат (зарплати, аренду, маркетинг тощо).</p>
+    <p>Тут так само, цифра подається в звіті, тобто знаючи її і загальний оборот можна розрахувати OpEx.</p>
+    <p><a href="https://www.investopedia.com/terms/o/operatingincome.asp">Investopedia</a></p>
+
+    <h1><a href="/net-income.html">Net Income</a></h1>
+    <p>
+      <math>
+        <mrow>
+          <mi>Net Income</mi>
+          <mo>=</mo>
+          <mi>Total Revenue</mi>
+          <mo>-</mo>
+          <mi>витрати, налоги, тощо</mi>
+          <mo>=</mo>
+          <mi>$99,803,000,000</mi>
+        </mrow>
+      </math>
+    </p>
+    <p>Це вже чистий прибуток, з якого відняли всі попередньо зазначенні витрати та налоги</p>
+    <p><a href="https://www.investopedia.com/terms/n/netincome.asp">Investopedia</a></p>
+
+    <h1>Воронка</h1>
+    <p>Дуже гарну ілюстрацію того як влаштовані ці цифри показує <a href="https://tradingview.com/">tradingview</a></p>
+    <p>
+      <picture>
+        <source srcset="images/revenue_to_profit_conversion_dark.png" media="(prefers-color-scheme: dark)" />
+        <img src="/images/revenue_to_profit_conversion_light.png" alt="revenue_to_profit_conversion" />
+      </picture>
+    </p>
+    <ul>
+      <li>
+        <math>
+          <mi>Gross Profit</mi>
+          <mo>=</mo>
+          <mi>Revenue</mi>
+          <mo>-</mo>
+          <mi>COGS</mi>
+        </math>
+      </li>
+      <li>
+        <math>
+          <mi>Gross Profit Margin</mi>
+          <mo>=</mo>
+          <mfrac>
+            <mi>Gross Profit</mi>
+            <mi>Revenue</mi>
+          </mfrac>
+        </math>
+      </li>
+      <li>
+        <math>
+          <mi>Net Profit</mi>
+          <mo>=</mo>
+          <mi>Gross Profit</mi>
+          <mo>-</mo>
+          <mi>Expenses</mi>
+        </math>
+      </li>
+      <li>
+        <math>
+          <mi>Net Profit Margin</mi>
+          <mo>=</mo>
+          <mfrac>
+            <mi>Net Profit</mi>
+            <mi>Revenue</mi>
+          </mfrac>
+        </math>
+      </li>
+      <li>
+        <math>
+          <mi>EBITDA</mi>
+          <mo>=</mo>
+          <mi>Operating Income</mi>
+          <mo>+</mo>
+          <mi>Depreciation and Amortization</mi>
+        </math>
+      </li>
+      <li>
+        <math>
+          <mi>EBIT</mi>
+          <mo>=</mo>
+          <mi>Revenue</mi>
+          <mo>-</mo>
+          <mi>COGS</mi>
+          <mo>-</mo>
+          <mi>OpEx</mi>
+        </math>
+      </li>
+    </ul>
+    <p>Примітка: Deprecation and Amortization у розрахунку EBITDA береться з <a href="/cash.html">Cash flow</a> звіту.</p>
+
+    <p>Табличка з розрахунками та формулами</p>
+    <p>
+      <iframe style="width: 312px; height: 448px" title="excel" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdBU3xwE_3m25SW8uaQgjYH8wv3lx7i9bdq2Dh9fl6JXhGKLeo3CzeOoRtc9dFbY0OyVroHeY7dAqD/pubhtml?gid=2028035723&amp;single=true&amp;widget=false&amp;headers=true&amp;chrome=false"></iframe>
+    </p>
+
+    <table class="excel">
+      <thead>
+        <tr>
+          <th></th>
+          <th>A</th>
+          <th>B</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>1</th>
+          <th colspan="2">AAPL</th>
+          <th></th>
+        </tr>
+        <tr>
+          <th>2</th>
+          <th nowrap colspan="2">Income Statemenet</th>
+          <th></th>
+        </tr>
+        <tr>
+          <th>3</th>
+          <th nowrap>Total Revenue</th>
+          <th>394328</th>
+          <td><code>=ABS(INDEX(SPLIT(SUBSTITUTE(REGEXREPLACE(REGEXREPLACE(IMPORTDATA(CONCATENATE("https://finviz.com/api/statement.ashx?t=",$A$1),"|"),CONCATENATE(".+",$A3,""":\["""),""),"""\].+",""),""",""","|"),"|"),1,2))</code></td>
+        </tr>
+        <tr>
+          <td colspan="4">&hellip;</td>
+        </tr>
+        <tr>
+          <th>15</th>
+          <th colspan="2">Calculations</th>
+          <th></th>
+        </tr>
+        <tr>
+          <th>16</th>
+          <td nowrap>Gross Profit</td>
+          <td>170782</td>
+          <td><code>=B3-B4</code></td>
+        </tr>
+        <tr>
+          <th>17</th>
+          <td nowrap>Total Operating Expense</td>
+          <td>274891</td>
+          <td><code>=B4+B6+B7</code></td>
+        </tr>
+        <tr>
+          <th>18</th>
+          <td nowrap>Operating Income (EBIT)</td>
+          <td>119437</td>
+          <td><code>=B5-B6-B7</code></td>
+        </tr>
+        <tr>
+          <th>19</th>
+          <td nowrap>Net Income Before Taxes</td>
+          <td>119103</td>
+          <td><code>=B9-B10-B11</code></td>
+        </tr>
+        <tr>
+          <th>20</th>
+          <td nowrap>Net Income</td>
+          <td>99803</td>
+          <td><code>=B12-B13</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h1>US-GAAP</h1>
+    <p>Маркування показників у звітах. Не залежно від сервісу чи того як позначена цифра в звіті, вона буде промаркована наступним чином:</p>
+    <table class="excel">
+      <thead>
+        <tr>
+          <th>finviz</th>
+          <th>us-gaap</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td nowrap>Total Revenue</td>
+          <td><code>us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax</code></td>
+        </tr>
+        <tr>
+          <td nowrap>Cost of Revenue</td>
+          <td><code>us-gaap:CostOfGoodsAndServicesSold</code></td>
+        </tr>
+        <tr>
+          <td nowrap>Gross Profit</td>
+          <td><code>us-gaap:GrossProfit</code></td>
+        </tr>
+        <tr>
+          <td nowrap>Total Operating Expense</td>
+          <td><code>us-gaap:OperatingExpenses</code></td>
+        </tr>
+        <tr>
+          <td nowrap>Operating Income</td>
+          <td><code>us-gaap:OperatingIncomeLoss</code></td>
+        </tr>
+        <tr>
+          <td nowrap>Net Income Before Taxes</td>
+          <td><code>us-gaap:IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest</code></td>
+        </tr>
+        <tr>
+          <td nowrap>Net Income</td>
+          <td><code>us-gaap:NetIncomeLoss</code></td>
+        </tr>
+        <tr>
+          <td nowrap>Deprecation and Depletion</td>
+          <td><code>us-gaap:DepreciationDepletionAndAmortization</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

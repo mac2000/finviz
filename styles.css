@@ -1,0 +1,66 @@
+@import url("/excel.css");
+
+html {
+  font: normal 16px/1.5 sans-serif;
+}
+
+body {
+  color: #24292f;
+  background-color: #ffffff;
+}
+
+/* if screen width > 760 */
+@media (min-width: 48em) {
+  body {
+    max-width: 50em;
+    margin-inline: auto;
+  }
+}
+
+a {
+  color: #0969da;
+}
+
+a:visited {
+  color: #57606a;
+}
+
+.green {
+  color: #1a7f37;
+}
+
+.red {
+  color: #cf222e;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #adbac7;
+    background-color: #22272e;
+  }
+
+  a {
+    color: #539bf5;
+  }
+
+  a:visited {
+    color: #768390;
+  }
+
+  .green {
+    color: #57ab5a;
+  }
+
+  .red {
+    color: #e5534b;
+  }
+}
+
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+img {
+  max-width: 100%;
+}

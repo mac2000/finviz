@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Price to Free Cash Flow</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <h1>Price to Free Cash Flow</h1>
+
+    <p>
+      <math>
+        <mrow>
+          <mtext>P/FCF</mtext>
+        </mrow>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mtext>Market Capitalization</mtext>
+          </mrow>
+          <mrow>
+            <mtext>Free Cash Flow</mtext>
+          </mrow>
+        </mfrac>
+      </math>
+    </p>
+
+    <dl>
+      <dt><a href="/market-cap.html">Market Capitalization</a></dt>
+      <dd>
+        <p>Сукупна вартість всіх акцій, 2776.01B</p>
+      </dd>
+      <dt>Free Cash Flow</dt>
+      <dd>
+        <p>Різниця між Total Operating Cash Flow та Capital Expenditures</p>
+      </dd>
+    </dl>
+
+    <p>Подивитися значення показників Market Capitalization та рорзахований результат P/FCF можна в табличці</p>
+    <p>
+      <picture>
+        <source srcset="images/metrics_dark.png" media="(prefers-color-scheme: dark)" />
+        <img src="/images/metrics_light.png" alt="metrics" />
+      </picture>
+    </p>
+
+    <p>Cash from Operating Activities та Capital Expenditures (CAPEX) можно знайти в звіті cash flow</p>
+    <p>
+      <picture>
+        <source srcset="images/cash_dark.png" media="(prefers-color-scheme: dark)" />
+        <img src="/images/cash_light.png" alt="cash" />
+      </picture>
+    </p>
+    <p>Cash from Operating Activities маркується як us-gaap:NetCashProvidedByUsedInOperatingActivities</p>
+    <p>Capital Expenditures в звіті 10-K називається Payments for acquisition of property, plant and equipment та маркується як us-gaap:PaymentsToAcquirePropertyPlantAndEquipment</p>
+
+    <p>Отже для Apple цей показник буде дорівнювати</p>
+
+    <p>
+      <math>
+        <mrow>
+          <mtext>P/FCF</mtext>
+        </mrow>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mtext>Market Cap</mtext>
+          </mrow>
+          <mrow>
+            <mi>Cash from Operating Activities</mi>
+            <mo>-</mo>
+            <mi>Capital Expenditures</mi>
+          </mrow>
+        </mfrac>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mn>2776.01B</mn>
+          </mrow>
+          <mrow>
+            <mn>113.072B-12.085B</mn>
+          </mrow>
+        </mfrac>
+        <mo>=</mo>
+        <mrow>
+          <mn>27.5</mn>
+        </mrow>
+      </math>
+    </p>
+
+    <p>Показник може бути використанний при порівняння компаній для визначення яка з них переоцінена або недооцінена.</p>
+
+    <p>
+      <iframe style="width: 293px; height: 155px" title="excel" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdBU3xwE_3m25SW8uaQgjYH8wv3lx7i9bdq2Dh9fl6JXhGKLeo3CzeOoRtc9dFbY0OyVroHeY7dAqD/pubhtml?gid=1419933612&amp;single=true&amp;widget=false&amp;headers=true&amp;chrome=false"></iframe>
+    </p>
+
+    <table class="excel">
+      <thead>
+        <tr>
+          <th></th>
+          <th>A</th>
+          <th>B</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>1</th>
+          <td>Symbol</td>
+          <td>AAPL</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>2</th>
+          <td>P/FCF</td>
+          <td>27.67</td>
+          <td><code>=VALUE(INDEX(ARRAYFORMULA(REGEXREPLACE(IMPORTHTML(CONCATENATE("https://finviz.com/quote.ashx?t=",B1),"table","10"),"\*","")),7,4))</code></td>
+        </tr>
+        <tr>
+          <th>3</th>
+          <td>Market Cap</td>
+          <td>2794400</td>
+          <td><code>=VALUE(SUBSTITUTE(INDEX(ARRAYFORMULA(REGEXREPLACE(IMPORTHTML(CONCATENATE("https://finviz.com/quote.ashx?t=",B1),"table","10"),"\*","")),2,2),"B",""))*1000</code></td>
+        </tr>
+        <tr>
+          <th>4</th>
+          <td>Cash from Operating Activities</td>
+          <td>113072</td>
+          <td><code>=INDEX(SPLIT(SUBSTITUTE(REGEXREPLACE(REGEXREPLACE(IMPORTDATA(CONCATENATE("https://finviz.com/api/statement.ashx?t=",$B$1,"&s=CA"),"|"),CONCATENATE(".+",A4,""":\["""),""),"""\].+",""),""",""","|"),"|"),1,1)</code></td>
+        </tr>
+        <tr>
+          <th>5</th>
+          <td>Capital Expenditures</td>
+          <td>12085</td>
+          <td><code>=-1*INDEX(SPLIT(SUBSTITUTE(REGEXREPLACE(REGEXREPLACE(IMPORTDATA(CONCATENATE("https://finviz.com/api/statement.ashx?t=",$B$1,"&s=CA"),"|"),CONCATENATE(".+",A5,""":\["""),""),"""\].+",""),""",""","|"),"|"),1,1)</code></td>
+        </tr>
+        <tr>
+          <th>6</th>
+          <td>calculated</td>
+          <td>27.67</td>
+          <td><code>=B3/(B4-B5)</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Синоніми та аббревіатури:</p>
+    <ul>
+      <li>Price to Free Cash Flow</li>
+      <li>P/FCF</li>
+    </ul>
+
+    <p>Посилання на джерела:</p>
+    <ul>
+      <li>
+        <a href="https://en.wikipedia.org/wiki/Free_cash_flow">Wikipedia</a>
+      </li>
+      <li>
+        <a href="https://www.investopedia.com/terms/p/pricetofreecashflow.asp">Investopedia</a>
+      </li>
+      <li>
+        <a href="https://www.youtube.com/watch?v=sC46a30SXpw">YouTube</a>
+      </li>
+      <li>
+        <a href="https://docs.google.com/spreadsheets/d/1e7EngYnq1yNCJtAPjP7wpJPw3hNg9H7sSxxjFnw8gCs/edit?usp=sharing">Google Sheet</a>
+      </li>
+    </ul>
+  </body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Relative Strength Index</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <h1>Relative Strength Index (RSI)</h1>
+
+    <p><b>Relative Strength Index (14 days)</b> - індикатор що заміряє нещодавні зміни в ціні в діапазоні 0&hellip;100 і даючий коротко живучу відповід на питання - покупати (значення меньше 30) чи продавати (зачення більше 70).</p>
+
+    <p>Подивитися значення показника RSI (14) можна в таблиці</p>
+    <p>
+      <picture>
+        <source srcset="images/metrics_dark.png" media="(prefers-color-scheme: dark)" />
+        <img src="/images/metrics_light.png" alt="metrics" />
+      </picture>
+    </p>
+
+    <p>Звісно це історія для трейдерів, але все ж цікава, розраховується наступним чином:</p>
+
+    <p>
+      <math>
+        <mrow>
+          <mi>RSI</mi>
+          <mo>=</mo>
+          <mn>100</mn>
+          <mo>-</mo>
+          <mfenced open="[" close="]">
+            <mfrac>
+              <mn>100</mn>
+              <mrow>
+                <mrow>
+                  <mn>1</mn>
+                  <mo>+</mo>
+                  <mfrac>
+                    <mi>Average loss</mi>
+                    <mi>Average gain</mi>
+                  </mfrac>
+                </mrow>
+              </mrow>
+            </mfrac>
+          </mfenced>
+        </mrow>
+      </math>
+    </p>
+
+    <p>Беремо данні за дві неділі</p>
+    <p><img src="/images/rsi_data.png" alt="Apple price for 2 weeks" /></p>
+
+    <p>Розраховуємо різницю current - previous</p>
+    <p><img src="/images/rsi_change.png" alt="Difference between current and previous price" /></p>
+
+    <p>Далі заповнюємо колонку Gains позитивними цифрами</p>
+    <p><img src="/images/rsi_gains.png" alt="RSI Gains" /></p>
+
+    <p>Схожим чином заповнюємо колонку Loss, перемножуючи всі числа на мінус один (потрібно для наступних кроків, щоб працювати з позитивними цифрами)</p>
+    <p><img src="/images/rsi_loss.png" alt="RSI Loss" /></p>
+
+    <p>Розраховуємо середнє значення для Gain та Loss за попередні 14 днів</p>
+    <p><img src="/images/rsi_avg.png" alt="RSI Average Gains and Losses" /></p>
+
+    <p>Розраховуємо співвідношення між ними</p>
+    <p><img src="/images/rsi_rs.png" alt="RS ratio between gains and losses" /></p>
+
+    <p>І розраховуємо сам RSI</p>
+    <p><img src="/images/rsi.png" alt="RSI" /></p>
+
+    <p><a href="https://www.youtube.com/watch?v=KctBItOThAY">How to Calculate RSI in Google Sheets (or Excel)</a> &mdash; відео що допомогло розібратись з розрахунком</p>
+
+    <p>
+      <iframe style="width: 294px; height: 406px" title="excel" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdBU3xwE_3m25SW8uaQgjYH8wv3lx7i9bdq2Dh9fl6JXhGKLeo3CzeOoRtc9dFbY0OyVroHeY7dAqD/pubhtml?gid=1942741562&amp;single=true&amp;widget=false&amp;headers=true&amp;chrome=false"></iframe>
+    </p>
+
+    <table class="excel">
+      <tbody>
+        <tr>
+          <th>A1</th>
+          <td><code>=GOOGLEFINANCE("AAPL","price",WORKDAY(TODAY()-1,-16),WORKDAY(TODAY()-1,-1))</code></td>
+        </tr>
+        <tr>
+          <th>C3</th>
+          <td><code>=B3-B2</code></td>
+        </tr>
+        <tr>
+          <th>D3</th>
+          <td><code>=IF(C3&gt;0,C3,0)</code></td>
+        </tr>
+        <tr>
+          <th>E3</th>
+          <td><code>=IF(C3&lt;0,-1*C3,0)</code></td>
+        </tr>
+        <tr>
+          <th>D16</th>
+          <td><code>=AVERAGE(D3:D15)</code></td>
+        </tr>
+        <tr>
+          <th>E16</th>
+          <td><code>=AVERAGE(E3:E15)</code></td>
+        </tr>
+        <tr>
+          <th>D17</th>
+          <td><code>=D16/E16</code></td>
+        </tr>
+        <tr>
+          <th>D18</th>
+          <td><code>=IF(D17=0,100,100-(100/(1+D17)))</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Синоніми та аббревіатури:</p>
+    <ul>
+      <li>Relative Strength Index</li>
+      <li>RSI</li>
+      <li>RSI (14)</li>
+    </ul>
+
+    <p>Посилання на джерела:</p>
+    <ul>
+      <li>
+        <a href="https://en.wikipedia.org/wiki/Relative_strength_index">Wikipedia</a>
+      </li>
+      <li>
+        <a href="https://www.investopedia.com/terms/r/rsi.asp">Investopedia</a>
+      </li>
+      <li>
+        <a href="https://www.youtube.com/watch?v=7FvtcVc6S2M">YouTube</a>
+      </li>
+      <li>
+        <a href="https://docs.google.com/spreadsheets/d/1e7EngYnq1yNCJtAPjP7wpJPw3hNg9H7sSxxjFnw8gCs/edit?usp=sharing">Google Sheet</a>
+      </li>
+    </ul>
+  </body>
+</html>

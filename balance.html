@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Balance sheet</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <h1>Balance sheet</h1>
+    <p>Звіт щодо активів та пасивів компанії</p>
+    <p>
+      <picture>
+        <source srcset="images/balance_dark.png" media="(prefers-color-scheme: dark)" />
+        <img src="/images/balance_light.png" alt="balance" />
+      </picture>
+    </p>
+
+    <p>Всюду будемо використовувати цифру як є, без мультиплікаторів, тобто якщо мільони то прямо з шістью нулями і будемо писати. Також у разі нестиковок, з зазначенням цього будемо використовувати цифру зі звіту, а не finviz.</p>
+    <p><a href="https://www.investopedia.com/terms/b/balancesheet.asp">Investopedia</a></p>
+
+    <p>Далі показники що мабуть є найбіль важливими</p>
+
+    <h1>Total Current Assets</h1>
+    <p>
+      <math>
+        <mrow>
+          <mi>Current Assets</mi>
+          <mo>=</mo>
+          <mi>$135,405,000,000</mi>
+        </mrow>
+      </math>
+    </p>
+    <p>Активи компанії, що можна відносно швидко (зазвичай до року) конвертувати в готівку.</p>
+    <p>Цей показник є важливим адже показує наявніть у компанії ресурсу для подолання кризових ситуацій, але з іншого боку наявність занадто великої кількості коштів може свідчити про проблеми з довгостроковим плануванням.</p>
+    <p><a href="https://www.investopedia.com/terms/c/currentassets.asp">Investopedia</a></p>
+
+    <h1>Total Assets</h1>
+    <p>
+      <math>
+        <mrow>
+          <mi>Assets</mi>
+          <mo>=</mo>
+          <mi>$352,755,000,000</mi>
+        </mrow>
+      </math>
+    </p>
+    <p>Всі активи команії (включаючи current assets).</p>
+    <p>Мабуть тут можна провести аналогію з депозитами з правом та без права дострокового розірвання.</p>
+    <p><a href="https://www.investopedia.com/terms/a/asset.asp">Investopedia</a></p>
+
+    <h1>Total Current Liabilities</h1>
+    <p>
+      <math>
+        <mrow>
+          <mi>Current Liabilities</mi>
+          <mo>=</mo>
+          <mi>$153,982,000,000</mi>
+        </mrow>
+      </math>
+    </p>
+    <p>Забовьязання компанії що мають бути погашені найближчим часом (як правило до року).</p>
+    <p><a href="https://www.investopedia.com/terms/c/currentliabilities.asp">Investopedia</a></p>
+
+    <h1>Total Liabilities</h1>
+    <p>
+      <math>
+        <mrow>
+          <mi>Liabilities</mi>
+          <mo>=</mo>
+          <mi>$302,083,000,000</mi>
+        </mrow>
+      </math>
+    </p>
+    <p>Всі забовьязання компанії включно з current liabilities.</p>
+    <p>На відміну від активів це пасиви - тобто як кредити що потрібно виплачувати, і якщое є кредит на рік - він піде в current liabilityies тому що його потрібно буде погасити цього року, а от якась іпотека вже піде в загальні забоьязання (liabilities).</p>
+    <p><a href="https://www.investopedia.com/terms/t/total-liabilities.asp">Investopedia</a></p>
+
+    <h1>Total Equity</h1>
+    <p>
+      <math>
+        <mrow>
+          <mi>Equity</mi>
+          <mo>=</mo>
+          <mi>Assets</mi>
+          <mo>-</mo>
+          <mi>Liabilities</mi>
+          <mo>=</mo>
+          <mi>$352,755,000,000</mi>
+          <mo>-</mo>
+          <mi>$302,083,000,000</mi>
+          <mo>=</mo>
+          <mi>$50,672,000,000</mi>
+        </mrow>
+      </math>
+    </p>
+    <p>Різниця між активами та пасивами.</p>
+    <p>Мабуть не треба бути єкспертом чи мати фінансову освіту задля того щоб зробити виводи з цієї різниці.</p>
+    <p><a href="https://www.investopedia.com/terms/s/shareholdersequity.asp">Investopedia</a></p>
+
+    <h1><a href="/outstanding-shares.html">Total Common Shares Outstanding</a></h1>
+    <p>
+      <math>
+        <mrow>
+          <mi>Shares Outstanding</mi>
+          <mo>=</mo>
+          <mi>15,943,425,000</mi>
+        </mrow>
+      </math>
+    </p>
+    <p>Кілкість акцій в обігу.</p>
+    <p><a href="https://www.investopedia.com/terms/o/outstandingshares.asp">Investopedia</a></p>
+
+    <p>Табличка з розрахунками та формулами</p>
+    <p>
+      <iframe style="width: 322px; height: 238px" title="excel" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdBU3xwE_3m25SW8uaQgjYH8wv3lx7i9bdq2Dh9fl6JXhGKLeo3CzeOoRtc9dFbY0OyVroHeY7dAqD/pubhtml?gid=454462399&amp;single=true&amp;widget=false&amp;headers=true&amp;chrome=false"></iframe>
+    </p>
+
+    <table class="excel">
+      <thead>
+        <tr>
+          <th></th>
+          <th>A</th>
+          <th>B</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>1</th>
+          <th colspan="2">AAPL</th>
+          <th></th>
+        </tr>
+        <tr>
+          <th>2</th>
+          <th nowrap colspan="2">Balance Sheet</th>
+          <th></th>
+        </tr>
+        <tr>
+          <th>3</th>
+          <th nowrap>Total Current Assets</th>
+          <th>135405</th>
+          <td><code>=ABS(INDEX(SPLIT(SUBSTITUTE(REGEXREPLACE(REGEXREPLACE(IMPORTDATA(CONCATENATE("https://finviz.com/api/statement.ashx?t=",$A$1,"&s=BA"),"|"),CONCATENATE(".+",$A3,""":\["""),""),"""\].+",""),""",""","|"),"|"),1,1))</code></td>
+        </tr>
+        <tr>
+          <td colspan="4">&hellip;</td>
+        </tr>
+        <tr>
+          <th>15</th>
+          <th colspan="2">Calculations</th>
+          <th></th>
+        </tr>
+        <tr>
+          <th>10</th>
+          <td nowrap>Total Equity</td>
+          <td>50672</td>
+          <td><code>=B4-B6</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h1>US-GAAP</h1>
+    <p>Маркування показників у звітах. Не залежно від сервісу чи того як позначена цифра в звіті, вона буде промаркована наступним чином:</p>
+    <table class="excel">
+      <thead>
+        <tr>
+          <th>finviz</th>
+          <th>us-gaap</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td nowrap>Total Current Assets</td>
+          <td><code>us-gaap:AssetsCurrent</code></td>
+        </tr>
+        <tr>
+          <td nowrap>Total Assets</td>
+          <td><code>us-gaap:Assets</code></td>
+        </tr>
+        <tr>
+          <td nowrap>Total Current Liabilities</td>
+          <td><code>us-gaap:LiabilitiesCurrent</code></td>
+        </tr>
+        <tr>
+          <td nowrap>Total Liabilities</td>
+          <td><code>us-gaap:Liabilities</code></td>
+        </tr>
+        <tr>
+          <td nowrap>Total Equity</td>
+          <td><code>us-gaap:StockholdersEquity</code></td>
+        </tr>
+        <tr>
+          <td nowrap>Total Common Shares Outstanding</td>
+          <td><code>us-gaap:CommonStockSharesOutstanding</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

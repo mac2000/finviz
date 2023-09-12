@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Value, Total Equity</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <h1>Book Value, Total Equity</h1>
+
+    <p>Чиста вартість компанії &mdash; вартість всих активів мінус вартість всіх пасивів.</p>
+
+    <p>
+      <math>
+        <mrow>
+          <mi>BV</mi>
+          <mo>=</mo>
+          <mi>total_assets</mi>
+          <mo>-</mo>
+          <mi>total_liabilities</mi>
+        </mrow>
+      </math>
+    </p>
+
+    <dl>
+      <dt>total_assets</dt>
+      <dd>
+        <p>Активи компанії (us-gaap:Assets) &mdash; 352,755</p>
+      </dd>
+      <dt>total_liabilities</dt>
+      <dd>
+        <p>Пасиви (us-gaap:Liabilities) &mdash; 302,083</p>
+      </dd>
+    </dl>
+
+    <p>Подивитися можно в звіті &laquo;balance sheet&raquo; значення &laquo;Total Assets&raquo; та &laquo;Total Liabilities&raquo;</p>
+
+    <p>
+      <picture>
+        <source srcset="images/balance_dark.png" media="(prefers-color-scheme: dark)" />
+        <img src="/images/balance_light.png" alt="balance" />
+      </picture>
+    </p>
+
+    <p>Тобто &laquo;чиста&raquo; вартість Apple:</p>
+
+    <p>
+      <math>
+        <mrow>
+          <mi>BV</mi>
+          <mo>=</mo>
+          <mi>total_assets</mi>
+          <mo>-</mo>
+          <mi>total_liabilities</mi>
+          <mo>=</mo>
+          <mi>352,755</mi>
+          <mo>-</mo>
+          <mi>50,672</mi>
+        </mrow>
+      </math>
+    </p>
+
+    <p>Ось так виявляеться компанія з трільйонами грошей, на справді коштує не так багато, адже окрім активів має немаленькі пасиви.</p>
+
+    <p>Примітки:</p>
+    <ul>
+      <li>Total Assets (us-gaap:Assets) - все що є у компанії, наприклад будівлі, обладнання, гроші на рахунках.</li>
+      <li>Total Liabilities (us-gaap:Liabilities) - всі борги компанії такі як кредити, заборженості постачальникам, тощо.</li>
+      <li>Total Current Assets (us-gaap:AssetsCurrent) - частина загальних активів, що може бути швидко (зазвичай до року) конвертована в гроші, це як депозит з можливістью дострокового закриття.</li>
+      <li>Total Current Liabilities (us-gaap:LiabilitiesCurrent) - теж саме, аля для забовьязань компанії.</li>
+    </ul>
+    <p>Примітка: під активами підрозумівається все що є у компанії, наприклад будівлі, обладнання, гроші на рахунках.</p>
+
+    <p>
+      <iframe style="width: 209px; height: 133px" title="excel" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdBU3xwE_3m25SW8uaQgjYH8wv3lx7i9bdq2Dh9fl6JXhGKLeo3CzeOoRtc9dFbY0OyVroHeY7dAqD/pubhtml?gid=769963479&amp;single=true&amp;widget=false&amp;headers=true&amp;chrome=false"></iframe>
+    </p>
+
+    <table class="excel">
+      <thead>
+        <tr>
+          <th></th>
+          <th>A</th>
+          <th>B</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>1</th>
+          <td>Symbol</td>
+          <td>AAPL</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>2</th>
+          <td>Total Assets</td>
+          <td>352755</td>
+          <td><code>=VALUE(SUBSTITUTE(REGEXREPLACE(REGEXREPLACE(IMPORTDATA(CONCATENATE("https://finviz.com/api/statement.ashx?t=",B1,"&s=BA"),"|"),".+Total Assets"":\[""",""),""".+",""),",",""))</code></td>
+        </tr>
+        <tr>
+          <th>3</th>
+          <td>Total Liabilities</td>
+          <td>302083</td>
+          <td><code>=VALUE(SUBSTITUTE(REGEXREPLACE(REGEXREPLACE(IMPORTDATA(CONCATENATE("https://finviz.com/api/statement.ashx?t=",B1,"&s=BA"),"|"),".+Total Liabilities"":\[""",""),""".+",""),",",""))</code></td>
+        </tr>
+        <tr>
+          <th>4</th>
+          <td>Book Value</td>
+          <td>50672</td>
+          <td><code>=B2-B3</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Синоніми та аббревіатури:</p>
+    <ul>
+      <li>Book Value</li>
+      <li>BV</li>
+      <li>Total Equity</li>
+      <li>Total shareholders equity</li>
+      <li>us-gaap:StockholdersEquity</li>
+    </ul>
+
+    <p>Використовується в разрахунках:</p>
+    <ul>
+      <li>
+        <a href="/bvps.html">Book Value per Share (BVPS)</a>
+      </li>
+    </ul>
+
+    <p>Посилання на джерела:</p>
+    <ul>
+      <li>
+        <a href="https://en.wikipedia.org/wiki/Book_value">Wikipedia</a>
+      </li>
+      <li>
+        <a href="https://www.investopedia.com/terms/b/bookvalue.asp">Investopedia</a>
+      </li>
+      <li>
+        <a href="https://docs.google.com/spreadsheets/d/1e7EngYnq1yNCJtAPjP7wpJPw3hNg9H7sSxxjFnw8gCs/edit?usp=sharing">Google Sheet</a>
+      </li>
+    </ul>
+  </body>
+</html>

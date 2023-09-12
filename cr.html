@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Current Raio</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <h1>Current Raio</h1>
+
+    <p>Співвідношення між швидкими активами та пасивами. Показує спроможність компанії сплатити короткострокові борги.</p>
+
+    <p>
+      <math>
+        <mrow>
+          <mi>Current Ratio</mi>
+          <mo>=</mo>
+          <mfrac>
+            <mi>Total Current Assets</mi>
+            <mi>Total Current Liabilities</mi>
+          </mfrac>
+        </mrow>
+      </math>
+    </p>
+
+    <dl>
+      <dt>Total Current Assets</dt>
+      <dd>
+        <p>Швидкі активи компанії (us-gaap:AssetsCurrent), те що можна швидко ковертувати в кошти &mdash; 135,405.00</p>
+      </dd>
+      <dt>Total Current Liabilities</dt>
+      <dd>
+        <p>Пасиви (us-gaap:LiabilitiesCurrent) що потрібно оплатити в найближчий (як правило один рік) час &mdash; 153,982.00</p>
+      </dd>
+    </dl>
+
+    <p>Подивитися можно в звіті &laquo;balance sheet&raquo; значення &laquo;Total Current Assets&raquo; та &laquo;Total Current Liabilities&raquo;</p>
+
+    <p>
+      <picture>
+        <source srcset="images/balance_dark.png" media="(prefers-color-scheme: dark)" />
+        <img src="/images/balance_light.png" alt="balance" />
+      </picture>
+    </p>
+
+    <p>Тобто для Apple це буде:</p>
+
+    <p>
+      <math>
+        <mrow>
+          <mi>Current Ratio</mi>
+          <mo>=</mo>
+          <mfrac>
+            <mi>Total Current Assets</mi>
+            <mi>Total Current Liabilities</mi>
+          </mfrac>
+          <mo>=</mo>
+          <mfrac>
+            <mi>135,405.00</mi>
+            <mi>153,982.00</mi>
+          </mfrac>
+          <mo>=</mo>
+          <mi>0.87</mi>
+        </mrow>
+      </math>
+    </p>
+
+    <p>Технічно, показник менший за одиницю не дуже добре, так як в разі чого, компанія не зможе погасити короткострокові борги. Але на практиці багато насправді гарних компаній мают такий показник. Важливо розуміти, що цей показник це лише цифра на конкретний період і не варто розглядати її на довгому проміжку часу.</p>
+    <p>Є ще один гарний приклад - якщо у компаній цей показник дорівнює 3 це мало було б бути добре, адже компанія може тричи виплатити всі свої борги наступного року, але з іншого боку, це може свідчити про неспроможність керівнитства ефективно використовувати коротко строкові активи, що вже не є дуже добре.</p>
+    <p>За для більшої впененности цей показник слід розглядати в часі, як він змінюється та який тренд має в цілому.</p>
+
+    <p>
+      <iframe style="width: 245px; height: 133px" title="excel" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdBU3xwE_3m25SW8uaQgjYH8wv3lx7i9bdq2Dh9fl6JXhGKLeo3CzeOoRtc9dFbY0OyVroHeY7dAqD/pubhtml?gid=1804026605&amp;single=true&amp;widget=false&amp;headers=true&amp;chrome=false"></iframe>
+    </p>
+
+    <table class="excel">
+      <thead>
+        <tr>
+          <th></th>
+          <th>A</th>
+          <th>B</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>1</th>
+          <td>Symbol</td>
+          <td>AAPL</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>2</th>
+          <td>Current Ratio</td>
+          <td>1.00</td>
+          <td><code>=VALUE(INDEX(ARRAYFORMULA(REGEXREPLACE(IMPORTHTML(CONCATENATE("https://finviz.com/quote.ashx?t=",B1),"table","10"),"\*","")),9,4))</code></td>
+        </tr>
+        <tr>
+          <th>3</th>
+          <td>Total Current Assets</td>
+          <td>135405</td>
+          <td><code>=VALUE(SUBSTITUTE(REGEXREPLACE(REGEXREPLACE(IMPORTDATA(CONCATENATE("https://finviz.com/api/statement.ashx?t=",B1,"&s=BA"),"|"),".+Total Current Assets"":\[""",""),""".+",""),",",""))</code></td>
+        </tr>
+        <tr>
+          <th>4</th>
+          <td>Total Current Liabilities</td>
+          <td>153982</td>
+          <td><code>=VALUE(SUBSTITUTE(REGEXREPLACE(REGEXREPLACE(IMPORTDATA(CONCATENATE("https://finviz.com/api/statement.ashx?t=",B1,"&s=BA"),"|"),".+Total Current Liabilities"":\[""",""),""".+",""),",",""))</code></td>
+        </tr>
+        <tr>
+          <th>5</th>
+          <td>calculated</td>
+          <td>0.88</td>
+          <td><code>=B3/B4</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Синоніми та аббревіатури:</p>
+    <ul>
+      <li>Current Ratio</li>
+      <li>CR</li>
+    </ul>
+
+    <p>Посилання на джерела:</p>
+    <ul>
+      <li>
+        <a href="https://en.wikipedia.org/wiki/Current_ratio">Wikipedia</a>
+      </li>
+      <li>
+        <a href="https://www.investopedia.com/terms/c/currentratio.asp">Investopedia</a>
+      </li>
+      <li>
+        <a href="https://docs.google.com/spreadsheets/d/1e7EngYnq1yNCJtAPjP7wpJPw3hNg9H7sSxxjFnw8gCs/edit?usp=sharing">Google Sheet</a>
+      </li>
+    </ul>
+  </body>
+</html>
