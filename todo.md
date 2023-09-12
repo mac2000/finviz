@@ -1,7 +1,0 @@
-- [ ] homepage
-- [ ] chart
-- [ ] table
-- [ ] reports (income, balance, cash)
-- [ ] analysts
-- [ ] insiders
-- [ ] us-gaap
