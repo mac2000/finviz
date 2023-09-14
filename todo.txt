@@ -47,8 +47,3 @@ revenue.html
 roa.html
 roe.html
 roi.html
-rsi.html
-short-interest.html
-sma.html
-target-price.html
-volatility.html
