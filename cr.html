@@ -123,6 +123,62 @@
       <li>CR</li>
     </ul>
 
+    <p>Зв'язки:</p>
+    <p class="graph">
+      <!--
+      http://localhost:3000/graphviz.html#digraph%20%7B%0A%20%20rankdir%3D%22LR%22%0A%20%20%0A%20%20tca%5Blabel%3D%22Total%20Current%20Assets%22%2C%20URL%3D%22%2Fbalance.html%22%5D%0A%20%20tcl%5Blabel%3D%22Total%20Current%20Liabilities%22%2C%20URL%3D%22%2Fbalance.html%22%5D%0A%20%20cr%5Blabel%3D%22Current%20Ratio%22%2C%20URL%3D%22%2Fcr.html%22%5D%0A%20%20%0A%20%20tca%20-%3E%20cr%0A%20%20tcl%20-%3E%20cr%0A%7D
+      -->
+      <svg width="382pt" height="98pt" viewBox="0.00 0.00 381.55 98.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 94)">
+          <polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-94 377.5472,-94 377.5472,4 -4,4" />
+          <g id="node1" class="node">
+            <g id="a_node1">
+              <a xlink:href="/balance.html" xlink:title="Total Current Assets">
+                <ellipse fill="none" stroke="#000000" cx="104.903" cy="-72" rx="90.9051" ry="18" />
+                <text text-anchor="middle" x="104.903" y="-67.8" font-family="Times,serif" font-size="14.00" fill="#000000">Total Current Assets</text>
+              </a>
+            </g>
+          </g>
+          <g id="node3" class="node">
+            <g id="a_node3">
+              <a xlink:href="/cr.html" xlink:title="Current Ratio">
+                <ellipse fill="none" stroke="#000000" cx="309.6766" cy="-45" rx="63.7415" ry="18" />
+                <text text-anchor="middle" x="309.6766" y="-40.8" font-family="Times,serif" font-size="14.00" fill="#000000">Current Ratio</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge1" class="edge">
+            <path fill="none" stroke="#000000" d="M180.8621,-61.9846C200.8288,-59.3519 222.2349,-56.5294 241.7502,-53.9563" />
+            <polygon fill="#000000" stroke="#000000" points="242.3088,-57.413 251.7655,-52.6357 241.3937,-50.4731 242.3088,-57.413" />
+          </g>
+          <g id="node2" class="node">
+            <g id="a_node2">
+              <a xlink:href="/balance.html" xlink:title="Total Current Liabilities">
+                <ellipse fill="none" stroke="#000000" cx="104.903" cy="-18" rx="104.806" ry="18" />
+                <text text-anchor="middle" x="104.903" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">Total Current Liabilities</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge2" class="edge">
+            <path fill="none" stroke="#000000" d="M188.1922,-28.9819C205.798,-31.3033 224.1848,-33.7277 241.1696,-35.9672" />
+            <polygon fill="#000000" stroke="#000000" points="241.1727,-39.4978 251.5444,-37.3351 242.0878,-32.5578 241.1727,-39.4978" />
+          </g>
+        </g>
+      </svg>
+      <!--
+      digraph {
+        rankdir="LR"
+
+        tca[label="Total Current Assets", URL="/balance.html"]
+        tcl[label="Total Current Liabilities", URL="/balance.html"]
+        cr[label="Current Ratio", URL="/cr.html"]
+
+        tca -> cr
+        tcl -> cr
+      }
+      -->
+    </p>
+
     <p>Посилання на джерела:</p>
     <ul>
       <li>

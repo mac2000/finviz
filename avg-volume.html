@@ -34,6 +34,48 @@
       <li>Avg Volume</li>
     </ul>
 
+    <p>Зв'язки:</p>
+    <p class="graph">
+      <!--
+      http://localhost:3000/graphviz.html#digraph%20%7B%0A%20%20rankdir%3D%22LR%22%0A%20%20%0A%20%20v%5Blabel%3D%22Volume%22%2C%20URL%3D%22%2Fvolume.html%22%5D%0A%20%20av%5Blabel%3D%22Average%20Volume%22%2C%20URL%3D%22%2Favg-volume.html%22%5D%0A%20%20%0A%20%20v%20-%3E%20av%0A%7D
+      -->
+      <svg width="283pt" height="44pt" viewBox="0.00 0.00 282.82 44.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 40)">
+          <polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-40 278.8242,-40 278.8242,4 -4,4" />
+          <g id="node1" class="node">
+            <g id="a_node1">
+              <a xlink:href="/volume.html" xlink:title="Volume">
+                <ellipse fill="none" stroke="#000000" cx="42.1473" cy="-18" rx="42.2952" ry="18" />
+                <text text-anchor="middle" x="42.1473" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">Volume</text>
+              </a>
+            </g>
+          </g>
+          <g id="node2" class="node">
+            <g id="a_node2">
+              <a xlink:href="/avg-volume.html" xlink:title="Average Volume">
+                <ellipse fill="none" stroke="#000000" cx="197.5594" cy="-18" rx="77.0303" ry="18" />
+                <text text-anchor="middle" x="197.5594" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">Average Volume</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge1" class="edge">
+            <path fill="none" stroke="#000000" d="M84.6144,-18C92.646,-18 101.3149,-18 110.1538,-18" />
+            <polygon fill="#000000" stroke="#000000" points="110.1807,-21.5001 120.1806,-18 110.1806,-14.5001 110.1807,-21.5001" />
+          </g>
+        </g>
+      </svg>
+      <!--
+      digraph {
+        rankdir="LR"
+
+        v[label="Volume", URL="/volume.html"]
+        av[label="Average Volume", URL="/avg-volume.html"]
+
+        v -> av
+      }
+      -->
+    </p>
+
     <p>Посилання на джерела:</p>
     <ul>
       <li>

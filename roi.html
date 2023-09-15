@@ -42,6 +42,48 @@
     <p>Тобто якщо купив акцію за $100, а через якийсь час продав за $120 - ROI = 20%.</p>
     <p>В цьому контексті взагалі не зрозуміло, що саме показує finviz, спроби порахувати за місяць, квартал, рік, три, п'ять не дають схожих результатів. Добре, у випадку з Apple більш менш збігається за три роки.</p>
 
+    <p>Зв'язки:</p>
+    <p class="graph">
+      <!--
+      http://localhost:3000/graphviz.html#digraph%20%7B%0A%20%20rankdir%3D%22LR%22%0A%20%20%0A%20%20p%5Blabel%3D%22Price%22%2C%20URL%3D%22%2Fprice.html%22%5D%0A%20%20roi%5Blabel%3D%22Return%20on%20Investment%20(ROI)%22%2C%20URL%3D%22%2Froi.html%22%5D%0A%20%20%0A%20%20p%20-%3E%20roi%0A%7D
+      -->
+      <svg width="346pt" height="44pt" viewBox="0.00 0.00 346.12 44.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 40)">
+          <polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-40 342.1197,-40 342.1197,4 -4,4" />
+          <g id="node1" class="node">
+            <g id="a_node1">
+              <a xlink:href="/price.html" xlink:title="Price">
+                <ellipse fill="none" stroke="#000000" cx="30.8767" cy="-18" rx="30.7539" ry="18" />
+                <text text-anchor="middle" x="30.8767" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">Price</text>
+              </a>
+            </g>
+          </g>
+          <g id="node2" class="node">
+            <g id="a_node2">
+              <a xlink:href="/roi.html" xlink:title="Return on Investment (ROI)">
+                <ellipse fill="none" stroke="#000000" cx="217.9366" cy="-18" rx="120.3666" ry="18" />
+                <text text-anchor="middle" x="217.9366" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">Return on Investment (ROI)</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge1" class="edge">
+            <path fill="none" stroke="#000000" d="M61.7658,-18C69.3864,-18 78.0339,-18 87.2567,-18" />
+            <polygon fill="#000000" stroke="#000000" points="87.4691,-21.5001 97.469,-18 87.469,-14.5001 87.4691,-21.5001" />
+          </g>
+        </g>
+      </svg>
+      <!--
+      digraph {
+        rankdir="LR"
+
+        p[label="Price", URL="/price.html"]
+        roi[label="Return on Investment (ROI)", URL="/roi.html"]
+
+        p -> roi
+      }
+      -->
+    </p>
+
     <p>Wikipedia дала ще одну гарну ідею розрахунку трохи з іншого боку та іншого показника</p>
     <p>
       <math>
@@ -103,6 +145,58 @@
       <li>Return on Investment</li>
       <li>ROI</li>
     </ul>
+
+    <p>Зв'язки:</p>
+    <p class="graph">
+      <!--
+      http://localhost:3000/graphviz.html#digraph%20%7B%0A%20%20rankdir%3D%22LR%22%0A%20%20%0A%20%20r%5Blabel%3D%22Total%20Revenue%22%2C%20URL%3D%22%2Frevenue.html%22%5D%0A%20%20cogs%5Blabel%3D%22Cost%20of%20Revenue%20(COGS)%22%5D%0A%20%20roi%5Blabel%3D%22Return%20on%20Investment%20(ROI)%22%2C%20URL%3D%22%2Froi.html%22%5D%0A%20%20%0A%20%20r%20-%3E%20roi%0A%20%20cogs%20-%3E%20roi%0A%7D
+      -->
+      <svg width="504pt" height="98pt" viewBox="0.00 0.00 504.36 98.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 94)">
+          <polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-94 500.3603,-94 500.3603,4 -4,4" />
+          <g id="node1" class="node">
+            <g id="a_node1">
+              <a xlink:href="/revenue.html" xlink:title="Total Revenue">
+                <ellipse fill="none" stroke="#000000" cx="109.997" cy="-72" rx="67.7372" ry="18" />
+                <text text-anchor="middle" x="109.997" y="-67.8" font-family="Times,serif" font-size="14.00" fill="#000000">Total Revenue</text>
+              </a>
+            </g>
+          </g>
+          <g id="node3" class="node">
+            <g id="a_node3">
+              <a xlink:href="/roi.html" xlink:title="Return on Investment (ROI)">
+                <ellipse fill="none" stroke="#000000" cx="376.1772" cy="-45" rx="120.3666" ry="18" />
+                <text text-anchor="middle" x="376.1772" y="-40.8" font-family="Times,serif" font-size="14.00" fill="#000000">Return on Investment (ROI)</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge1" class="edge">
+            <path fill="none" stroke="#000000" d="M173.4156,-65.5671C201.2358,-62.7452 234.7123,-59.3495 266.374,-56.1379" />
+            <polygon fill="#000000" stroke="#000000" points="266.9848,-59.594 276.5806,-55.1026 266.2784,-52.6297 266.9848,-59.594" />
+          </g>
+          <g id="node2" class="node">
+            <ellipse fill="none" stroke="#000000" cx="109.997" cy="-18" rx="109.994" ry="18" />
+            <text text-anchor="middle" x="109.997" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">Cost of Revenue (COGS)</text>
+          </g>
+          <g id="edge2" class="edge">
+            <path fill="none" stroke="#000000" d="M203.8422,-27.5192C224.037,-29.5676 245.5557,-31.7504 266.2982,-33.8544" />
+            <polygon fill="#000000" stroke="#000000" points="266.1071,-37.3529 276.4093,-34.88 266.8136,-30.3886 266.1071,-37.3529" />
+          </g>
+        </g>
+      </svg>
+      <!--
+      digraph {
+        rankdir="LR"
+
+        r[label="Total Revenue", URL="/revenue.html"]
+        cogs[label="Cost of Revenue (COGS)"]
+        roi[label="Return on Investment (ROI)", URL="/roi.html"]
+
+        r -> roi
+        cogs -> roi
+      }
+      -->
+    </p>
 
     <p>Посилання на джерела:</p>
     <ul>

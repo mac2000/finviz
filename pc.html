@@ -136,6 +136,90 @@
       <li>price-to-cash ratio</li>
     </ul>
 
+    <p>Зв'язки:</p>
+    <p class="graph">
+      <!--
+      http://localhost:3000/graphviz.html#digraph%20%7B%0A%20%20rankdir%3D%22LR%22%0A%0A%20%20s%5Blabel%3D%22Shares%20Outstanding%22%2C%20URL%3D%22%2Foutstanding-shares.html%22%5D%0A%20%20cps%5Blabel%3D%22Cash%20per%20Share%20(CPS)%22%2C%20URL%3D%22%2Fcps.html%22%5D%0A%20%20p%5Blabel%3D%22Price%22%2C%20URL%3D%22%2Fprice.html%22%5D%0A%20%20c%5Blabel%3D%22Cash%20and%20cash%20equivalents%22%2C%20URL%3D%22%2Fcash.html%22%5D%0A%20%20pc%5Blabel%3D%22Price%20to%20Cash%20(P%2FC)%22%2C%20URL%3D%22%2Fpc.html%22%5D%0A%0A%20%20s%20-%3E%20cps%0A%20%20c%20-%3E%20cps%0A%20%20cps%20-%3E%20pc%0A%20%20p%20-%3E%20pc%0A%7D
+      -->
+      <svg width="668pt" height="125pt" viewBox="0.00 0.00 668.10 125.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 121)">
+          <polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-121 664.0958,-121 664.0958,4 -4,4" />
+          <g id="node1" class="node">
+            <g id="a_node1">
+              <a xlink:href="/outstanding-shares.html" xlink:title="Shares Outstanding">
+                <ellipse fill="none" stroke="#000000" cx="112.672" cy="-99" rx="86.2968" ry="18" />
+                <text text-anchor="middle" x="112.672" y="-94.8" font-family="Times,serif" font-size="14.00" fill="#000000">Shares Outstanding</text>
+              </a>
+            </g>
+          </g>
+          <g id="node2" class="node">
+            <g id="a_node2">
+              <a xlink:href="/cps.html" xlink:title="Cash per Share (CPS)">
+                <ellipse fill="none" stroke="#000000" cx="356.8556" cy="-72" rx="95.5232" ry="18" />
+                <text text-anchor="middle" x="356.8556" y="-67.8" font-family="Times,serif" font-size="14.00" fill="#000000">Cash per Share (CPS)</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge1" class="edge">
+            <path fill="none" stroke="#000000" d="M189.2632,-90.5311C212.9884,-87.9078 239.3886,-84.9886 264.0871,-82.2576" />
+            <polygon fill="#000000" stroke="#000000" points="264.6327,-85.7187 274.1875,-81.1408 263.8634,-78.7611 264.6327,-85.7187" />
+          </g>
+          <g id="node5" class="node">
+            <g id="a_node5">
+              <a xlink:href="/pc.html" xlink:title="Price to Cash (P/C)">
+                <ellipse fill="none" stroke="#000000" cx="574.2315" cy="-45" rx="85.7288" ry="18" />
+                <text text-anchor="middle" x="574.2315" y="-40.8" font-family="Times,serif" font-size="14.00" fill="#000000">Price to Cash (P/C)</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge3" class="edge">
+            <path fill="none" stroke="#000000" d="M436.8723,-62.0612C454.1767,-59.9119 472.5255,-57.6328 489.9866,-55.464" />
+            <polygon fill="#000000" stroke="#000000" points="490.6579,-58.9076 500.1502,-54.2015 489.795,-51.9609 490.6579,-58.9076" />
+          </g>
+          <g id="node3" class="node">
+            <g id="a_node3">
+              <a xlink:href="/price.html" xlink:title="Price">
+                <ellipse fill="none" stroke="#000000" cx="356.8556" cy="-18" rx="30.7539" ry="18" />
+                <text text-anchor="middle" x="356.8556" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">Price</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge4" class="edge">
+            <path fill="none" stroke="#000000" d="M387.0808,-21.7542C413.739,-25.0654 453.8816,-30.0515 490.1617,-34.5578" />
+            <polygon fill="#000000" stroke="#000000" points="489.9225,-38.0549 500.2777,-35.8143 490.7854,-31.1083 489.9225,-38.0549" />
+          </g>
+          <g id="node4" class="node">
+            <g id="a_node4">
+              <a xlink:href="/cash.html" xlink:title="Cash and cash equivalents">
+                <ellipse fill="none" stroke="#000000" cx="112.672" cy="-45" rx="112.8442" ry="18" />
+                <text text-anchor="middle" x="112.672" y="-40.8" font-family="Times,serif" font-size="14.00" fill="#000000">Cash and cash equivalents</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge2" class="edge">
+            <path fill="none" stroke="#000000" d="M205.3355,-55.246C224.6371,-57.3803 244.9822,-59.6299 264.2806,-61.7638" />
+            <polygon fill="#000000" stroke="#000000" points="263.9418,-65.2475 274.266,-62.8679 264.7112,-58.2899 263.9418,-65.2475" />
+          </g>
+        </g>
+      </svg>
+      <!--
+      digraph {
+        rankdir="LR"
+
+        s[label="Shares Outstanding", URL="/outstanding-shares.html"]
+        cps[label="Cash per Share (CPS)", URL="/cps.html"]
+        p[label="Price", URL="/price.html"]
+        c[label="Cash and cash equivalents", URL="/cash.html"]
+        pc[label="Price to Cash (P/C)", URL="/pc.html"]
+
+        s -> cps
+        c -> cps
+        cps -> pc
+        p -> pc
+      }
+      -->
+    </p>
+
     <p>Посилання на джерела:</p>
     <ul>
       <li>

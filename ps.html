@@ -133,6 +133,91 @@
       <li>PSR</li>
     </ul>
 
+    <p>Зв'язки:</p>
+    <p class="graph">
+      <!--
+      http://localhost:3000/graphviz.html#digraph%20%7B%0A%20%20rankdir%3D%22LR%22%0A%20%20%0A%20%20p%5Blabel%3D%22Price%22%2C%20URL%3D%22%2Fprice.html%22%5D%0A%20%20s%5Blabel%3D%22Outstanding%20Shares%22%2C%20URL%3D%22outstanding-shares.html%22%5D%0A%20%20r%5Blabel%3D%22Total%20Revenue%22%2C%20URL%3D%22%2Frevenue.html%22%5D%0A%20%20mc%5Blabel%3D%22Market%20Cap%22%2C%20URL%3D%22%2Fmarket-cap.html%22%5D%0A%20%20ps%5Blabel%3D%22Price%20to%20Sales%20(P%2FS)%22%2C%20URL%3D%22%2Fps.html%22%5D%0A%20%20%0A%20%20s%20-%3E%20mc%0A%20%20p%20-%3E%20mc%0A%20%20mc%20-%3E%20ps%0A%20%20r%20-%3E%20ps%0A%20%20%0A%7D
+      -->
+      <svg width="560pt" height="125pt" viewBox="0.00 0.00 559.76 125.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 121)">
+          <polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-121 555.7584,-121 555.7584,4 -4,4" />
+          <g id="node1" class="node">
+            <g id="a_node1">
+              <a xlink:href="/price.html" xlink:title="Price">
+                <ellipse fill="none" stroke="#000000" cx="86.3983" cy="-99" rx="30.7539" ry="18" />
+                <text text-anchor="middle" x="86.3983" y="-94.8" font-family="Times,serif" font-size="14.00" fill="#000000">Price</text>
+              </a>
+            </g>
+          </g>
+          <g id="node4" class="node">
+            <g id="a_node4">
+              <a xlink:href="/market-cap.html" xlink:title="Market Cap">
+                <ellipse fill="none" stroke="#000000" cx="276.4152" cy="-72" rx="56.7814" ry="18" />
+                <text text-anchor="middle" x="276.4152" y="-67.8" font-family="Times,serif" font-size="14.00" fill="#000000">Market Cap</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge2" class="edge">
+            <path fill="none" stroke="#000000" d="M116.5071,-94.7218C142.6821,-91.0025 181.4459,-85.4944 214.2519,-80.8329" />
+            <polygon fill="#000000" stroke="#000000" points="214.8131,-84.2884 224.2212,-79.4164 213.8283,-77.3581 214.8131,-84.2884" />
+          </g>
+          <g id="node2" class="node">
+            <g id="a_node2">
+              <a xlink:href="outstanding-shares.html" xlink:title="Outstanding Shares">
+                <ellipse fill="none" stroke="#000000" cx="86.3983" cy="-45" rx="86.2968" ry="18" />
+                <text text-anchor="middle" x="86.3983" y="-40.8" font-family="Times,serif" font-size="14.00" fill="#000000">Outstanding Shares</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge1" class="edge">
+            <path fill="none" stroke="#000000" d="M157.9648,-55.1691C176.5192,-57.8055 196.3458,-60.6227 214.3667,-63.1834" />
+            <polygon fill="#000000" stroke="#000000" points="214.0649,-66.6756 224.4579,-64.6173 215.0497,-59.7452 214.0649,-66.6756" />
+          </g>
+          <g id="node3" class="node">
+            <g id="a_node3">
+              <a xlink:href="/revenue.html" xlink:title="Total Revenue">
+                <ellipse fill="none" stroke="#000000" cx="276.4152" cy="-18" rx="67.7372" ry="18" />
+                <text text-anchor="middle" x="276.4152" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">Total Revenue</text>
+              </a>
+            </g>
+          </g>
+          <g id="node5" class="node">
+            <g id="a_node5">
+              <a xlink:href="/ps.html" xlink:title="Price to Sales (P/S)">
+                <ellipse fill="none" stroke="#000000" cx="465.896" cy="-45" rx="85.725" ry="18" />
+                <text text-anchor="middle" x="465.896" y="-40.8" font-family="Times,serif" font-size="14.00" fill="#000000">Price to Sales (P/S)</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge4" class="edge">
+            <path fill="none" stroke="#000000" d="M336.108,-26.5059C351.4695,-28.6948 368.2619,-31.0877 384.5187,-33.4042" />
+            <polygon fill="#000000" stroke="#000000" points="384.1603,-36.8884 394.5541,-34.8342 385.1479,-29.9584 384.1603,-36.8884" />
+          </g>
+          <g id="edge3" class="edge">
+            <path fill="none" stroke="#000000" d="M328.4423,-64.5864C345.8886,-62.1004 365.7789,-59.2661 384.9054,-56.5407" />
+            <polygon fill="#000000" stroke="#000000" points="385.4145,-60.0036 394.8207,-55.1278 384.427,-53.0736 385.4145,-60.0036" />
+          </g>
+        </g>
+      </svg>
+      <!--
+      digraph {
+        rankdir="LR"
+
+        p[label="Price", URL="/price.html"]
+        s[label="Outstanding Shares", URL="outstanding-shares.html"]
+        r[label="Total Revenue", URL="/revenue.html"]
+        mc[label="Market Cap", URL="/market-cap.html"]
+        ps[label="Price to Sales (P/S)", URL="/ps.html"]
+
+        s -> mc
+        p -> mc
+        mc -> ps
+        r -> ps
+
+      }
+      -->
+    </p>
+
     <p>Посилання на джерела:</p>
     <ul>
       <li>

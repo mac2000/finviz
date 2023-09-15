@@ -150,6 +150,119 @@
       <li>P/FCF</li>
     </ul>
 
+    <p>Зв'язки:</p>
+    <p class="graph">
+      <!--
+      http://localhost:3000/graphviz.html#digraph%20%7B%0A%20%20rankdir%3D%22LR%22%0A%20%20%0A%20%20s%5Blabel%3D%22Outstanding%20Shares%22%2C%20URL%3D%22%2Foutstanding-shares.html%22%5D%0A%20%20p%5Blabel%3D%22Price%22%2C%20URL%3D%22%2Fprice.html%22%5D%0A%20%20mc%5Blabel%3D%22Market%20Cap%22%2C%20URL%3D%22%2F%22%5D%0A%20%20pfcf%5Blabel%3D%22Price%20to%20Free%20Cash%20Flow%20(P%2FFCF)%22%2C%20URL%3D%22%2Fpfcf.html%22%5D%0A%20%20fcf%5Blabel%3D%22Free%20Cash%20Flow%20(FCF)%22%2C%20URL%3D%22%2Fcash.html%22%5D%0A%20%20ocf%5Blabel%3D%22Cash%20from%20Operating%20Activities%22%2C%20URL%3D%22%2Fcash.html%22%5D%0A%20%20capex%5Blabel%3D%22Capital%20Expenditures%20(CAPEX)%22%2C%20URL%3D%22%2Fcash.html%22%5D%0A%20%20%0A%20%20s%20-%3E%20mc%0A%20%20p%20-%3E%20mc%0A%20%20mc%20-%3E%20pfcf%0A%20%20%0A%20%20ocf%20-%3E%20fcf%0A%20%20capex%20-%3E%20fcf%0A%20%20fcf%20-%3E%20pfcf%0A%7D
+      -->
+      <svg width="819pt" height="206pt" viewBox="0.00 0.00 818.87 206.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 202)">
+          <polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-202 814.8677,-202 814.8677,4 -4,4" />
+          <g id="node1" class="node">
+            <g id="a_node1">
+              <a xlink:href="/outstanding-shares.html" xlink:title="Outstanding Shares">
+                <ellipse fill="none" stroke="#000000" cx="132.7913" cy="-180" rx="86.2968" ry="18" />
+                <text text-anchor="middle" x="132.7913" y="-175.8" font-family="Times,serif" font-size="14.00" fill="#000000">Outstanding Shares</text>
+              </a>
+            </g>
+          </g>
+          <g id="node3" class="node">
+            <g id="a_node3">
+              <a xlink:href="/" xlink:title="Market Cap">
+                <ellipse fill="none" stroke="#000000" cx="399.7874" cy="-126" rx="56.7814" ry="18" />
+                <text text-anchor="middle" x="399.7874" y="-121.8" font-family="Times,serif" font-size="14.00" fill="#000000">Market Cap</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge1" class="edge">
+            <path fill="none" stroke="#000000" d="M195.053,-167.4076C239.3696,-158.4445 298.4981,-146.4858 341.8154,-137.7248" />
+            <polygon fill="#000000" stroke="#000000" points="342.528,-141.1517 351.6357,-135.7387 341.1403,-134.2906 342.528,-141.1517" />
+          </g>
+          <g id="node2" class="node">
+            <g id="a_node2">
+              <a xlink:href="/price.html" xlink:title="Price">
+                <ellipse fill="none" stroke="#000000" cx="132.7913" cy="-126" rx="30.7539" ry="18" />
+                <text text-anchor="middle" x="132.7913" y="-121.8" font-family="Times,serif" font-size="14.00" fill="#000000">Price</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge2" class="edge">
+            <path fill="none" stroke="#000000" d="M163.68,-126C204.753,-126 278.4572,-126 332.6252,-126" />
+            <polygon fill="#000000" stroke="#000000" points="332.8411,-129.5001 342.8411,-126 332.841,-122.5001 332.8411,-129.5001" />
+          </g>
+          <g id="node4" class="node">
+            <g id="a_node4">
+              <a xlink:href="/pfcf.html" xlink:title="Price to Free Cash Flow (P/FCF)">
+                <ellipse fill="none" stroke="#000000" cx="672.43" cy="-99" rx="138.3754" ry="18" />
+                <text text-anchor="middle" x="672.43" y="-94.8" font-family="Times,serif" font-size="14.00" fill="#000000">Price to Free Cash Flow (P/FCF)</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge3" class="edge">
+            <path fill="none" stroke="#000000" d="M454.3055,-120.601C482.4514,-117.8137 517.9802,-114.2953 552.1463,-110.9118" />
+            <polygon fill="#000000" stroke="#000000" points="552.6095,-114.3831 562.2159,-109.9146 551.9196,-107.4172 552.6095,-114.3831" />
+          </g>
+          <g id="node5" class="node">
+            <g id="a_node5">
+              <a xlink:href="/cash.html" xlink:title="Free Cash Flow (FCF)">
+                <ellipse fill="none" stroke="#000000" cx="399.7874" cy="-72" rx="98.4103" ry="18" />
+                <text text-anchor="middle" x="399.7874" y="-67.8" font-family="Times,serif" font-size="14.00" fill="#000000">Free Cash Flow (FCF)</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge6" class="edge">
+            <path fill="none" stroke="#000000" d="M486.4279,-80.5801C507.2512,-82.6422 529.8662,-84.8818 551.9215,-87.0659" />
+            <polygon fill="#000000" stroke="#000000" points="551.7109,-90.5621 562.0072,-88.0647 552.4008,-83.5962 551.7109,-90.5621" />
+          </g>
+          <g id="node6" class="node">
+            <g id="a_node6">
+              <a xlink:href="/cash.html" xlink:title="Cash from Operating Activities">
+                <ellipse fill="none" stroke="#000000" cx="132.7913" cy="-72" rx="132.5398" ry="18" />
+                <text text-anchor="middle" x="132.7913" y="-67.8" font-family="Times,serif" font-size="14.00" fill="#000000">Cash from Operating Activities</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge4" class="edge">
+            <path fill="none" stroke="#000000" d="M265.5071,-72C274.0673,-72 282.6317,-72 291.0596,-72" />
+            <polygon fill="#000000" stroke="#000000" points="291.2627,-75.5001 301.2627,-72 291.2627,-68.5001 291.2627,-75.5001" />
+          </g>
+          <g id="node7" class="node">
+            <g id="a_node7">
+              <a xlink:href="/cash.html" xlink:title="Capital Expenditures (CAPEX)">
+                <ellipse fill="none" stroke="#000000" cx="132.7913" cy="-18" rx="132.5829" ry="18" />
+                <text text-anchor="middle" x="132.7913" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">Capital Expenditures (CAPEX)</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge5" class="edge">
+            <path fill="none" stroke="#000000" d="M206.81,-32.9703C243.205,-40.3312 287.0137,-49.1915 323.6853,-56.6083" />
+            <polygon fill="#000000" stroke="#000000" points="323.3318,-60.1076 333.8272,-58.6595 324.7195,-53.2466 323.3318,-60.1076" />
+          </g>
+        </g>
+      </svg>
+      <!--
+      digraph {
+        rankdir="LR"
+
+        s[label="Outstanding Shares", URL="/outstanding-shares.html"]
+        p[label="Price", URL="/price.html"]
+        mc[label="Market Cap", URL="/"]
+        pfcf[label="Price to Free Cash Flow (P/FCF)", URL="/pfcf.html"]
+        fcf[label="Free Cash Flow (FCF)", URL="/cash.html"]
+        ocf[label="Cash from Operating Activities", URL="/cash.html"]
+        capex[label="Capital Expenditures (CAPEX)", URL="/cash.html"]
+
+        s -> mc
+        p -> mc
+        mc -> pfcf
+
+        ocf -> fcf
+        capex -> fcf
+        fcf -> pfcf
+      }
+      -->
+    </p>
+
     <p>Посилання на джерела:</p>
     <ul>
       <li>

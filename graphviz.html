@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GraphViz Editor</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <meta name="robots" content="noindex, nofollow" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/viz.js/2.1.2/viz.js" integrity="sha512-vnRdmX8ZxbU+IhA2gLhZqXkX1neJISG10xy0iP0WauuClu3AIMknxyDjYHEpEhi8fTZPyOCWgqUCnEafDB/jVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/viz.js/2.1.2/full.render.js" integrity="sha512-1zKK2bG3QY2JaUPpfHZDUMe3dwBwFdCDwXQ01GrKSd+/l0hqPbF+aak66zYPUZtn+o2JYi1mjXAqy5mW04v3iA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.25.1/ace.js" integrity="sha512-ANhthI6cmOPsKTQBHxf1/Hhjjqdrj8SUzobb3/v/SoaiWFJgGE0aquvKL12yYY6mChM7deADr91WllgDfYffXw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+      html,
+      body {
+        padding: 0;
+        margin: 0;
+        width: 100vw;
+        max-width: 100%;
+        height: 100vh;
+        overflow: hidden;
+      }
+      body {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      #graph {
+        text-align: center;
+        /* overflow: auto; */
+      }
+
+      #graph svg {
+        max-width: 100%;
+      }
+
+      #copy,
+      #log {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      #copy {
+        top: 5px;
+      }
+
+      #log {
+        bottom: 5px;
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="editor"></div>
+    <div id="graph"></div>
+    <button id="copy">copy</button>
+    <div id="log"></div>
+  </body>
+  <script>
+    var debouncer = null;
+    var graph = document.getElementById("graph");
+    var log = document.getElementById("log");
+    var copy = document.getElementById("copy");
+    var editor = ace.edit("editor");
+    editor.setValue(
+      window.location.hash.length > 1
+        ? decodeURIComponent(window.location.hash.substring(1))
+        : `digraph {
+  rankdir="LR"
+
+  s[label="Shares Outstanding", URL="/outstanding-shares.html"]
+  ni[label="Net Income", URL="/net-income.html"]
+  eps[label="EPS", URL="/eps.html"]
+  p[label="Price", URL="/price.html"]
+  pe[label="P/E", URL="/pe.html"]
+  peg[label="PEG", URL="/peg.html"]
+
+  ni -> eps
+  s -> eps
+  p -> pe
+  eps -> pe
+  pe -> peg
+}`
+    );
+    editor.setOptions({ fontSize: "16px", tabSize: 2 });
+    editor.setTheme(matchMedia("(prefers-color-scheme: dark)").matches ? "ace/theme/monokai" : "ace/theme/chrome");
+    editor.session.setMode("ace/mode/dot");
+    editor.getSession().selection.clearSelection();
+    editor.session.on("change", () => {
+      if (debouncer) {
+        cancelAnimationFrame(debouncer);
+      }
+      debouncer = window.requestAnimationFrame(render);
+    });
+
+    async function render() {
+      try {
+        var svg = await new Viz().renderString(editor.getValue());
+        graph.innerHTML = svg;
+        window.location.hash = "#" + encodeURIComponent(editor.getValue());
+        log.hidden = true;
+        copy.onclick = () =>
+          navigator.clipboard.writeText(
+            [
+              '<p class="graph">',
+              "<!--",
+              window.location.toString(),
+              "-->",
+              "<svg " +
+                svg
+                  .replace(/<!--[^-]+-->\n+/g, "")
+                  .replace(/<title>[^<]+<\/title>/gs, "")
+                  .split("<svg")
+                  .pop()
+                  .trim(),
+              "<!--",
+              editor.getValue(),
+              "-->",
+              "</p>",
+            ].join("\n")
+          );
+        // var el = await new Viz().renderSVGElement(editor.getValue());
+        // el.querySelectorAll("title").forEach((t) => t.parentNode.removeChild(t));
+        // var remove = [];
+        // var walker = document.createTreeWalker(el, NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_TEXT);
+        // while (walker.nextNode()) {
+        //   if (walker.currentNode.nodeType === Node.COMMENT_NODE) {
+        //     remove.push(walker.currentNode);
+        //   }
+        //   if (walker.currentNode.nodeType === Node.TEXT_NODE && walker.currentNode.nodeValue.trim() === "" && walker.currentNode.parentElement === el) {
+        //     remove.push(walker.currentNode);
+        //   }
+        // }
+        // remove.forEach((n) => n.parentNode.removeChild(n));
+        // console.log(el.outerHTML);
+        // graph.replaceChildren(el);
+        // window.el = el;
+      } catch (error) {
+        console.group("%c" + error.message, "color: red");
+        console.log(editor.getValue());
+        console.groupEnd();
+        log.hidden = false;
+        log.innerText = error.message;
+      }
+    }
+
+    render();
+  </script>
+</html>

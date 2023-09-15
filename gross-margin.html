@@ -113,6 +113,58 @@
       <li>us-gaap:GrossProfit</li>
     </ul>
 
+    <p>Зв'язки:</p>
+    <p class="graph">
+      <!--
+      http://localhost:3000/graphviz.html#digraph%20%7B%0A%20%20rankdir%3D%22LR%22%0A%20%20%0A%20%20gm%5Blabel%3D%22Gross%20Margin%22%2C%20URL%3D%22%2Fgross-margin.html%22%5D%0A%20%20r%5Blabel%3D%22Total%20Revenue%20(Sales)%22%2C%20URL%3D%22revenue.html%22%5D%0A%20%20cogs%5Blabel%3D%22Cost%20of%20Revenue%20(COGS)%22%5D%0A%20%20%0A%20%20r%20-%3E%20gm%0A%20%20cogs%20-%3E%20gm%0A%7D
+      -->
+      <svg width="393pt" height="98pt" viewBox="0.00 0.00 392.80 98.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 94)">
+          <polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-94 388.7995,-94 388.7995,4 -4,4" />
+          <g id="node1" class="node">
+            <g id="a_node1">
+              <a xlink:href="/gross-margin.html" xlink:title="Gross Margin">
+                <ellipse fill="none" stroke="#000000" cx="320.3967" cy="-45" rx="64.3056" ry="18" />
+                <text text-anchor="middle" x="320.3967" y="-40.8" font-family="Times,serif" font-size="14.00" fill="#000000">Gross Margin</text>
+              </a>
+            </g>
+          </g>
+          <g id="node2" class="node">
+            <g id="a_node2">
+              <a xlink:href="revenue.html" xlink:title="Total Revenue (Sales)">
+                <ellipse fill="none" stroke="#000000" cx="109.997" cy="-72" rx="96.6868" ry="18" />
+                <text text-anchor="middle" x="109.997" y="-67.8" font-family="Times,serif" font-size="14.00" fill="#000000">Total Revenue (Sales)</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge1" class="edge">
+            <path fill="none" stroke="#000000" d="M189.8401,-61.754C210.1341,-59.1497 231.7668,-56.3736 251.4661,-53.8457" />
+            <polygon fill="#000000" stroke="#000000" points="252.1008,-57.293 261.574,-52.5486 251.2098,-50.3499 252.1008,-57.293" />
+          </g>
+          <g id="node3" class="node">
+            <ellipse fill="none" stroke="#000000" cx="109.997" cy="-18" rx="109.994" ry="18" />
+            <text text-anchor="middle" x="109.997" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">Cost of Revenue (COGS)</text>
+          </g>
+          <g id="edge2" class="edge">
+            <path fill="none" stroke="#000000" d="M196.7894,-29.1378C215.0521,-31.4814 234.0788,-33.9231 251.5746,-36.1683" />
+            <polygon fill="#000000" stroke="#000000" points="251.3174,-39.6639 261.6816,-37.4653 252.2085,-32.7208 251.3174,-39.6639" />
+          </g>
+        </g>
+      </svg>
+      <!--
+      digraph {
+        rankdir="LR"
+
+        gm[label="Gross Margin", URL="/gross-margin.html"]
+        r[label="Total Revenue (Sales)", URL="revenue.html"]
+        cogs[label="Cost of Revenue (COGS)"]
+
+        r -> gm
+        cogs -> gm
+      }
+      -->
+    </p>
+
     <p>Посилання на джерела:</p>
     <ul>
       <li>

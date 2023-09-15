@@ -55,6 +55,160 @@
       <li>Forward P/E</li>
     </ul>
 
+    <p>Зв'язки:</p>
+    <p class="graph">
+      <!--
+      http://localhost:3000/graphviz.html#digraph%20%7B%0A%20%20rankdir%3D%22LR%22%0A%0A%20%20tr%5Blabel%3D%22Total%20Revenue%20(Sales)%22%2C%20URL%3D%22%2Frevenue.html%22%5D%0A%20%20cogs%5Blabel%3D%22Cost%20of%20Revenue%20(COGS)%22%2C%20URL%3D%22%2Fincome.html%22%5D%0A%20%20opex%5Blabel%3D%22Total%20Operating%20Expense%20(OpEx)%22%2C%20URL%3D%22%2Fincome.html%22%5D%0A%20%20tax%5Blabel%3D%22Tax%22%2C%20URL%3D%22%2Fincome.html%22%5D%0A%20%20ni%5Blabel%3D%22Net%20Income%22%2C%20URL%3D%22%2Fnet-income.html%22%5D%0A%20%20s%5Blabel%3D%22Shares%20Outstanding%22%2C%20URL%3D%22%2Foutstanding-shares.html%22%5D%0A%20%20eps%5Blabel%3D%22EPS%22%2C%20URL%3D%22%2Feps.html%22%5D%0A%20%20eeps%5Blabel%3D%22Estimated%20future%20EPS%22%2C%20URL%3D%22%2Feps.html%22%5D%0A%20%20p%5Blabel%3D%22Price%22%2C%20URL%3D%22%2Fprice.html%22%5D%0A%20%20fpe%5Blabel%3D%22Forward%20P%2FE%22%2C%20URL%3D%22%2Fforward-pe.html%22%5D%0A%0A%20%20tr%20-%3E%20ni%0A%20%20cogs%20-%3E%20ni%0A%20%20opex%20-%3E%20ni%0A%20%20tax%20-%3E%20ni%0A%20%20ni%20-%3E%20eps%0A%20%20s%20-%3E%20eps%0A%20%20eps%20-%3E%20eeps%0A%20%20eeps%20-%3E%20fpe%0A%20%20p%20-%3E%20fpe%0A%7D
+      -->
+      <svg width="967pt" height="206pt" viewBox="0.00 0.00 966.62 206.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 202)">
+          <polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-202 962.6171,-202 962.6171,4 -4,4" />
+          <g id="node1" class="node">
+            <g id="a_node1">
+              <a xlink:href="/revenue.html" xlink:title="Total Revenue (Sales)">
+                <ellipse fill="none" stroke="#000000" cx="138.9447" cy="-180" rx="96.6868" ry="18" />
+                <text text-anchor="middle" x="138.9447" y="-175.8" font-family="Times,serif" font-size="14.00" fill="#000000">Total Revenue (Sales)</text>
+              </a>
+            </g>
+          </g>
+          <g id="node5" class="node">
+            <g id="a_node5">
+              <a xlink:href="/net-income.html" xlink:title="Net Income">
+                <ellipse fill="none" stroke="#000000" cx="400.2877" cy="-99" rx="56.2" ry="18" />
+                <text text-anchor="middle" x="400.2877" y="-94.8" font-family="Times,serif" font-size="14.00" fill="#000000">Net Income</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge1" class="edge">
+            <path fill="none" stroke="#000000" d="M213.9827,-168.5948C234.907,-164.5601 257.4888,-159.3937 277.8893,-153 306.6509,-143.9859 337.7057,-130.2341 361.3378,-118.8643" />
+            <polygon fill="#000000" stroke="#000000" points="362.8785,-122.0071 370.3337,-114.4791 359.8112,-115.7149 362.8785,-122.0071" />
+          </g>
+          <g id="node2" class="node">
+            <g id="a_node2">
+              <a xlink:href="/income.html" xlink:title="Cost of Revenue (COGS)">
+                <ellipse fill="none" stroke="#000000" cx="138.9447" cy="-126" rx="109.994" ry="18" />
+                <text text-anchor="middle" x="138.9447" y="-121.8" font-family="Times,serif" font-size="14.00" fill="#000000">Cost of Revenue (COGS)</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge2" class="edge">
+            <path fill="none" stroke="#000000" d="M232.1887,-116.3667C266.6945,-112.8018 305.0031,-108.8441 336.3244,-105.6082" />
+            <polygon fill="#000000" stroke="#000000" points="337.0756,-109.0493 346.663,-104.5401 336.3562,-102.0864 337.0756,-109.0493" />
+          </g>
+          <g id="node3" class="node">
+            <g id="a_node3">
+              <a xlink:href="/income.html" xlink:title="Total Operating Expense (OpEx)">
+                <ellipse fill="none" stroke="#000000" cx="138.9447" cy="-72" rx="138.8894" ry="18" />
+                <text text-anchor="middle" x="138.9447" y="-67.8" font-family="Times,serif" font-size="14.00" fill="#000000">Total Operating Expense (OpEx)</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge3" class="edge">
+            <path fill="none" stroke="#000000" d="M247.8852,-83.2549C278.0638,-86.3727 309.8335,-89.6549 336.5101,-92.411" />
+            <polygon fill="#000000" stroke="#000000" points="336.164,-95.8938 346.4708,-93.44 336.8835,-88.9308 336.164,-95.8938" />
+          </g>
+          <g id="node4" class="node">
+            <g id="a_node4">
+              <a xlink:href="/income.html" xlink:title="Tax">
+                <ellipse fill="none" stroke="#000000" cx="138.9447" cy="-18" rx="27" ry="18" />
+                <text text-anchor="middle" x="138.9447" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">Tax</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge4" class="edge">
+            <path fill="none" stroke="#000000" d="M165.8729,-19.6439C194.6753,-22.208 241.1661,-28.7009 277.8893,-45 296.1697,-53.1135 296.087,-62.8853 313.8893,-72 323.7423,-77.0447 334.7141,-81.3573 345.4431,-84.9589" />
+            <polygon fill="#000000" stroke="#000000" points="344.5983,-88.3631 355.189,-88.0672 346.7253,-81.6941 344.5983,-88.3631" />
+          </g>
+          <g id="node7" class="node">
+            <g id="a_node7">
+              <a xlink:href="/eps.html" xlink:title="EPS">
+                <ellipse fill="none" stroke="#000000" cx="550.3585" cy="-72" rx="27.8461" ry="18" />
+                <text text-anchor="middle" x="550.3585" y="-67.8" font-family="Times,serif" font-size="14.00" fill="#000000">EPS</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge5" class="edge">
+            <path fill="none" stroke="#000000" d="M449.4265,-90.1592C470.2949,-86.4047 494.2093,-82.1021 513.5206,-78.6277" />
+            <polygon fill="#000000" stroke="#000000" points="514.2201,-82.0581 523.4423,-76.8426 512.9805,-75.1687 514.2201,-82.0581" />
+          </g>
+          <g id="node6" class="node">
+            <g id="a_node6">
+              <a xlink:href="/outstanding-shares.html" xlink:title="Shares Outstanding">
+                <ellipse fill="none" stroke="#000000" cx="400.2877" cy="-45" rx="86.2968" ry="18" />
+                <text text-anchor="middle" x="400.2877" y="-40.8" font-family="Times,serif" font-size="14.00" fill="#000000">Shares Outstanding</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge6" class="edge">
+            <path fill="none" stroke="#000000" d="M466.1109,-56.8426C482.3343,-59.7614 499.141,-62.7852 513.4353,-65.357" />
+            <polygon fill="#000000" stroke="#000000" points="512.8938,-68.8156 523.3556,-67.1418 514.1334,-61.9263 512.8938,-68.8156" />
+          </g>
+          <g id="node8" class="node">
+            <g id="a_node8">
+              <a xlink:href="/eps.html" xlink:title="Estimated future EPS">
+                <ellipse fill="none" stroke="#000000" cx="708.209" cy="-72" rx="94.3563" ry="18" />
+                <text text-anchor="middle" x="708.209" y="-67.8" font-family="Times,serif" font-size="14.00" fill="#000000">Estimated future EPS</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge7" class="edge">
+            <path fill="none" stroke="#000000" d="M578.2157,-72C585.8204,-72 594.5336,-72 603.7692,-72" />
+            <polygon fill="#000000" stroke="#000000" points="603.968,-75.5001 613.968,-72 603.9679,-68.5001 603.968,-75.5001" />
+          </g>
+          <g id="node10" class="node">
+            <g id="a_node10">
+              <a xlink:href="/forward-pe.html" xlink:title="Forward P/E">
+                <ellipse fill="none" stroke="#000000" cx="898.502" cy="-45" rx="60.2303" ry="18" />
+                <text text-anchor="middle" x="898.502" y="-40.8" font-family="Times,serif" font-size="14.00" fill="#000000">Forward P/E</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge8" class="edge">
+            <path fill="none" stroke="#000000" d="M783.9647,-61.2513C800.4589,-58.911 817.7651,-56.4555 833.7849,-54.1825" />
+            <polygon fill="#000000" stroke="#000000" points="834.6959,-57.5884 844.1051,-52.7182 833.7125,-50.6578 834.6959,-57.5884" />
+          </g>
+          <g id="node9" class="node">
+            <g id="a_node9">
+              <a xlink:href="/price.html" xlink:title="Price">
+                <ellipse fill="none" stroke="#000000" cx="708.209" cy="-18" rx="30.7539" ry="18" />
+                <text text-anchor="middle" x="708.209" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">Price</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge9" class="edge">
+            <path fill="none" stroke="#000000" d="M738.3615,-22.2782C763.8942,-25.901 801.3881,-31.2208 833.6785,-35.8024" />
+            <polygon fill="#000000" stroke="#000000" points="833.5652,-39.3213 843.9578,-37.2609 834.5486,-32.3907 833.5652,-39.3213" />
+          </g>
+        </g>
+      </svg>
+      <!--
+      digraph {
+        rankdir="LR"
+
+        tr[label="Total Revenue (Sales)", URL="/revenue.html"]
+        cogs[label="Cost of Revenue (COGS)", URL="/income.html"]
+        opex[label="Total Operating Expense (OpEx)", URL="/income.html"]
+        tax[label="Tax", URL="/income.html"]
+        ni[label="Net Income", URL="/net-income.html"]
+        s[label="Shares Outstanding", URL="/outstanding-shares.html"]
+        eps[label="EPS", URL="/eps.html"]
+        eeps[label="Estimated future EPS", URL="/eps.html"]
+        p[label="Price", URL="/price.html"]
+        fpe[label="Forward P/E", URL="/forward-pe.html"]
+
+        tr -> ni
+        cogs -> ni
+        opex -> ni
+        tax -> ni
+        ni -> eps
+        s -> eps
+        eps -> eeps
+        eeps -> fpe
+        p -> fpe
+      }
+      -->
+    </p>
+
     <p>Посилання на джерела:</p>
     <ul>
       <li>

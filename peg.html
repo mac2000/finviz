@@ -90,151 +90,144 @@
       <iframe style="width: 561px; height: 238px" title="excel" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdBU3xwE_3m25SW8uaQgjYH8wv3lx7i9bdq2Dh9fl6JXhGKLeo3CzeOoRtc9dFbY0OyVroHeY7dAqD/pubhtml?gid=1336815165&amp;single=true&amp;widget=false&amp;headers=true&amp;chrome=false"></iframe>
     </p>
 
-    <p>
-      <table class="excel">
-        <thead>
-          <tr>
-            <th></th>
-            <th>A</th>
-            <th>B</th>
-            <th>C</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th>1</th>
-            <td>AAPL</td>
-            <td>2022</td>
-            <td>2021</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>2</th>
-            <td>Net Income</td>
-            <td>99803</td>
-            <td>94680</td>
-            <td><code>=TRANSPOSE(QUERY(TRANSPOSE(SPLIT(SUBSTITUTE(SUBSTITUTE(REGEXREPLACE(REGEXREPLACE(IMPORTDATA(CONCATENATE("https://finviz.com/api/statement.ashx?t=",A1),"|"),".+Net Income"":\[""",""),"""\].+",""),""",""","|"),",",""),"|")),"SELECT Col1 LIMIT 2 OFFSET 1",0))</code></td>
-          </tr>
-          <tr>
-            <th>3</th>
-            <td>Outstanding Shares</td>
-            <td>16426.79</td>
-            <td>16976.76</td>
-            <td><code>=TRANSPOSE(QUERY(TRANSPOSE(SPLIT(SUBSTITUTE(SUBSTITUTE(REGEXREPLACE(REGEXREPLACE(IMPORTDATA(CONCATENATE("https://finviz.com/api/statement.ashx?t=",A1,"&s=BA"),"|"),".+Total Common Shares Outstanding"":\[""",""),"""\].+",""),""",""","|"),",",""),"|")),"SELECT Col1 LIMIT 2 OFFSET 1",0))</code></td>
-          </tr>
-          <tr>
-            <th>4</th>
-            <td>EPS</td>
-            <td>6.08</td>
-            <td>5.58</td>
-            <td><code>=B2/B3</code></td>
-          </tr>
-        </tbody>
-      </table>
-    </p>
+    <table class="excel">
+      <thead>
+        <tr>
+          <th></th>
+          <th>A</th>
+          <th>B</th>
+          <th>C</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>1</th>
+          <td>AAPL</td>
+          <td>2022</td>
+          <td>2021</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>2</th>
+          <td>Net Income</td>
+          <td>99803</td>
+          <td>94680</td>
+          <td><code>=TRANSPOSE(QUERY(TRANSPOSE(SPLIT(SUBSTITUTE(SUBSTITUTE(REGEXREPLACE(REGEXREPLACE(IMPORTDATA(CONCATENATE("https://finviz.com/api/statement.ashx?t=",A1),"|"),".+Net Income"":\[""",""),"""\].+",""),""",""","|"),",",""),"|")),"SELECT Col1 LIMIT 2 OFFSET 1",0))</code></td>
+        </tr>
+        <tr>
+          <th>3</th>
+          <td>Outstanding Shares</td>
+          <td>16426.79</td>
+          <td>16976.76</td>
+          <td><code>=TRANSPOSE(QUERY(TRANSPOSE(SPLIT(SUBSTITUTE(SUBSTITUTE(REGEXREPLACE(REGEXREPLACE(IMPORTDATA(CONCATENATE("https://finviz.com/api/statement.ashx?t=",A1,"&s=BA"),"|"),".+Total Common Shares Outstanding"":\[""",""),"""\].+",""),""",""","|"),",",""),"|")),"SELECT Col1 LIMIT 2 OFFSET 1",0))</code></td>
+        </tr>
+        <tr>
+          <th>4</th>
+          <td>EPS</td>
+          <td>6.08</td>
+          <td>5.58</td>
+          <td><code>=B2/B3</code></td>
+        </tr>
+      </tbody>
+    </table>
 
-    <p>
-      <table class="excel">
-        <thead>
-          <tr>
-            <th></th>
-            <th>E</th>
-            <th>F</th>
-            <th>G</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th>1</th>
-            <td>TSLA</td>
-            <td>2022</td>
-            <td>2021</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>2</th>
-            <td>Net Income</td>
-            <td>12583</td>
-            <td>5524</td>
-            <td><code>=TRANSPOSE(QUERY(TRANSPOSE(SPLIT(SUBSTITUTE(SUBSTITUTE(REGEXREPLACE(REGEXREPLACE(IMPORTDATA(CONCATENATE("https://finviz.com/api/statement.ashx?t=",E1),"|"),".+Net Income"":\[""",""),"""\].+",""),""",""","|"),",",""),"|")),"SELECT Col1 LIMIT 2 OFFSET 1",0))</code></td>
-          </tr>
-          <tr>
-            <th>3</th>
-            <td>Outstanding Shares</td>
-            <td>3099.03</td>
-            <td>2880.03</td>
-            <td><code>=TRANSPOSE(QUERY(TRANSPOSE(SPLIT(SUBSTITUTE(SUBSTITUTE(REGEXREPLACE(REGEXREPLACE(IMPORTDATA(CONCATENATE("https://finviz.com/api/statement.ashx?t=",E1,"&s=BA"),"|"),".+Total Common Shares Outstanding"":\[""",""),"""\].+",""),""",""","|"),",",""),"|")),"SELECT Col1 LIMIT 2 OFFSET 1",0))</code></td>
-          </tr>
-          <tr>
-            <th>4</th>
-            <td>EPS</td>
-            <td>4.06</td>
-            <td>1.92</td>
-            <td><code>=F2/F3</code></td>
-          </tr>
-        </tbody>
-      </table>
-    </p>
+    <table class="excel">
+      <thead>
+        <tr>
+          <th></th>
+          <th>E</th>
+          <th>F</th>
+          <th>G</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>1</th>
+          <td>TSLA</td>
+          <td>2022</td>
+          <td>2021</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>2</th>
+          <td>Net Income</td>
+          <td>12583</td>
+          <td>5524</td>
+          <td><code>=TRANSPOSE(QUERY(TRANSPOSE(SPLIT(SUBSTITUTE(SUBSTITUTE(REGEXREPLACE(REGEXREPLACE(IMPORTDATA(CONCATENATE("https://finviz.com/api/statement.ashx?t=",E1),"|"),".+Net Income"":\[""",""),"""\].+",""),""",""","|"),",",""),"|")),"SELECT Col1 LIMIT 2 OFFSET 1",0))</code></td>
+        </tr>
+        <tr>
+          <th>3</th>
+          <td>Outstanding Shares</td>
+          <td>3099.03</td>
+          <td>2880.03</td>
+          <td><code>=TRANSPOSE(QUERY(TRANSPOSE(SPLIT(SUBSTITUTE(SUBSTITUTE(REGEXREPLACE(REGEXREPLACE(IMPORTDATA(CONCATENATE("https://finviz.com/api/statement.ashx?t=",E1,"&s=BA"),"|"),".+Total Common Shares Outstanding"":\[""",""),"""\].+",""),""",""","|"),",",""),"|")),"SELECT Col1 LIMIT 2 OFFSET 1",0))</code></td>
+        </tr>
+        <tr>
+          <th>4</th>
+          <td>EPS</td>
+          <td>4.06</td>
+          <td>1.92</td>
+          <td><code>=F2/F3</code></td>
+        </tr>
+      </tbody>
+    </table>
 
-
-    <p>
-      <table class="excel">
-        <thead>
-          <tr>
-            <th></th>
-            <th>A</th>
-            <th>B</th>
-            <th>C</th>
-            <th></th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th>6</th>
-            <td></td>
-            <td>AAPL</td>
-            <td>TSLA</td>
-            <td><code>=A1</code></td>
-            <td><code>=E1</code></td>
-          </tr>
-          <tr>
-            <th>7</th>
-            <td>Price</td>
-            <td>125.07</td>
-            <td>108.1</td>
-            <td><code>=INDEX(GOOGLEFINANCE(A1,"price", DATE(B1,12,31)),2,2)</code></td>
-            <td><code>=INDEX(GOOGLEFINANCE(E1,"price",DATE(F1,12,31)),2,2)</code></td>
-          </tr>
-          <tr>
-            <th>8</th>
-            <td>P/E</td>
-            <td>20.59</td>
-            <td>26.62</td>
-            <td><code>=B7/B4</code></td>
-            <td><code>=C7/F4</code></td>
-          </tr>
-          <tr>
-            <th>9</th>
-            <td>EPS Growth</td>
-            <td>8.94</td>
-            <td>111.69</td>
-            <td><code>=100*(B4/C4-1)</code></td>
-            <td><code>=100*(F4/G4-1)</code></td>
-          </tr>
-          <tr>
-            <th>10</th>
-            <td>PEG</td>
-            <td>2.30</td>
-            <td>0.24</td>
-            <td><code>=B8/B9</code></td>
-            <td><code>=C8/C9</code></td>
-          </tr>
-        </tbody>
-      </table>
-    </p>
+    <table class="excel">
+      <thead>
+        <tr>
+          <th></th>
+          <th>A</th>
+          <th>B</th>
+          <th>C</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>6</th>
+          <td></td>
+          <td>AAPL</td>
+          <td>TSLA</td>
+          <td><code>=A1</code></td>
+          <td><code>=E1</code></td>
+        </tr>
+        <tr>
+          <th>7</th>
+          <td>Price</td>
+          <td>125.07</td>
+          <td>108.1</td>
+          <td><code>=INDEX(GOOGLEFINANCE(A1,"price", DATE(B1,12,31)),2,2)</code></td>
+          <td><code>=INDEX(GOOGLEFINANCE(E1,"price",DATE(F1,12,31)),2,2)</code></td>
+        </tr>
+        <tr>
+          <th>8</th>
+          <td>P/E</td>
+          <td>20.59</td>
+          <td>26.62</td>
+          <td><code>=B7/B4</code></td>
+          <td><code>=C7/F4</code></td>
+        </tr>
+        <tr>
+          <th>9</th>
+          <td>EPS Growth</td>
+          <td>8.94</td>
+          <td>111.69</td>
+          <td><code>=100*(B4/C4-1)</code></td>
+          <td><code>=100*(F4/G4-1)</code></td>
+        </tr>
+        <tr>
+          <th>10</th>
+          <td>PEG</td>
+          <td>2.30</td>
+          <td>0.24</td>
+          <td><code>=B8/B9</code></td>
+          <td><code>=C8/C9</code></td>
+        </tr>
+      </tbody>
+    </table>
 
     <p>Синоніми та абревіатури:</p>
     <ul>
@@ -242,6 +235,180 @@
       <li>PEG</li>
       <li>PEG ratio</li>
     </ul>
+
+    <p>Зв'язки:</p>
+    <p class="graph">
+      <!--
+      http://localhost:3000/graphviz.html#digraph%20%7B%0A%20%20rankdir%3D%22LR%22%0A%0A%20%20tr%5Blabel%3D%22Total%20Revenue%20(Sales)%22%2C%20URL%3D%22%2Frevenue.html%22%5D%0A%20%20cogs%5Blabel%3D%22Cost%20of%20Revenue%20(COGS)%22%2C%20URL%3D%22%2Fincome.html%22%5D%0A%20%20opex%5Blabel%3D%22Total%20Operating%20Expense%20(OpEx)%22%2C%20URL%3D%22%2Fincome.html%22%5D%0A%20%20tax%5Blabel%3D%22Tax%22%2C%20URL%3D%22%2Fincome.html%22%5D%0A%20%20ni%5Blabel%3D%22Net%20Income%22%2C%20URL%3D%22%2Fnet-income.html%22%5D%0A%20%20%0A%20%20s%5Blabel%3D%22Shares%20Outstanding%22%2C%20URL%3D%22%2Foutstanding-shares.html%22%5D%0A%20%20eps%5Blabel%3D%22EPS%22%2C%20URL%3D%22%2Feps.html%22%5D%0A%20%20feps%5Blabel%3D%22EPS%20next%205Y%22%2C%20URL%3D%22%2Feps.html%22%5D%0A%20%20p%5Blabel%3D%22Price%22%2C%20URL%3D%22%2Fprice.html%22%5D%0A%20%20pe%5Blabel%3D%22P%2FE%22%2C%20URL%3D%22%2Fpe.html%22%5D%0A%20%20peg%5Blabel%3D%22PEG%22%2C%20URL%3D%22%2Fpeg.html%22%5D%0A%0A%20%20tr%20-%3E%20ni%0A%20%20cogs%20-%3E%20ni%0A%20%20opex%20-%3E%20ni%0A%20%20tax%20-%3E%20ni%0A%20%20ni%20-%3E%20eps%0A%20%20s%20-%3E%20eps%0A%20%20p%20-%3E%20pe%0A%20%20eps%20-%3E%20pe%0A%20%20pe%20-%3E%20peg%0A%20%20feps%20-%3E%20peg%0A%20%20eps%20-%3E%20feps%0A%7D
+      -->
+      <svg width="845pt" height="206pt" viewBox="0.00 0.00 844.85 206.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 202)">
+          <polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-202 840.8469,-202 840.8469,4 -4,4" />
+          <g id="node1" class="node">
+            <g id="a_node1">
+              <a xlink:href="/revenue.html" xlink:title="Total Revenue (Sales)">
+                <ellipse fill="none" stroke="#000000" cx="138.9447" cy="-180" rx="96.6868" ry="18" />
+                <text text-anchor="middle" x="138.9447" y="-175.8" font-family="Times,serif" font-size="14.00" fill="#000000">Total Revenue (Sales)</text>
+              </a>
+            </g>
+          </g>
+          <g id="node5" class="node">
+            <g id="a_node5">
+              <a xlink:href="/net-income.html" xlink:title="Net Income">
+                <ellipse fill="none" stroke="#000000" cx="400.2877" cy="-99" rx="56.2" ry="18" />
+                <text text-anchor="middle" x="400.2877" y="-94.8" font-family="Times,serif" font-size="14.00" fill="#000000">Net Income</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge1" class="edge">
+            <path fill="none" stroke="#000000" d="M213.9827,-168.5948C234.907,-164.5601 257.4888,-159.3937 277.8893,-153 306.6509,-143.9859 337.7057,-130.2341 361.3378,-118.8643" />
+            <polygon fill="#000000" stroke="#000000" points="362.8785,-122.0071 370.3337,-114.4791 359.8112,-115.7149 362.8785,-122.0071" />
+          </g>
+          <g id="node2" class="node">
+            <g id="a_node2">
+              <a xlink:href="/income.html" xlink:title="Cost of Revenue (COGS)">
+                <ellipse fill="none" stroke="#000000" cx="138.9447" cy="-126" rx="109.994" ry="18" />
+                <text text-anchor="middle" x="138.9447" y="-121.8" font-family="Times,serif" font-size="14.00" fill="#000000">Cost of Revenue (COGS)</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge2" class="edge">
+            <path fill="none" stroke="#000000" d="M232.1887,-116.3667C266.6945,-112.8018 305.0031,-108.8441 336.3244,-105.6082" />
+            <polygon fill="#000000" stroke="#000000" points="337.0756,-109.0493 346.663,-104.5401 336.3562,-102.0864 337.0756,-109.0493" />
+          </g>
+          <g id="node3" class="node">
+            <g id="a_node3">
+              <a xlink:href="/income.html" xlink:title="Total Operating Expense (OpEx)">
+                <ellipse fill="none" stroke="#000000" cx="138.9447" cy="-72" rx="138.8894" ry="18" />
+                <text text-anchor="middle" x="138.9447" y="-67.8" font-family="Times,serif" font-size="14.00" fill="#000000">Total Operating Expense (OpEx)</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge3" class="edge">
+            <path fill="none" stroke="#000000" d="M247.8852,-83.2549C278.0638,-86.3727 309.8335,-89.6549 336.5101,-92.411" />
+            <polygon fill="#000000" stroke="#000000" points="336.164,-95.8938 346.4708,-93.44 336.8835,-88.9308 336.164,-95.8938" />
+          </g>
+          <g id="node4" class="node">
+            <g id="a_node4">
+              <a xlink:href="/income.html" xlink:title="Tax">
+                <ellipse fill="none" stroke="#000000" cx="138.9447" cy="-18" rx="27" ry="18" />
+                <text text-anchor="middle" x="138.9447" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">Tax</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge4" class="edge">
+            <path fill="none" stroke="#000000" d="M165.8729,-19.6439C194.6753,-22.208 241.1661,-28.7009 277.8893,-45 296.1697,-53.1135 296.087,-62.8853 313.8893,-72 323.7423,-77.0447 334.7141,-81.3573 345.4431,-84.9589" />
+            <polygon fill="#000000" stroke="#000000" points="344.5983,-88.3631 355.189,-88.0672 346.7253,-81.6941 344.5983,-88.3631" />
+          </g>
+          <g id="node7" class="node">
+            <g id="a_node7">
+              <a xlink:href="/eps.html" xlink:title="EPS">
+                <ellipse fill="none" stroke="#000000" cx="553.5627" cy="-72" rx="27.8461" ry="18" />
+                <text text-anchor="middle" x="553.5627" y="-67.8" font-family="Times,serif" font-size="14.00" fill="#000000">EPS</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge5" class="edge">
+            <path fill="none" stroke="#000000" d="M450.0517,-90.2339C471.7874,-86.405 496.8253,-81.9945 516.8313,-78.4704" />
+            <polygon fill="#000000" stroke="#000000" points="517.5491,-81.8979 526.7903,-76.7161 516.3347,-75.004 517.5491,-81.8979" />
+          </g>
+          <g id="node6" class="node">
+            <g id="a_node6">
+              <a xlink:href="/outstanding-shares.html" xlink:title="Shares Outstanding">
+                <ellipse fill="none" stroke="#000000" cx="400.2877" cy="-45" rx="86.2968" ry="18" />
+                <text text-anchor="middle" x="400.2877" y="-40.8" font-family="Times,serif" font-size="14.00" fill="#000000">Shares Outstanding</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge6" class="edge">
+            <path fill="none" stroke="#000000" d="M466.6249,-56.6856C483.848,-59.7195 501.7779,-62.8779 516.8496,-65.5328" />
+            <polygon fill="#000000" stroke="#000000" points="516.3279,-68.9947 526.7834,-67.2827 517.5423,-62.1009 516.3279,-68.9947" />
+          </g>
+          <g id="node8" class="node">
+            <g id="a_node8">
+              <a xlink:href="/eps.html" xlink:title="EPS next 5Y">
+                <ellipse fill="none" stroke="#000000" cx="681.3676" cy="-72" rx="60.8564" ry="18" />
+                <text text-anchor="middle" x="681.3676" y="-67.8" font-family="Times,serif" font-size="14.00" fill="#000000">EPS next 5Y</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge11" class="edge">
+            <path fill="none" stroke="#000000" d="M581.2945,-72C589.9391,-72 599.9005,-72 610.1158,-72" />
+            <polygon fill="#000000" stroke="#000000" points="610.3763,-75.5001 620.3763,-72 610.3763,-68.5001 610.3763,-75.5001" />
+          </g>
+          <g id="node10" class="node">
+            <g id="a_node10">
+              <a xlink:href="/pe.html" xlink:title="P/E">
+                <ellipse fill="none" stroke="#000000" cx="681.3676" cy="-18" rx="27" ry="18" />
+                <text text-anchor="middle" x="681.3676" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">P/E</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge8" class="edge">
+            <path fill="none" stroke="#000000" d="M577.0041,-62.0956C597.2172,-53.5552 626.6054,-41.1381 649.0493,-31.6551" />
+            <polygon fill="#000000" stroke="#000000" points="650.6555,-34.7761 658.5048,-27.66 647.931,-28.328 650.6555,-34.7761" />
+          </g>
+          <g id="node11" class="node">
+            <g id="a_node11">
+              <a xlink:href="/peg.html" xlink:title="PEG">
+                <ellipse fill="none" stroke="#000000" cx="807.5713" cy="-45" rx="29.0529" ry="18" />
+                <text text-anchor="middle" x="807.5713" y="-40.8" font-family="Times,serif" font-size="14.00" fill="#000000">PEG</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge10" class="edge">
+            <path fill="none" stroke="#000000" d="M730.8844,-61.4064C743.8324,-58.6363 757.5815,-55.6948 769.8085,-53.079" />
+            <polygon fill="#000000" stroke="#000000" points="770.6238,-56.4838 779.6702,-50.9691 769.1593,-49.6387 770.6238,-56.4838" />
+          </g>
+          <g id="node9" class="node">
+            <g id="a_node9">
+              <a xlink:href="/price.html" xlink:title="Price">
+                <ellipse fill="none" stroke="#000000" cx="553.5627" cy="-18" rx="30.7539" ry="18" />
+                <text text-anchor="middle" x="553.5627" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">Price</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge7" class="edge">
+            <path fill="none" stroke="#000000" d="M584.5007,-18C602.4524,-18 625.1837,-18 644.114,-18" />
+            <polygon fill="#000000" stroke="#000000" points="644.1853,-21.5001 654.1852,-18 644.1852,-14.5001 644.1853,-21.5001" />
+          </g>
+          <g id="edge9" class="edge">
+            <path fill="none" stroke="#000000" d="M707.2113,-23.529C725.2253,-27.3829 749.5506,-32.5871 769.7409,-36.9066" />
+            <polygon fill="#000000" stroke="#000000" points="769.059,-40.3398 779.5699,-39.0094 770.5235,-33.4947 769.059,-40.3398" />
+          </g>
+        </g>
+      </svg>
+      <!--
+      digraph {
+        rankdir="LR"
+
+        tr[label="Total Revenue (Sales)", URL="/revenue.html"]
+        cogs[label="Cost of Revenue (COGS)", URL="/income.html"]
+        opex[label="Total Operating Expense (OpEx)", URL="/income.html"]
+        tax[label="Tax", URL="/income.html"]
+        ni[label="Net Income", URL="/net-income.html"]
+
+        s[label="Shares Outstanding", URL="/outstanding-shares.html"]
+        eps[label="EPS", URL="/eps.html"]
+        feps[label="EPS next 5Y", URL="/eps.html"]
+        p[label="Price", URL="/price.html"]
+        pe[label="P/E", URL="/pe.html"]
+        peg[label="PEG", URL="/peg.html"]
+
+        tr -> ni
+        cogs -> ni
+        opex -> ni
+        tax -> ni
+        ni -> eps
+        s -> eps
+        p -> pe
+        eps -> pe
+        pe -> peg
+        feps -> peg
+        eps -> feps
+      }
+      -->
+    </p>
 
     <p>Посилання на джерела:</p>
     <ul>

@@ -64,3 +64,41 @@ h1 {
 img {
   max-width: 100%;
 }
+
+p,
+table {
+  margin: 1em 0;
+}
+
+/* graphviz */
+p.graph {
+  text-align: center;
+}
+
+p.graph svg {
+  max-width: 100%;
+}
+
+.graph polygon {
+  fill: transparent;
+}
+
+@media (prefers-color-scheme: dark) {
+  .graph g path[stroke="#000000"],
+  .graph g polygon[stroke="#000000"],
+  .graph g ellipse[stroke="#000000"],
+  .graph g path[stroke="#000"],
+  .graph g polygon[stroke="#000"],
+  .graph g ellipse[stroke="#000"],
+  .graph g path[stroke="black"],
+  .graph g polygon[stroke="black"],
+  .graph g ellipse[stroke="black"] {
+    stroke: white;
+  }
+
+  .graph g text[fill="#000000"],
+  .graph g text[fill="#000"],
+  .graph g text[fill="black"] {
+    fill: white;
+  }
+}

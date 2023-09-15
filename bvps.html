@@ -138,6 +138,118 @@
       </li>
     </ul>
 
+    <p>Зв'язки:</p>
+    <p class="graph">
+      <!--
+      http://localhost:3000/graphviz.html#digraph%20%7B%0A%20%20rankdir%3D%22LR%22%0A%0A%20%20tca%5Blabel%3D%22Total%20Current%20Assets%22%2C%20URL%3D%22%2Fbalance.html%22%5D%0A%20%20ta%5Blabel%3D%22Total%20Assets%22%2C%20URL%3D%22%2Fbalance.html%22%5D%0A%20%20tcl%5Blabel%3D%22Total%20Current%20Liabilities%22%2C%20URL%3D%22%2Fbalance.html%22%5D%0A%20%20tl%5Blabel%3D%22Total%20Liabilities%22%2C%20URL%3D%22%2Fbalance.html%22%5D%0A%20%20bv%5Blabel%3D%22Book%20Value%22%2C%20URL%3D%22%2Fbv.html%22%5D%0A%20%20bvps%5Blabel%3D%22Book%20Value%20per%20Share%20(BVPS)%22%2C%20URL%3D%22%2Fbvps.html%22%5D%0A%20%20pb%5Blabel%3D%22Price%20to%20Book%20(P%2FB)%22%2C%20URL%3D%22%2Fpb.html%22%5D%0A%0A%20%20tca%20-%3E%20ta%0A%20%20tcl%20-%3E%20tl%0A%20%20ta%20-%3E%20bv%0A%20%20tl%20-%3E%20bv%0A%20%20bv%20-%3E%20bvps%0A%20%20bvps%20-%3E%20pb%0A%7D
+      -->
+      <svg width="1057pt" height="98pt" viewBox="0.00 0.00 1056.75 98.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 94)">
+          <polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-94 1052.7511,-94 1052.7511,4 -4,4" />
+          <g id="node1" class="node">
+            <g id="a_node1">
+              <a xlink:href="/balance.html" xlink:title="Total Current Assets">
+                <ellipse fill="none" stroke="#000000" cx="104.903" cy="-72" rx="90.9051" ry="18" />
+                <text text-anchor="middle" x="104.903" y="-67.8" font-family="Times,serif" font-size="14.00" fill="#000000">Total Current Assets</text>
+              </a>
+            </g>
+          </g>
+          <g id="node2" class="node">
+            <g id="a_node2">
+              <a xlink:href="/balance.html" xlink:title="Total Assets">
+                <ellipse fill="none" stroke="#000000" cx="318.7976" cy="-72" rx="59.0824" ry="18" />
+                <text text-anchor="middle" x="318.7976" y="-67.8" font-family="Times,serif" font-size="14.00" fill="#000000">Total Assets</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge1" class="edge">
+            <path fill="none" stroke="#000000" d="M195.9237,-72C213.7202,-72 232.1186,-72 249.0878,-72" />
+            <polygon fill="#000000" stroke="#000000" points="249.4507,-75.5001 259.4507,-72 249.4507,-68.5001 249.4507,-75.5001" />
+          </g>
+          <g id="node5" class="node">
+            <g id="a_node5">
+              <a xlink:href="/bv.html" xlink:title="Book Value">
+                <ellipse fill="none" stroke="#000000" cx="485.2225" cy="-45" rx="57.3667" ry="18" />
+                <text text-anchor="middle" x="485.2225" y="-40.8" font-family="Times,serif" font-size="14.00" fill="#000000">Book Value</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge3" class="edge">
+            <path fill="none" stroke="#000000" d="M370.9988,-63.5311C387.8127,-60.8033 406.5978,-57.7557 424.0005,-54.9324" />
+            <polygon fill="#000000" stroke="#000000" points="424.7515,-58.3564 434.0619,-53.3001 423.6304,-51.4467 424.7515,-58.3564" />
+          </g>
+          <g id="node3" class="node">
+            <g id="a_node3">
+              <a xlink:href="/balance.html" xlink:title="Total Current Liabilities">
+                <ellipse fill="none" stroke="#000000" cx="104.903" cy="-18" rx="104.806" ry="18" />
+                <text text-anchor="middle" x="104.903" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">Total Current Liabilities</text>
+              </a>
+            </g>
+          </g>
+          <g id="node4" class="node">
+            <g id="a_node4">
+              <a xlink:href="/balance.html" xlink:title="Total Liabilities">
+                <ellipse fill="none" stroke="#000000" cx="318.7976" cy="-18" rx="72.9832" ry="18" />
+                <text text-anchor="middle" x="318.7976" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">Total Liabilities</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge2" class="edge">
+            <path fill="none" stroke="#000000" d="M209.9704,-18C218.533,-18 227.1117,-18 235.4868,-18" />
+            <polygon fill="#000000" stroke="#000000" points="235.5869,-21.5001 245.5869,-18 235.5869,-14.5001 235.5869,-21.5001" />
+          </g>
+          <g id="edge4" class="edge">
+            <path fill="none" stroke="#000000" d="M379.823,-27.9005C394.1558,-30.2258 409.436,-32.7048 423.7866,-35.0329" />
+            <polygon fill="#000000" stroke="#000000" points="423.6136,-38.5505 434.045,-36.6972 424.7346,-31.6409 423.6136,-38.5505" />
+          </g>
+          <g id="node6" class="node">
+            <g id="a_node6">
+              <a xlink:href="/bvps.html" xlink:title="Book Value per Share (BVPS)">
+                <ellipse fill="none" stroke="#000000" cx="708.2245" cy="-45" rx="129.6375" ry="18" />
+                <text text-anchor="middle" x="708.2245" y="-40.8" font-family="Times,serif" font-size="14.00" fill="#000000">Book Value per Share (BVPS)</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge5" class="edge">
+            <path fill="none" stroke="#000000" d="M542.941,-45C551.0048,-45 559.562,-45 568.3722,-45" />
+            <polygon fill="#000000" stroke="#000000" points="568.4138,-48.5001 578.4138,-45 568.4137,-41.5001 568.4138,-48.5001" />
+          </g>
+          <g id="node7" class="node">
+            <g id="a_node7">
+              <a xlink:href="/pb.html" xlink:title="Price to Book (P/B)">
+                <ellipse fill="none" stroke="#000000" cx="961.2722" cy="-45" rx="87.4579" ry="18" />
+                <text text-anchor="middle" x="961.2722" y="-40.8" font-family="Times,serif" font-size="14.00" fill="#000000">Price to Book (P/B)</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge6" class="edge">
+            <path fill="none" stroke="#000000" d="M838.0841,-45C846.625,-45 855.1456,-45 863.4901,-45" />
+            <polygon fill="#000000" stroke="#000000" points="863.5707,-48.5001 873.5707,-45 863.5707,-41.5001 863.5707,-48.5001" />
+          </g>
+        </g>
+      </svg>
+      <!--
+      digraph {
+        rankdir="LR"
+
+        tca[label="Total Current Assets", URL="/balance.html"]
+        ta[label="Total Assets", URL="/balance.html"]
+        tcl[label="Total Current Liabilities", URL="/balance.html"]
+        tl[label="Total Liabilities", URL="/balance.html"]
+        bv[label="Book Value", URL="/bv.html"]
+        bvps[label="Book Value per Share (BVPS)", URL="/bvps.html"]
+        pb[label="Price to Book (P/B)", URL="/pb.html"]
+
+        tca -> ta
+        tcl -> tl
+        ta -> bv
+        tl -> bv
+        bv -> bvps
+        bvps -> pb
+      }
+      -->
+    </p>
+
     <p>Посилання на джерела:</p>
     <ul>
       <li>

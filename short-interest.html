@@ -75,6 +75,62 @@
       <li>Short Ratio</li>
     </ul>
 
+    <p>Зв'язки:</p>
+    <p class="graph">
+      <!--
+      http://localhost:3000/graphviz.html#digraph%20%7B%0A%20%20rankdir%3D%22LR%22%0A%20%20%0A%20%20si%5Blabel%3D%22Short%20Interest%22%2C%20URL%3D%22%2Fshort-interest.html%22%5D%0A%20%20v%5Blabel%3D%22Volume%22%2C%20URL%3D%22%2Fvolume.html%22%5D%0A%20%20sir%5Blabel%3D%22Short%20Interest%20Ratio%22%2C%20URL%3D%22%2Fshort-interest.html%22%5D%0A%20%20%0A%20%20si%20-%3E%20sir%0A%20%20v%20-%3E%20sir%0A%7D
+      -->
+      <svg width="344pt" height="98pt" viewBox="0.00 0.00 343.99 98.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 94)">
+          <polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-94 339.9894,-94 339.9894,4 -4,4" />
+          <g id="node1" class="node">
+            <g id="a_node1">
+              <a xlink:href="/short-interest.html" xlink:title="Short Interest">
+                <ellipse fill="none" stroke="#000000" cx="63.3289" cy="-72" rx="63.1582" ry="18" />
+                <text text-anchor="middle" x="63.3289" y="-67.8" font-family="Times,serif" font-size="14.00" fill="#000000">Short Interest</text>
+              </a>
+            </g>
+          </g>
+          <g id="node3" class="node">
+            <g id="a_node3">
+              <a xlink:href="/short-interest.html" xlink:title="Short Interest Ratio">
+                <ellipse fill="none" stroke="#000000" cx="249.3236" cy="-45" rx="86.832" ry="18" />
+                <text text-anchor="middle" x="249.3236" y="-40.8" font-family="Times,serif" font-size="14.00" fill="#000000">Short Interest Ratio</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge1" class="edge">
+            <path fill="none" stroke="#000000" d="M119.891,-63.7891C135.1141,-61.5793 151.8845,-59.1448 168.1631,-56.7817" />
+            <polygon fill="#000000" stroke="#000000" points="168.8236,-60.2226 178.217,-55.3222 167.8179,-53.2952 168.8236,-60.2226" />
+          </g>
+          <g id="node2" class="node">
+            <g id="a_node2">
+              <a xlink:href="/volume.html" xlink:title="Volume">
+                <ellipse fill="none" stroke="#000000" cx="63.3289" cy="-18" rx="42.2952" ry="18" />
+                <text text-anchor="middle" x="63.3289" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">Volume</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge2" class="edge">
+            <path fill="none" stroke="#000000" d="M103.6869,-23.8586C122.5878,-26.6023 145.8141,-29.974 168.1203,-33.2121" />
+            <polygon fill="#000000" stroke="#000000" points="167.8864,-36.7147 178.2855,-34.6877 168.8921,-29.7874 167.8864,-36.7147" />
+          </g>
+        </g>
+      </svg>
+      <!--
+      digraph {
+        rankdir="LR"
+
+        si[label="Short Interest", URL="/short-interest.html"]
+        v[label="Volume", URL="/volume.html"]
+        sir[label="Short Interest Ratio", URL="/short-interest.html"]
+
+        si -> sir
+        v -> sir
+      }
+      -->
+    </p>
+
     <p>Посилання на джерела:</p>
     <ul>
       <li>

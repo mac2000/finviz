@@ -118,6 +118,91 @@
       </li>
     </ul>
 
+    <p>Зв'язки:</p>
+    <p class="graph">
+      <!--
+      http://localhost:3000/graphviz.html#digraph%20%7B%0A%20%20rankdir%3D%22LR%22%0A%20%20%0A%20%20r%5Blabel%3D%22Total%20Revenue%22%2C%20URL%3D%22%2Frevenue.html%22%5D%0A%20%20%0A%20%20ps%5Blabel%3D%22Price%20to%20Sales%20(P%2FS)%22%2C%20URL%3D%22%2Fps.html%22%5D%0A%20%20gm%5Blabel%3D%22Gross%20Margin%22%2C%20URL%3D%22%2Fgross-margin.html%22%5D%0A%20%20om%5Blabel%3D%22Operating%20Margin%22%2C%20URL%3D%22%2Foper-margin.html%22%5D%0A%20%20pm%5Blabel%3D%22Profit%20Margin%22%2C%20URL%3D%22%2Fprofit-margin.html%22%5D%0A%0A%20%20r%20-%3E%20ps%0A%20%20r%20-%3E%20gm%0A%20%20r%20-%3E%20om%0A%20%20r%20-%3E%20pm%0A%7D
+      -->
+      <svg width="351pt" height="206pt" viewBox="0.00 0.00 350.96 206.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 202)">
+          <polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-202 346.9617,-202 346.9617,4 -4,4" />
+          <g id="node1" class="node">
+            <g id="a_node1">
+              <a xlink:href="/revenue.html" xlink:title="Total Revenue">
+                <ellipse fill="none" stroke="#000000" cx="67.6185" cy="-99" rx="67.7372" ry="18" />
+                <text text-anchor="middle" x="67.6185" y="-94.8" font-family="Times,serif" font-size="14.00" fill="#000000">Total Revenue</text>
+              </a>
+            </g>
+          </g>
+          <g id="node2" class="node">
+            <g id="a_node2">
+              <a xlink:href="/ps.html" xlink:title="Price to Sales (P/S)">
+                <ellipse fill="none" stroke="#000000" cx="257.0993" cy="-180" rx="85.725" ry="18" />
+                <text text-anchor="middle" x="257.0993" y="-175.8" font-family="Times,serif" font-size="14.00" fill="#000000">Price to Sales (P/S)</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge1" class="edge">
+            <path fill="none" stroke="#000000" d="M96.0006,-115.5224C116.4678,-127.0046 144.9972,-142.136 171.237,-153 179.2093,-156.3008 187.7372,-159.4338 196.2101,-162.3179" />
+            <polygon fill="#000000" stroke="#000000" points="195.1271,-165.6461 205.7204,-165.464 197.3256,-159.0003 195.1271,-165.6461" />
+          </g>
+          <g id="node3" class="node">
+            <g id="a_node3">
+              <a xlink:href="/gross-margin.html" xlink:title="Gross Margin">
+                <ellipse fill="none" stroke="#000000" cx="257.0993" cy="-126" rx="64.3056" ry="18" />
+                <text text-anchor="middle" x="257.0993" y="-121.8" font-family="Times,serif" font-size="14.00" fill="#000000">Gross Margin</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge2" class="edge">
+            <path fill="none" stroke="#000000" d="M127.3113,-107.5059C147.0776,-110.3225 169.2132,-113.4767 189.5281,-116.3715" />
+            <polygon fill="#000000" stroke="#000000" points="189.2549,-119.8678 199.6486,-117.8136 190.2424,-112.9378 189.2549,-119.8678" />
+          </g>
+          <g id="node4" class="node">
+            <g id="a_node4">
+              <a xlink:href="/oper-margin.html" xlink:title="Operating Margin">
+                <ellipse fill="none" stroke="#000000" cx="257.0993" cy="-72" rx="80.4785" ry="18" />
+                <text text-anchor="middle" x="257.0993" y="-67.8" font-family="Times,serif" font-size="14.00" fill="#000000">Operating Margin</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge3" class="edge">
+            <path fill="none" stroke="#000000" d="M127.3113,-90.4941C143.7245,-88.1553 161.7714,-85.5837 179.053,-83.1212" />
+            <polygon fill="#000000" stroke="#000000" points="179.7153,-86.5622 189.1216,-81.6865 178.7278,-79.6322 179.7153,-86.5622" />
+          </g>
+          <g id="node5" class="node">
+            <g id="a_node5">
+              <a xlink:href="/profit-margin.html" xlink:title="Profit Margin">
+                <ellipse fill="none" stroke="#000000" cx="257.0993" cy="-18" rx="63.7415" ry="18" />
+                <text text-anchor="middle" x="257.0993" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">Profit Margin</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge4" class="edge">
+            <path fill="none" stroke="#000000" d="M96.0006,-82.4776C116.4678,-70.9954 144.9972,-55.864 171.237,-45 180.9745,-40.9683 191.541,-37.187 201.8236,-33.8038" />
+            <polygon fill="#000000" stroke="#000000" points="203.1023,-37.0695 211.559,-30.687 200.9679,-30.4028 203.1023,-37.0695" />
+          </g>
+        </g>
+      </svg>
+      <!--
+      digraph {
+        rankdir="LR"
+
+        r[label="Total Revenue", URL="/revenue.html"]
+
+        ps[label="Price to Sales (P/S)", URL="/ps.html"]
+        gm[label="Gross Margin", URL="/gross-margin.html"]
+        om[label="Operating Margin", URL="/oper-margin.html"]
+        pm[label="Profit Margin", URL="/profit-margin.html"]
+
+        r -> ps
+        r -> gm
+        r -> om
+        r -> pm
+      }
+      -->
+    </p>
+
     <p>Посилання на джерела:</p>
     <ul>
       <li>

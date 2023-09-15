@@ -138,6 +138,132 @@
       <li>ROA</li>
     </ul>
 
+    <p>Зв'язки:</p>
+    <p class="graph">
+      <!--
+      http://localhost:3000/graphviz.html#digraph%20%7B%0A%20%20rankdir%3D%22LR%22%0A%20%20%0A%20%20tr%5Blabel%3D%22Total%20Revenue%20(Sales)%22%2C%20URL%3D%22%2Frevenue.html%22%5D%0A%20%20cogs%5Blabel%3D%22Cost%20of%20Revenue%20(COGS)%22%2C%20URL%3D%22%2Fincome.html%22%5D%0A%20%20opex%5Blabel%3D%22Total%20Operating%20Expense%20(OpEx)%22%2C%20URL%3D%22%2Fincome.html%22%5D%0A%20%20tax%5Blabel%3D%22Tax%22%2C%20URL%3D%22%2Fincome.html%22%5D%0A%20%20ni%5Blabel%3D%22Net%20Income%22%2C%20URL%3D%22%2Fnet-income.html%22%5D%0A%20%20ta%5Blabel%3D%22Total%20Assets%22%2C%20URL%3D%22%2Fbalance.html%22%5D%0A%20%20tca%5Blabel%3D%22Total%20Current%20Assets%22%2C%20URL%3D%22%2Fbalance.html%22%5D%0A%20%20roa%5Blabel%3D%22Return%20on%20Assets%20(ROA)%22%2C%20URL%3D%22%2Froa.html%22%5D%0A%20%20%0A%20%20tr%20-%3E%20ni%0A%20%20cogs%20-%3E%20ni%0A%20%20opex%20-%3E%20ni%0A%20%20tax%20-%3E%20ni%0A%20%20ni%20-%3E%20roa%0A%20%20ta%20-%3E%20roa%0A%20%20tca%20-%3E%20ta%0A%7D
+      -->
+      <svg width="688pt" height="260pt" viewBox="0.00 0.00 688.45 260.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 256)">
+          <polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-256 684.4507,-256 684.4507,4 -4,4" />
+          <g id="node1" class="node">
+            <g id="a_node1">
+              <a xlink:href="/revenue.html" xlink:title="Total Revenue (Sales)">
+                <ellipse fill="none" stroke="#000000" cx="138.9447" cy="-234" rx="96.6868" ry="18" />
+                <text text-anchor="middle" x="138.9447" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">Total Revenue (Sales)</text>
+              </a>
+            </g>
+          </g>
+          <g id="node5" class="node">
+            <g id="a_node5">
+              <a xlink:href="/net-income.html" xlink:title="Net Income">
+                <ellipse fill="none" stroke="#000000" cx="372.9305" cy="-126" rx="56.2" ry="18" />
+                <text text-anchor="middle" x="372.9305" y="-121.8" font-family="Times,serif" font-size="14.00" fill="#000000">Net Income</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge1" class="edge">
+            <path fill="none" stroke="#000000" d="M222.7369,-224.9018C241.4796,-220.9252 260.8421,-215.211 277.8893,-207 306.0888,-193.4174 332.7097,-169.3925 350.5635,-151.0235" />
+            <polygon fill="#000000" stroke="#000000" points="353.3152,-153.2083 357.6575,-143.5442 348.2363,-148.3911 353.3152,-153.2083" />
+          </g>
+          <g id="node2" class="node">
+            <g id="a_node2">
+              <a xlink:href="/income.html" xlink:title="Cost of Revenue (COGS)">
+                <ellipse fill="none" stroke="#000000" cx="138.9447" cy="-180" rx="109.994" ry="18" />
+                <text text-anchor="middle" x="138.9447" y="-175.8" font-family="Times,serif" font-size="14.00" fill="#000000">Cost of Revenue (COGS)</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge2" class="edge">
+            <path fill="none" stroke="#000000" d="M213.4675,-166.7264C234.3868,-162.6733 257.0948,-157.9647 277.8893,-153 292.3942,-149.537 308.0082,-145.3122 322.3053,-141.2424" />
+            <polygon fill="#000000" stroke="#000000" points="323.3224,-144.5918 331.9631,-138.4609 321.385,-137.8652 323.3224,-144.5918" />
+          </g>
+          <g id="node3" class="node">
+            <g id="a_node3">
+              <a xlink:href="/income.html" xlink:title="Total Operating Expense (OpEx)">
+                <ellipse fill="none" stroke="#000000" cx="138.9447" cy="-126" rx="138.8894" ry="18" />
+                <text text-anchor="middle" x="138.9447" y="-121.8" font-family="Times,serif" font-size="14.00" fill="#000000">Total Operating Expense (OpEx)</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge3" class="edge">
+            <path fill="none" stroke="#000000" d="M278.0968,-126C287.7604,-126 297.2147,-126 306.1826,-126" />
+            <polygon fill="#000000" stroke="#000000" points="306.4703,-129.5001 316.4703,-126 306.4703,-122.5001 306.4703,-129.5001" />
+          </g>
+          <g id="node4" class="node">
+            <g id="a_node4">
+              <a xlink:href="/income.html" xlink:title="Tax">
+                <ellipse fill="none" stroke="#000000" cx="138.9447" cy="-72" rx="27" ry="18" />
+                <text text-anchor="middle" x="138.9447" y="-67.8" font-family="Times,serif" font-size="14.00" fill="#000000">Tax</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge4" class="edge">
+            <path fill="none" stroke="#000000" d="M165.2077,-76.4182C193.2529,-81.2957 238.9294,-89.6983 277.8893,-99 292.3942,-102.463 308.0082,-106.6878 322.3053,-110.7576" />
+            <polygon fill="#000000" stroke="#000000" points="321.385,-114.1348 331.9631,-113.5391 323.3224,-107.4082 321.385,-114.1348" />
+          </g>
+          <g id="node8" class="node">
+            <g id="a_node8">
+              <a xlink:href="/roa.html" xlink:title="Return on Assets (ROA)">
+                <ellipse fill="none" stroke="#000000" cx="574.2112" cy="-72" rx="106.4795" ry="18" />
+                <text text-anchor="middle" x="574.2112" y="-67.8" font-family="Times,serif" font-size="14.00" fill="#000000">Return on Assets (ROA)</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge5" class="edge">
+            <path fill="none" stroke="#000000" d="M416.1103,-114.4156C442.6784,-107.2879 477.2811,-98.0046 507.3384,-89.9408" />
+            <polygon fill="#000000" stroke="#000000" points="508.5878,-93.2294 517.3393,-87.2577 506.7739,-86.4685 508.5878,-93.2294" />
+          </g>
+          <g id="node6" class="node">
+            <g id="a_node6">
+              <a xlink:href="/balance.html" xlink:title="Total Assets">
+                <ellipse fill="none" stroke="#000000" cx="372.9305" cy="-45" rx="59.0824" ry="18" />
+                <text text-anchor="middle" x="372.9305" y="-40.8" font-family="Times,serif" font-size="14.00" fill="#000000">Total Assets</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge6" class="edge">
+            <path fill="none" stroke="#000000" d="M427.1348,-52.271C443.6399,-54.485 462.2792,-56.9853 480.6059,-59.4437" />
+            <polygon fill="#000000" stroke="#000000" points="480.3631,-62.9424 490.7397,-60.803 481.2938,-56.0045 480.3631,-62.9424" />
+          </g>
+          <g id="node7" class="node">
+            <g id="a_node7">
+              <a xlink:href="/balance.html" xlink:title="Total Current Assets">
+                <ellipse fill="none" stroke="#000000" cx="138.9447" cy="-18" rx="90.9051" ry="18" />
+                <text text-anchor="middle" x="138.9447" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">Total Current Assets</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge7" class="edge">
+            <path fill="none" stroke="#000000" d="M217.8354,-27.1033C247.0214,-30.4711 279.7588,-34.2488 307.608,-37.4623" />
+            <polygon fill="#000000" stroke="#000000" points="307.2961,-40.9495 317.6314,-38.6189 308.0986,-33.9956 307.2961,-40.9495" />
+          </g>
+        </g>
+      </svg>
+      <!--
+      digraph {
+        rankdir="LR"
+
+        tr[label="Total Revenue (Sales)", URL="/revenue.html"]
+        cogs[label="Cost of Revenue (COGS)", URL="/income.html"]
+        opex[label="Total Operating Expense (OpEx)", URL="/income.html"]
+        tax[label="Tax", URL="/income.html"]
+        ni[label="Net Income", URL="/net-income.html"]
+        ta[label="Total Assets", URL="/balance.html"]
+        tca[label="Total Current Assets", URL="/balance.html"]
+        roa[label="Return on Assets (ROA)", URL="/roa.html"]
+
+        tr -> ni
+        cogs -> ni
+        opex -> ni
+        tax -> ni
+        ni -> roa
+        ta -> roa
+        tca -> ta
+      }
+      -->
+    </p>
+
     <p>Посилання на джерела:</p>
     <ul>
       <li>

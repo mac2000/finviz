@@ -104,6 +104,118 @@
       <li>DPR</li>
     </ul>
 
+    <p>Зв'язки:</p>
+    <p class="graph">
+      <!--
+      http://localhost:3000/graphviz.html#digraph%20%7B%0A%20%20rankdir%3D%22LR%22%0A%0A%20%20tr%5Blabel%3D%22Total%20Revenue%20(Sales)%22%2C%20URL%3D%22%2Frevenue.html%22%5D%0A%20%20cogs%5Blabel%3D%22Cost%20of%20Revenue%20(COGS)%22%2C%20URL%3D%22%2Fincome.html%22%5D%0A%20%20opex%5Blabel%3D%22Total%20Operating%20Expense%20(OpEx)%22%2C%20URL%3D%22%2Fincome.html%22%5D%0A%20%20tax%5Blabel%3D%22Tax%22%2C%20URL%3D%22%2Fincome.html%22%5D%0A%20%20ni%5Blabel%3D%22Net%20Income%22%2C%20URL%3D%22%2Fnet-income.html%22%5D%0A%20%20d%5Blabel%3D%22Dividend%22%2C%20URL%3D%22%2Fdividend.html%22%5D%0A%20%20payout%5Blabel%3D%22Dividend%20Payout%20Ratio%20(DPR)%22%2C%20URL%3D%22%2Fpayout.html%22%5D%0A%20%20%0A%20%20tr%20-%3E%20ni%0A%20%20cogs%20-%3E%20ni%0A%20%20opex%20-%3E%20ni%0A%20%20tax%20-%3E%20ni%0A%20%20ni%20-%3E%20payout%0A%20%20d%20-%3E%20payout%0A%7D
+      -->
+      <svg width="725pt" height="206pt" viewBox="0.00 0.00 724.94 206.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 202)">
+          <polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-202 720.9385,-202 720.9385,4 -4,4" />
+          <g id="node1" class="node">
+            <g id="a_node1">
+              <a xlink:href="/revenue.html" xlink:title="Total Revenue (Sales)">
+                <ellipse fill="none" stroke="#000000" cx="138.9447" cy="-180" rx="96.6868" ry="18" />
+                <text text-anchor="middle" x="138.9447" y="-175.8" font-family="Times,serif" font-size="14.00" fill="#000000">Total Revenue (Sales)</text>
+              </a>
+            </g>
+          </g>
+          <g id="node5" class="node">
+            <g id="a_node5">
+              <a xlink:href="/net-income.html" xlink:title="Net Income">
+                <ellipse fill="none" stroke="#000000" cx="370.2391" cy="-99" rx="56.2" ry="18" />
+                <text text-anchor="middle" x="370.2391" y="-94.8" font-family="Times,serif" font-size="14.00" fill="#000000">Net Income</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge1" class="edge">
+            <path fill="none" stroke="#000000" d="M217.7597,-169.4597C237.7462,-165.4979 258.9195,-160.1517 277.8893,-153 299.2,-144.9659 321.2841,-132.2385 338.511,-121.1574" />
+            <polygon fill="#000000" stroke="#000000" points="340.6132,-123.964 347.047,-115.5463 336.7681,-118.1146 340.6132,-123.964" />
+          </g>
+          <g id="node2" class="node">
+            <g id="a_node2">
+              <a xlink:href="/income.html" xlink:title="Cost of Revenue (COGS)">
+                <ellipse fill="none" stroke="#000000" cx="138.9447" cy="-126" rx="109.994" ry="18" />
+                <text text-anchor="middle" x="138.9447" y="-121.8" font-family="Times,serif" font-size="14.00" fill="#000000">Cost of Revenue (COGS)</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge2" class="edge">
+            <path fill="none" stroke="#000000" d="M228.7002,-115.5225C254.8111,-112.4744 282.7781,-109.2097 306.899,-106.394" />
+            <polygon fill="#000000" stroke="#000000" points="307.4577,-109.8526 316.9844,-105.2167 306.646,-102.8998 307.4577,-109.8526" />
+          </g>
+          <g id="node3" class="node">
+            <g id="a_node3">
+              <a xlink:href="/income.html" xlink:title="Total Operating Expense (OpEx)">
+                <ellipse fill="none" stroke="#000000" cx="138.9447" cy="-72" rx="138.8894" ry="18" />
+                <text text-anchor="middle" x="138.9447" y="-67.8" font-family="Times,serif" font-size="14.00" fill="#000000">Total Operating Expense (OpEx)</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge3" class="edge">
+            <path fill="none" stroke="#000000" d="M242.4148,-84.0785C264.4364,-86.6492 287.0536,-89.2894 307.0244,-91.6207" />
+            <polygon fill="#000000" stroke="#000000" points="306.8711,-95.1265 317.2095,-92.8096 307.6828,-88.1737 306.8711,-95.1265" />
+          </g>
+          <g id="node4" class="node">
+            <g id="a_node4">
+              <a xlink:href="/income.html" xlink:title="Tax">
+                <ellipse fill="none" stroke="#000000" cx="138.9447" cy="-18" rx="27" ry="18" />
+                <text text-anchor="middle" x="138.9447" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">Tax</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge4" class="edge">
+            <path fill="none" stroke="#000000" d="M165.8729,-19.6439C194.6753,-22.208 241.1661,-28.7009 277.8893,-45 296.1697,-53.1135 296.7885,-61.6288 313.8893,-72 318.2981,-74.6738 323.0123,-77.2855 327.7664,-79.7659" />
+            <polygon fill="#000000" stroke="#000000" points="326.3824,-82.9876 336.8885,-84.3561 329.5289,-76.7346 326.3824,-82.9876" />
+          </g>
+          <g id="node7" class="node">
+            <g id="a_node7">
+              <a xlink:href="/payout.html" xlink:title="Dividend Payout Ratio (DPR)">
+                <ellipse fill="none" stroke="#000000" cx="589.7637" cy="-72" rx="127.3498" ry="18" />
+                <text text-anchor="middle" x="589.7637" y="-67.8" font-family="Times,serif" font-size="14.00" fill="#000000">Dividend Payout Ratio (DPR)</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge5" class="edge">
+            <path fill="none" stroke="#000000" d="M423.1001,-92.4985C441.3906,-90.2489 462.5948,-87.6409 483.6217,-85.0547" />
+            <polygon fill="#000000" stroke="#000000" points="484.0883,-88.5238 493.5862,-83.8292 483.2337,-81.5762 484.0883,-88.5238" />
+          </g>
+          <g id="node6" class="node">
+            <g id="a_node6">
+              <a xlink:href="/dividend.html" xlink:title="Dividend">
+                <ellipse fill="none" stroke="#000000" cx="370.2391" cy="-45" rx="46.9516" ry="18" />
+                <text text-anchor="middle" x="370.2391" y="-40.8" font-family="Times,serif" font-size="14.00" fill="#000000">Dividend</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge6" class="edge">
+            <path fill="none" stroke="#000000" d="M415.1929,-50.529C435.148,-52.9833 459.5556,-55.9853 483.7224,-58.9577" />
+            <polygon fill="#000000" stroke="#000000" points="483.3329,-62.436 493.6854,-60.183 484.1874,-55.4884 483.3329,-62.436" />
+          </g>
+        </g>
+      </svg>
+      <!--
+      digraph {
+        rankdir="LR"
+
+        tr[label="Total Revenue (Sales)", URL="/revenue.html"]
+        cogs[label="Cost of Revenue (COGS)", URL="/income.html"]
+        opex[label="Total Operating Expense (OpEx)", URL="/income.html"]
+        tax[label="Tax", URL="/income.html"]
+        ni[label="Net Income", URL="/net-income.html"]
+        d[label="Dividend", URL="/dividend.html"]
+        payout[label="Dividend Payout Ratio (DPR)", URL="/payout.html"]
+
+        tr -> ni
+        cogs -> ni
+        opex -> ni
+        tax -> ni
+        ni -> payout
+        d -> payout
+      }
+      -->
+    </p>
+
     <p>Посилання на джерела:</p>
     <ul>
       <li>

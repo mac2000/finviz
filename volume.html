@@ -81,7 +81,85 @@
       <li>
         <a href="/rel-volume.html">Relative Volume</a>
       </li>
+      <li>
+        <a href="/short-interest.html">Short Interest Ratio</a>
+      </li>
     </ul>
+
+    <p>Зв'язки:</p>
+    <p class="graph">
+      <!--
+      http://localhost:3000/graphviz.html#digraph%20%7B%0A%20%20rankdir%3D%22LR%22%0A%20%20%0A%20%20volume%5Blabel%3D%22Volume%22%2C%20URL%3D%22%2Fvolume.html%22%5D%0A%20%20av%5Blabel%3D%22Average%20Volume%22%2C%20URL%3D%22%2Favg-volume.html%22%5D%0A%20%20rv%5Blabel%3D%22Relative%20Volume%22%2C%20URL%3D%22%2Frel-volume.html%22%5D%0A%20%20sir%5Blabel%3D%22Short%20Interest%20Ratio%22%2C%20URL%3D%22%2Fshort-interest.html%22%5D%0A%20%20%0A%20%20volume%20-%3E%20av%0A%20%20volume%20-%3E%20rv%0A%20%20av%20-%3E%20rv%0A%20%20volume%20-%3E%20sir%0A%7D
+      -->
+      <svg width="491pt" height="136pt" viewBox="0.00 0.00 491.11 136.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 132)">
+          <polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-132 487.1091,-132 487.1091,4 -4,4" />
+          <g id="node1" class="node">
+            <g id="a_node1">
+              <a xlink:href="/volume.html" xlink:title="Volume">
+                <ellipse fill="none" stroke="#000000" cx="42.1473" cy="-64" rx="42.2952" ry="18" />
+                <text text-anchor="middle" x="42.1473" y="-59.8" font-family="Times,serif" font-size="14.00" fill="#000000">Volume</text>
+              </a>
+            </g>
+          </g>
+          <g id="node2" class="node">
+            <g id="a_node2">
+              <a xlink:href="/avg-volume.html" xlink:title="Average Volume">
+                <ellipse fill="none" stroke="#000000" cx="206.9605" cy="-110" rx="77.0303" ry="18" />
+                <text text-anchor="middle" x="206.9605" y="-105.8" font-family="Times,serif" font-size="14.00" fill="#000000">Average Volume</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge1" class="edge">
+            <path fill="none" stroke="#000000" d="M77.5039,-73.8682C97.8633,-79.5505 123.9849,-86.8412 147.4252,-93.3835" />
+            <polygon fill="#000000" stroke="#000000" points="146.7095,-96.8174 157.2824,-96.1346 148.5914,-90.0751 146.7095,-96.8174" />
+          </g>
+          <g id="node3" class="node">
+            <g id="a_node3">
+              <a xlink:href="/rel-volume.html" xlink:title="Relative Volume">
+                <ellipse fill="none" stroke="#000000" cx="406.3677" cy="-87" rx="76.9835" ry="18" />
+                <text text-anchor="middle" x="406.3677" y="-82.8" font-family="Times,serif" font-size="14.00" fill="#000000">Relative Volume</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge2" class="edge">
+            <path fill="none" stroke="#000000" d="M83.928,-66.6384C141.6597,-70.2841 247.1328,-76.9445 321.7046,-81.6536" />
+            <polygon fill="#000000" stroke="#000000" points="321.813,-85.1674 332.0137,-82.3047 322.2542,-78.1813 321.813,-85.1674" />
+          </g>
+          <g id="node4" class="node">
+            <g id="a_node4">
+              <a xlink:href="/short-interest.html" xlink:title="Short Interest Ratio">
+                <ellipse fill="none" stroke="#000000" cx="206.9605" cy="-18" rx="86.832" ry="18" />
+                <text text-anchor="middle" x="206.9605" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">Short Interest Ratio</text>
+              </a>
+            </g>
+          </g>
+          <g id="edge4" class="edge">
+            <path fill="none" stroke="#000000" d="M77.5039,-54.1318C97.284,-48.6111 122.5029,-41.5724 145.4179,-35.1768" />
+            <polygon fill="#000000" stroke="#000000" points="146.384,-38.541 155.075,-32.4814 144.5022,-31.7987 146.384,-38.541" />
+          </g>
+          <g id="edge3" class="edge">
+            <path fill="none" stroke="#000000" d="M276.4235,-101.988C292.8058,-100.0984 310.3912,-98.0701 327.1672,-96.1351" />
+            <polygon fill="#000000" stroke="#000000" points="327.9569,-99.5673 337.49,-94.9445 327.1548,-92.6134 327.9569,-99.5673" />
+          </g>
+        </g>
+      </svg>
+      <!--
+      digraph {
+        rankdir="LR"
+
+        volume[label="Volume", URL="/volume.html"]
+        av[label="Average Volume", URL="/avg-volume.html"]
+        rv[label="Relative Volume", URL="/rel-volume.html"]
+        sir[label="Short Interest Ratio", URL="/short-interest.html"]
+
+        volume -> av
+        volume -> rv
+        av -> rv
+        volume -> sir
+      }
+      -->
+    </p>
 
     <p>Посилання на джерела:</p>
     <ul>
