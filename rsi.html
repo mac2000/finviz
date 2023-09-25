@@ -108,12 +108,24 @@
           <th>D18</th>
           <td><code>=IF(D17=0,100,100-(100/(1+D17)))</code></td>
         </tr>
-        <tr>
-          <th>🥷</th>
-          <td><code>=LET( prices,QUERY(GOOGLEFINANCE("AAPL","price",WORKDAY(TODAY(),-17),WORKDAY(TODAY(),-1)),"SELECT Col2 OFFSET 1",0), current,QUERY(prices,"OFFSET 1"), previous,QUERY(prices,"LIMIT 14"), changes,ARRAYFORMULA({(current-previous)/previous}), gains,ARRAYFORMULA({IF(changes&gt;0,changes,0)}), losses,ARRAYFORMULA({IF(changes&lt;0,-1*changes,0)}), rs,AVERAGE(gains)/AVERAGE(losses), rsi,IF(rs=0,100,100-ROUND(100/(1+rs))), rsi )</code></td>
-        </tr>
       </tbody>
     </table>
+
+    <pre class="ninja">
+=LET(
+ticker,A2,
+days,14,
+prices,QUERY(GOOGLEFINANCE(ticker,"price",WORKDAY(TODAY(),-1*days-3),WORKDAY(TODAY(),-1)),"SELECT Col2 OFFSET 1",0),
+current,QUERY(prices,"OFFSET 1"),
+previous,QUERY(prices,"LIMIT 14"),
+changes,ARRAYFORMULA({(current-previous)/previous}),
+gains,ARRAYFORMULA({IF(changes>0,changes,0)}),
+losses,ARRAYFORMULA({IF(changes<0,-1*changes,0)}),
+rs,AVERAGE(gains)/AVERAGE(losses),
+rsi,IF(rs=0,100,100-ROUND(100/(1+rs))),
+rsi
+)
+    </pre>
 
     <p>Синоніми та абревіатури:</p>
     <ul>

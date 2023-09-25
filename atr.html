@@ -66,6 +66,22 @@
       </tbody>
     </table>
 
+    <pre class="ninja">
+=LET(
+ticker,"AAPL",
+days,14,
+prices,QUERY(GOOGLEFINANCE(ticker,"all",WORKDAY(TODAY(),-1*days-2),WORKDAY(TODAY(),-1)),"OFFSET 1",0),
+curr,QUERY(prices,"OFFSET 1"),
+prev,QUERY(prices,CONCATENATE("LIMIT ",ROWS(prices)-1)),
+current_high,ARRAYFORMULA({INDEX(curr,,3)}),
+current_low,ARRAYFORMULA({INDEX(curr,,4)}),
+previous_close,ARRAYFORMULA({INDEX(prev,,5)}),
+tr,BYROW(ARRAYFORMULA({current_high-current_low,current_high-previous_close,current_low-previous_close}),LAMBDA(r,MAX(r))),
+atr,AVERAGE(tr),
+atr
+)
+    </pre>
+
     <p>Синоніми та абревіатури:</p>
     <ul>
       <li>Average True Range</li>

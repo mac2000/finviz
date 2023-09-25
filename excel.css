@@ -18,3 +18,18 @@ iframe[title="excel"] {
 .excel code {
   word-break: break-all;
 }
+
+.ninja {
+  border: 1px solid #999;
+  padding: 0.2em 0.5em;
+  word-break: break-all;
+  white-space: pre-line;
+  position: relative;
+}
+
+.ninja:before {
+  content: "🥷";
+  position: absolute;
+  right: 0.5em;
+  top: 0.5em;
+}
